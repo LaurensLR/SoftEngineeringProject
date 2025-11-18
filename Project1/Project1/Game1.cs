@@ -1,6 +1,7 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
+using Project1.Input;
 
 namespace Project1
 {
@@ -8,7 +9,8 @@ namespace Project1
     {
         private GraphicsDeviceManager _graphics;
         private SpriteBatch _spriteBatch;
-        private Texture2D _heroTexture;
+        private Texture2D _heroWalkTexture;
+        private Texture2D _heroIdleTexture;
 
         private Hero hero;
 
@@ -24,7 +26,7 @@ namespace Project1
             // TODO: Add your initialization logic here
             
             base.Initialize();
-            hero = new Hero(_heroTexture);
+            hero = new Hero(_heroWalkTexture,_heroIdleTexture, new KeyBoardReader());
         }
 
         protected override void LoadContent()
@@ -32,7 +34,8 @@ namespace Project1
             _spriteBatch = new SpriteBatch(GraphicsDevice);
 
             // TODO: use this.Content to load your game content here
-            _heroTexture = Content.Load<Texture2D>("idle");
+            _heroWalkTexture = Content.Load<Texture2D>("walk");
+            _heroIdleTexture = Content.Load<Texture2D>("idle");
         }
 
         protected override void Update(GameTime gameTime)

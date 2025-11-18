@@ -32,3 +32,5 @@ C:\Users\32486\School\J2\S1\Software Engineering\Project\Project1\Project1\obj\D
 C:\Users\32486\School\J2\S1\Software Engineering\Project\Project1\Project1\obj\Debug\net8.0\Project1.genruntimeconfig.cache
 C:\Users\32486\School\J2\S1\Software Engineering\Project\Project1\Project1\obj\Debug\net8.0\ref\Project1.dll
 C:\Users\32486\School\J2\S1\Software Engineering\Project\Project1\Project1\bin\Debug\net8.0\Content\idle.xnb
+C:\Users\32486\School\J2\S1\Software Engineering\Project\Project1\Project1\obj\Debug\net8.0\Project1.sourcelink.json
+C:\Users\32486\School\J2\S1\Software Engineering\Project\Project1\Project1\bin\Debug\net8.0\Content\walk.xnb

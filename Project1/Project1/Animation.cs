@@ -1,4 +1,5 @@
 ﻿using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,6 +10,7 @@ namespace Project1
 {
     internal class Animation
     {
+        public Texture2D Texture { get; protected set; }
         public AnimationFrame CurrentFrame { get; set; }
         private List<AnimationFrame> _frames;
         private int _counter;
@@ -46,7 +48,7 @@ namespace Project1
             CurrentFrame = _frames[_counter];
 
             _secondCounter += gameTime.ElapsedGameTime.TotalSeconds;
-            int fps = 15;
+            int fps = 10;
             if (_secondCounter >= 1d / fps)
             {
                 _counter++;
