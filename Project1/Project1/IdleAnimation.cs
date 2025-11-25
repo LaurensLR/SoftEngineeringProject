@@ -11,10 +11,10 @@ namespace Project1
             Texture = texture;
 
             // Add your idle animation frames here
-            AddFrame(new AnimationFrame(new Rectangle(81, 49, 13, 14)));
-            AddFrame(new AnimationFrame(new Rectangle(97, 49, 13, 14)));
-            AddFrame(new AnimationFrame(new Rectangle(113, 49, 13, 14)));
-            AddFrame(new AnimationFrame(new Rectangle(129, 49, 13, 14)));
+            AddFrame(new AnimationFrame(new Rectangle(2, 2, 26, 28)));
+            AddFrame(new AnimationFrame(new Rectangle(32, 2, 26, 28)));
+            AddFrame(new AnimationFrame(new Rectangle(62, 2, 26, 28)));
+            AddFrame(new AnimationFrame(new Rectangle(92, 2, 26, 28)));
             // Add more idle frames as needed
         }
     }

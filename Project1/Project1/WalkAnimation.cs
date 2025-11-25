@@ -10,14 +10,14 @@ namespace Project1
         {
             Texture = texture;
 
-            AddFrame(new AnimationFrame(new Rectangle(31, 34, 13, 14)));
-            AddFrame(new AnimationFrame(new Rectangle(49, 34, 13, 14)));
-            AddFrame(new AnimationFrame(new Rectangle(67, 34, 13, 14)));
-            AddFrame(new AnimationFrame(new Rectangle(84, 34, 13, 14)));
-            AddFrame(new AnimationFrame(new Rectangle(100, 34, 13, 14)));
-            AddFrame(new AnimationFrame(new Rectangle(116, 34, 13, 14)));
-            AddFrame(new AnimationFrame(new Rectangle(133, 34, 13, 14)));
-            AddFrame(new AnimationFrame(new Rectangle(148, 34, 13, 14)));
+            AddFrame(new AnimationFrame(new Rectangle(2, 2, 26, 28)));
+            AddFrame(new AnimationFrame(new Rectangle(30, 2, 26, 28)));
+            AddFrame(new AnimationFrame(new Rectangle(58, 2, 26, 28)));
+            AddFrame(new AnimationFrame(new Rectangle(86, 2, 26, 28)));
+            AddFrame(new AnimationFrame(new Rectangle(112, 2, 26, 28)));
+            AddFrame(new AnimationFrame(new Rectangle(138, 2, 26, 28)));
+            AddFrame(new AnimationFrame(new Rectangle(166, 2, 26, 28)));
+            AddFrame(new AnimationFrame(new Rectangle(192, 2, 26, 28)));
         }
     }
 }

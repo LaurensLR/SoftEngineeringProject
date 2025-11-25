@@ -26,7 +26,8 @@ namespace Project1
             // TODO: Add your initialization logic here
             
             base.Initialize();
-            hero = new Hero(_heroWalkTexture,_heroIdleTexture, new KeyBoardReader());
+            float groundLevel = 400f;
+            hero = new Hero(_heroWalkTexture,_heroIdleTexture, new KeyBoardReader(), groundLevel);
         }
 
         protected override void LoadContent()

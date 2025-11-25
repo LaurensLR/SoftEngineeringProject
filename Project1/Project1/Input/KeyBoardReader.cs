@@ -1,10 +1,5 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Input;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Project1.Input
 {
@@ -14,6 +9,7 @@ namespace Project1.Input
         {
             KeyboardState state = Keyboard.GetState();
             var direction = Vector2.Zero;
+
             if (state.IsKeyDown(Keys.Left))
             {
                 direction.X -= 1;
@@ -22,6 +18,11 @@ namespace Project1.Input
             {
                 direction.X += 1;
             }
+            if (state.IsKeyDown(Keys.Up))
+            {
+                direction.Y = 1;
+            }
+
             return direction;
         }
     }
