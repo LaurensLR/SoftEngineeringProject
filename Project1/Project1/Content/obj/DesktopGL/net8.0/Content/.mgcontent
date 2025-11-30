@@ -4,8 +4,8 @@
   <Platform>DesktopGL</Platform>
   <Config />
   <SourceFiles>
-    <File>C:/Users/32486/School/J2/S1/Software Engineering/Project/Project1/Project1/Content/idle.png</File>
-    <File>C:/Users/32486/School/J2/S1/Software Engineering/Project/Project1/Project1/Content/walk.png</File>
+    <File>C:/Users/laure_3y8jzli/School/J2/S1/SoftwareEngineering/SoftEngineeringProject/Project1/Project1/Content/idle.png</File>
+    <File>C:/Users/laure_3y8jzli/School/J2/S1/SoftwareEngineering/SoftEngineeringProject/Project1/Project1/Content/walk.png</File>
   </SourceFiles>
   <DestFiles>
     <File xsi:nil="true" />

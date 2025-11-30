@@ -1,0 +1,31 @@
+# Visual Studio temporary files
+.vs/
+bin/
+obj/
+
+# User-specific files
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Build results
+[Dd]ebug/
+[Rr]elease/
+x64/
+x86/
+[Aa]rm/
+[Aa]rm64/
+bld/
+[Bb]in/
+[Oo]bj/
+
+# Visual Studio cache/options
+.vs/
+*.cachefile
+*.VC.db
+*.VC.VC.opendb
+
+# MonoGame content pipeline files
+Content/bin/
+Content/obj/
