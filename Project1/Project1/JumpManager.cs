@@ -26,6 +26,19 @@ namespace Project1
             }
         }
 
+        public void CancelJump()
+        {
+            if (_velocityY > 0)
+                _velocityY = 0f;
+        }
+
+        public void Land()
+        {
+            // called when landing on a platform
+            _velocityY = 0f;
+            _isGrounded = true;
+        }
+
         public void Update(IMovable movable)
         {
             // Apply gravity
@@ -34,12 +47,16 @@ namespace Project1
             // Update position
             movable.Position = new Vector2(movable.Position.X, movable.Position.Y + _velocityY);
 
-            // Check if landed
+            // Check if landed on ground level
             if (movable.Position.Y >= _groundLevel)
             {
                 movable.Position = new Vector2(movable.Position.X, _groundLevel);
                 _velocityY = 0f;
                 _isGrounded = true;
+            }
+            else
+            {
+                _isGrounded = false;
             }
         }
     }

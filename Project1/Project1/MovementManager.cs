@@ -14,7 +14,7 @@ namespace Project1
 
             var distance = direction * movable.Speed;
             var futurePosition = movable.Position + distance;
-            if((futurePosition.X < (800-13)&& futurePosition.X > 0)&& (futurePosition.Y < (480-14)&&futurePosition.Y > 0))
+            if((futurePosition.X < (800-26)&& futurePosition.X > 0)&& (futurePosition.Y < (480-28)&&futurePosition.Y > 0))
             {
                 movable.Position = futurePosition;
             }
