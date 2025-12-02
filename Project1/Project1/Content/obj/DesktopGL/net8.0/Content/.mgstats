@@ -1,1 +1,4 @@
 Source File,Dest File,Processor Type,Content Type,Source File Size,Dest File Size,Build Seconds
+"C:/Users/32486/School/J2/S1/Software Engineering/Project/Project1/Project1/Content/hurt.png","C:/Users/32486/School/J2/S1/Software Engineering/Project/Project1/Project1/Content/bin/DesktopGL/Content/hurt.xnb","TextureProcessor","Texture2DContent",854,307285,0.1983974
+"C:/Users/32486/School/J2/S1/Software Engineering/Project/Project1/Project1/Content/idle.png","C:/Users/32486/School/J2/S1/Software Engineering/Project/Project1/Project1/Content/bin/DesktopGL/Content/idle.xnb","TextureProcessor","Texture2DContent",811,307285,0.1904468
+"C:/Users/32486/School/J2/S1/Software Engineering/Project/Project1/Project1/Content/walk.png","C:/Users/32486/School/J2/S1/Software Engineering/Project/Project1/Project1/Content/bin/DesktopGL/Content/walk.xnb","TextureProcessor","Texture2DContent",1385,614485,0.0185847

@@ -12,11 +12,10 @@ namespace Project1
         private SpriteBatch _spriteBatch;
         private Texture2D _heroWalkTexture;
         private Texture2D _heroIdleTexture;
+        private Texture2D _heroHurtTexture;
         private Texture2D _blockTexture;
 
         private Hero hero;
-        private Rectangle tempBlock;
-        private Rectangle tempBlock2;
 
         private List<Rectangle> _obstacles;
 
@@ -34,7 +33,7 @@ namespace Project1
             
             base.Initialize();
             float groundLevel = 400f;
-            hero = new Hero(_heroWalkTexture,_heroIdleTexture, new KeyBoardReader(), groundLevel);
+            hero = new Hero(_heroWalkTexture, _heroIdleTexture, _heroHurtTexture, new KeyBoardReader(), groundLevel);
 
             _obstacles.Add(new Rectangle(150, (int)groundLevel-15, 25, 25));
             _obstacles.Add(new Rectangle(75, (int)groundLevel - 10, 25, 25));
@@ -47,6 +46,7 @@ namespace Project1
             // TODO: use this.Content to load your game content here
             _heroWalkTexture = Content.Load<Texture2D>("walk");
             _heroIdleTexture = Content.Load<Texture2D>("idle");
+            _heroHurtTexture = Content.Load<Texture2D>("hurt");
             _blockTexture = new Texture2D(GraphicsDevice, 1, 1);
             _blockTexture.SetData(new[] { Color.Red });
         }
