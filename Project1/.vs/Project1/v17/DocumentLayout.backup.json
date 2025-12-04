@@ -7,24 +7,16 @@
       "RelativeMoniker": "D:0:0:{61340343-5B1B-4F30-A711-DD84BA788FF8}|Project1\\Project1.csproj|solutionrelative:project1\\game1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{61340343-5B1B-4F30-A711-DD84BA788FF8}|Project1\\Project1.csproj|c:\\users\\32486\\school\\j2\\s1\\software engineering\\project\\project1\\project1\\spike.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{61340343-5B1B-4F30-A711-DD84BA788FF8}|Project1\\Project1.csproj|solutionrelative:project1\\spike.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{61340343-5B1B-4F30-A711-DD84BA788FF8}|Project1\\Project1.csproj|c:\\users\\32486\\school\\j2\\s1\\software engineering\\project\\project1\\project1\\content\\hurtanimation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{61340343-5B1B-4F30-A711-DD84BA788FF8}|Project1\\Project1.csproj|solutionrelative:project1\\content\\hurtanimation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{61340343-5B1B-4F30-A711-DD84BA788FF8}|Project1\\Project1.csproj|c:\\users\\32486\\school\\j2\\s1\\software engineering\\project\\project1\\project1\\hero.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{61340343-5B1B-4F30-A711-DD84BA788FF8}|Project1\\Project1.csproj|solutionrelative:project1\\hero.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{61340343-5B1B-4F30-A711-DD84BA788FF8}|Project1\\Project1.csproj|c:\\users\\32486\\school\\j2\\s1\\software engineering\\project\\project1\\project1\\animationmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{61340343-5B1B-4F30-A711-DD84BA788FF8}|Project1\\Project1.csproj|solutionrelative:project1\\animationmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{61340343-5B1B-4F30-A711-DD84BA788FF8}|Project1\\Project1.csproj|c:\\users\\32486\\school\\j2\\s1\\software engineering\\project\\project1\\project1\\animation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{61340343-5B1B-4F30-A711-DD84BA788FF8}|Project1\\Project1.csproj|solutionrelative:project1\\animation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{61340343-5B1B-4F30-A711-DD84BA788FF8}|Project1\\Project1.csproj|c:\\users\\32486\\school\\j2\\s1\\software engineering\\project\\project1\\project1\\spike.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{61340343-5B1B-4F30-A711-DD84BA788FF8}|Project1\\Project1.csproj|solutionrelative:project1\\spike.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -34,11 +26,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "Spike.cs",
               "DocumentMoniker": "C:\\Users\\32486\\School\\J2\\S1\\Software Engineering\\Project\\Project1\\Project1\\Spike.cs",
               "RelativeDocumentMoniker": "Project1\\Spike.cs",
@@ -46,18 +38,17 @@
               "RelativeToolTip": "Project1\\Spike.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-02T10:33:58.199Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-02T10:33:58.199Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 1,
               "Title": "Hero.cs",
               "DocumentMoniker": "C:\\Users\\32486\\School\\J2\\S1\\Software Engineering\\Project\\Project1\\Project1\\Hero.cs",
               "RelativeDocumentMoniker": "Project1\\Hero.cs",
               "ToolTip": "C:\\Users\\32486\\School\\J2\\S1\\Software Engineering\\Project\\Project1\\Project1\\Hero.cs",
               "RelativeToolTip": "Project1\\Hero.cs",
-              "ViewState": "AgIAAAUAAAAAAAAAAAAhwB4AAABYAAAAAAAAAA==",
+              "ViewState": "AgIAABEAAAAAAAAAAAA3wCUAAABCAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-11-14T12:24:37.018Z",
               "EditorCaption": ""
@@ -65,38 +56,12 @@
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "HurtAnimation.cs",
-              "DocumentMoniker": "C:\\Users\\32486\\School\\J2\\S1\\Software Engineering\\Project\\Project1\\Project1\\Content\\HurtAnimation.cs",
-              "RelativeDocumentMoniker": "Project1\\Content\\HurtAnimation.cs",
-              "ToolTip": "C:\\Users\\32486\\School\\J2\\S1\\Software Engineering\\Project\\Project1\\Project1\\Content\\HurtAnimation.cs",
-              "RelativeToolTip": "Project1\\Content\\HurtAnimation.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAABDAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-02T10:27:26.504Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "AnimationManager.cs",
-              "DocumentMoniker": "C:\\Users\\32486\\School\\J2\\S1\\Software Engineering\\Project\\Project1\\Project1\\AnimationManager.cs",
-              "RelativeDocumentMoniker": "Project1\\AnimationManager.cs",
-              "ToolTip": "C:\\Users\\32486\\School\\J2\\S1\\Software Engineering\\Project\\Project1\\Project1\\AnimationManager.cs",
-              "RelativeToolTip": "Project1\\AnimationManager.cs",
-              "ViewState": "AgIAAAsAAAAAAAAAAAAAwBUAAAArAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-02T09:58:23.15Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
               "Title": "Animation.cs",
               "DocumentMoniker": "C:\\Users\\32486\\School\\J2\\S1\\Software Engineering\\Project\\Project1\\Project1\\Animation.cs",
               "RelativeDocumentMoniker": "Project1\\Animation.cs",
               "ToolTip": "C:\\Users\\32486\\School\\J2\\S1\\Software Engineering\\Project\\Project1\\Project1\\Animation.cs",
               "RelativeToolTip": "Project1\\Animation.cs",
-              "ViewState": "AgIAAA8AAAAAAAAAAAAYwDIAAAAYAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADIAAAAYAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-12-02T09:52:18.896Z",
               "EditorCaption": ""
@@ -109,7 +74,7 @@
               "RelativeDocumentMoniker": "Project1\\Game1.cs",
               "ToolTip": "C:\\Users\\32486\\School\\J2\\S1\\Software Engineering\\Project\\Project1\\Project1\\Game1.cs",
               "RelativeToolTip": "Project1\\Game1.cs",
-              "ViewState": "AgIAACMAAAAAAAAAAIAwwDAAAAAMAAAAAAAAAA==",
+              "ViewState": "AgIAABsAAAAAAAAAAAAtwCQAAABiAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-11-14T11:04:52.96Z",
               "EditorCaption": ""

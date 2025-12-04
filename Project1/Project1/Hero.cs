@@ -28,15 +28,16 @@ namespace Project1
             }
         }
 
-        public Hero(Texture2D walkTexture, Texture2D idleTexture, Texture2D hurtTexture, IInputReader inputReaderIn, float groundLevel)
+        public Hero(Texture2D walkTexture, Texture2D idleTexture, Texture2D hurtTexture, Texture2D deathTexture , IInputReader inputReaderIn, float groundLevel)
         {
             InputReader = inputReaderIn;
 
             var idleAnimation = new IdleAnimation(idleTexture);
             var walkAnimation = new WalkAnimation(walkTexture);
             var hurtAnimation = new HurtAnimation(hurtTexture);
+            var deathAnimation = new DeathAnimation(deathTexture);
 
-            _animationManager = new AnimationManager(idleAnimation, walkAnimation, hurtAnimation);
+            _animationManager = new AnimationManager(idleAnimation, walkAnimation, hurtAnimation, deathAnimation);
             _movementManager = new MovementManager();
             _jumpManager = new JumpManager(groundLevel);
             Position = new Vector2(100, groundLevel);

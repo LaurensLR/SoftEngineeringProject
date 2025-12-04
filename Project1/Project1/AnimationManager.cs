@@ -1,4 +1,5 @@
 ﻿using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,15 +12,17 @@ namespace Project1
         private Animation _idleAnimation;
         private Animation _walkAnimation;
         private Animation _hurtAnimation;
+        private Animation _deathAnimation;
         private Animation _currentAnimation;
         private bool _facingLeft;
         public Animation CurrentAnimation => _currentAnimation;
         public bool FacingLeft => _facingLeft;
-        public AnimationManager(Animation idleAnimation, Animation walkAnimation, Animation hurtAnimation)
+        public AnimationManager(Animation idleAnimation, Animation walkAnimation, Animation hurtAnimation, Animation deathAnimation)
         {
             _idleAnimation = idleAnimation;
             _walkAnimation = walkAnimation;
             _hurtAnimation = hurtAnimation;
+            _deathAnimation = deathAnimation;
             _currentAnimation = _idleAnimation;
             _facingLeft = false;
         }
