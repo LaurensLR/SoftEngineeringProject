@@ -3,20 +3,60 @@
   "WorkspaceRootPath": "C:\\Users\\32486\\School\\J2\\S1\\Software Engineering\\Project\\Project1\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{61340343-5B1B-4F30-A711-DD84BA788FF8}|Project1\\Project1.csproj|c:\\users\\32486\\school\\j2\\s1\\software engineering\\project\\project1\\project1\\spike.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{61340343-5B1B-4F30-A711-DD84BA788FF8}|Project1\\Project1.csproj|solutionrelative:project1\\spike.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{61340343-5B1B-4F30-A711-DD84BA788FF8}|Project1\\Project1.csproj|c:\\users\\32486\\school\\j2\\s1\\software engineering\\project\\project1\\project1\\game1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{61340343-5B1B-4F30-A711-DD84BA788FF8}|Project1\\Project1.csproj|solutionrelative:project1\\game1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{61340343-5B1B-4F30-A711-DD84BA788FF8}|Project1\\Project1.csproj|c:\\users\\32486\\school\\j2\\s1\\software engineering\\project\\project1\\project1\\jumpmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{61340343-5B1B-4F30-A711-DD84BA788FF8}|Project1\\Project1.csproj|solutionrelative:project1\\jumpmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{61340343-5B1B-4F30-A711-DD84BA788FF8}|Project1\\Project1.csproj|c:\\users\\32486\\school\\j2\\s1\\software engineering\\project\\project1\\project1\\hero.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{61340343-5B1B-4F30-A711-DD84BA788FF8}|Project1\\Project1.csproj|solutionrelative:project1\\hero.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{61340343-5B1B-4F30-A711-DD84BA788FF8}|Project1\\Project1.csproj|c:\\users\\32486\\school\\j2\\s1\\software engineering\\project\\project1\\project1\\animation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{61340343-5B1B-4F30-A711-DD84BA788FF8}|Project1\\Project1.csproj|solutionrelative:project1\\animation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{61340343-5B1B-4F30-A711-DD84BA788FF8}|Project1\\Project1.csproj|c:\\users\\32486\\school\\j2\\s1\\software engineering\\project\\project1\\project1\\movementmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{61340343-5B1B-4F30-A711-DD84BA788FF8}|Project1\\Project1.csproj|solutionrelative:project1\\movementmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{61340343-5B1B-4F30-A711-DD84BA788FF8}|Project1\\Project1.csproj|c:\\users\\32486\\school\\j2\\s1\\software engineering\\project\\project1\\project1\\spike.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{61340343-5B1B-4F30-A711-DD84BA788FF8}|Project1\\Project1.csproj|solutionrelative:project1\\spike.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{61340343-5B1B-4F30-A711-DD84BA788FF8}|Project1\\Project1.csproj|c:\\users\\32486\\school\\j2\\s1\\software engineering\\project\\project1\\project1\\block.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{61340343-5B1B-4F30-A711-DD84BA788FF8}|Project1\\Project1.csproj|solutionrelative:project1\\block.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{61340343-5B1B-4F30-A711-DD84BA788FF8}|Project1\\Project1.csproj|c:\\users\\32486\\school\\j2\\s1\\software engineering\\project\\project1\\project1\\imovable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{61340343-5B1B-4F30-A711-DD84BA788FF8}|Project1\\Project1.csproj|solutionrelative:project1\\imovable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{61340343-5B1B-4F30-A711-DD84BA788FF8}|Project1\\Project1.csproj|c:\\users\\32486\\school\\j2\\s1\\software engineering\\project\\project1\\project1\\icollidable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{61340343-5B1B-4F30-A711-DD84BA788FF8}|Project1\\Project1.csproj|solutionrelative:project1\\icollidable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{61340343-5B1B-4F30-A711-DD84BA788FF8}|Project1\\Project1.csproj|c:\\users\\32486\\school\\j2\\s1\\software engineering\\project\\project1\\project1\\input\\iinputreader.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{61340343-5B1B-4F30-A711-DD84BA788FF8}|Project1\\Project1.csproj|solutionrelative:project1\\input\\iinputreader.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{61340343-5B1B-4F30-A711-DD84BA788FF8}|Project1\\Project1.csproj|c:\\users\\32486\\school\\j2\\s1\\software engineering\\project\\project1\\project1\\input\\keyboardreader.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{61340343-5B1B-4F30-A711-DD84BA788FF8}|Project1\\Project1.csproj|solutionrelative:project1\\input\\keyboardreader.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{61340343-5B1B-4F30-A711-DD84BA788FF8}|Project1\\Project1.csproj|c:\\users\\32486\\school\\j2\\s1\\software engineering\\project\\project1\\project1\\collisionmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{61340343-5B1B-4F30-A711-DD84BA788FF8}|Project1\\Project1.csproj|solutionrelative:project1\\collisionmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{61340343-5B1B-4F30-A711-DD84BA788FF8}|Project1\\Project1.csproj|c:\\users\\32486\\school\\j2\\s1\\software engineering\\project\\project1\\project1\\walkanimation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{61340343-5B1B-4F30-A711-DD84BA788FF8}|Project1\\Project1.csproj|solutionrelative:project1\\walkanimation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{61340343-5B1B-4F30-A711-DD84BA788FF8}|Project1\\Project1.csproj|c:\\users\\32486\\school\\j2\\s1\\software engineering\\project\\project1\\project1\\hurtanimation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{61340343-5B1B-4F30-A711-DD84BA788FF8}|Project1\\Project1.csproj|solutionrelative:project1\\hurtanimation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{61340343-5B1B-4F30-A711-DD84BA788FF8}|Project1\\Project1.csproj|c:\\users\\32486\\school\\j2\\s1\\software engineering\\project\\project1\\project1\\animation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{61340343-5B1B-4F30-A711-DD84BA788FF8}|Project1\\Project1.csproj|solutionrelative:project1\\animation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,36 +66,167 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 11,
           "Children": [
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "Spike.cs",
-              "DocumentMoniker": "C:\\Users\\32486\\School\\J2\\S1\\Software Engineering\\Project\\Project1\\Project1\\Spike.cs",
-              "RelativeDocumentMoniker": "Project1\\Spike.cs",
-              "ToolTip": "C:\\Users\\32486\\School\\J2\\S1\\Software Engineering\\Project\\Project1\\Project1\\Spike.cs",
-              "RelativeToolTip": "Project1\\Spike.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAfAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-02T10:33:58.199Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
               "Title": "Hero.cs",
               "DocumentMoniker": "C:\\Users\\32486\\School\\J2\\S1\\Software Engineering\\Project\\Project1\\Project1\\Hero.cs",
               "RelativeDocumentMoniker": "Project1\\Hero.cs",
               "ToolTip": "C:\\Users\\32486\\School\\J2\\S1\\Software Engineering\\Project\\Project1\\Project1\\Hero.cs",
               "RelativeToolTip": "Project1\\Hero.cs",
-              "ViewState": "AgIAABEAAAAAAAAAAAA3wCUAAABCAAAAAAAAAA==",
+              "ViewState": "AgIAAGsAAAAAAAAAAAAkwCwAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-11-14T12:24:37.018Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "MovementManager.cs",
+              "DocumentMoniker": "C:\\Users\\32486\\School\\J2\\S1\\Software Engineering\\Project\\Project1\\Project1\\MovementManager.cs",
+              "RelativeDocumentMoniker": "Project1\\MovementManager.cs",
+              "ToolTip": "C:\\Users\\32486\\School\\J2\\S1\\Software Engineering\\Project\\Project1\\Project1\\MovementManager.cs",
+              "RelativeToolTip": "Project1\\MovementManager.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-09T09:48:03.226Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 2,
+              "Title": "JumpManager.cs",
+              "DocumentMoniker": "C:\\Users\\32486\\School\\J2\\S1\\Software Engineering\\Project\\Project1\\Project1\\JumpManager.cs",
+              "RelativeDocumentMoniker": "Project1\\JumpManager.cs",
+              "ToolTip": "C:\\Users\\32486\\School\\J2\\S1\\Software Engineering\\Project\\Project1\\Project1\\JumpManager.cs",
+              "RelativeToolTip": "Project1\\JumpManager.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-09T09:47:57.104Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "KeyBoardReader.cs",
+              "DocumentMoniker": "C:\\Users\\32486\\School\\J2\\S1\\Software Engineering\\Project\\Project1\\Project1\\Input\\KeyBoardReader.cs",
+              "RelativeDocumentMoniker": "Project1\\Input\\KeyBoardReader.cs",
+              "ToolTip": "C:\\Users\\32486\\School\\J2\\S1\\Software Engineering\\Project\\Project1\\Project1\\Input\\KeyBoardReader.cs",
+              "RelativeToolTip": "Project1\\Input\\KeyBoardReader.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-09T09:39:48.596Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "IInputReader.cs",
+              "DocumentMoniker": "C:\\Users\\32486\\School\\J2\\S1\\Software Engineering\\Project\\Project1\\Project1\\Input\\IInputReader.cs",
+              "RelativeDocumentMoniker": "Project1\\Input\\IInputReader.cs",
+              "ToolTip": "C:\\Users\\32486\\School\\J2\\S1\\Software Engineering\\Project\\Project1\\Project1\\Input\\IInputReader.cs",
+              "RelativeToolTip": "Project1\\Input\\IInputReader.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-09T09:39:34.939Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "IMovable.cs",
+              "DocumentMoniker": "C:\\Users\\32486\\School\\J2\\S1\\Software Engineering\\Project\\Project1\\Project1\\IMovable.cs",
+              "RelativeDocumentMoniker": "Project1\\IMovable.cs",
+              "ToolTip": "C:\\Users\\32486\\School\\J2\\S1\\Software Engineering\\Project\\Project1\\Project1\\IMovable.cs",
+              "RelativeToolTip": "Project1\\IMovable.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-09T09:37:46.558Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Block.cs",
+              "DocumentMoniker": "C:\\Users\\32486\\School\\J2\\S1\\Software Engineering\\Project\\Project1\\Project1\\Block.cs",
+              "RelativeDocumentMoniker": "Project1\\Block.cs",
+              "ToolTip": "C:\\Users\\32486\\School\\J2\\S1\\Software Engineering\\Project\\Project1\\Project1\\Block.cs",
+              "RelativeToolTip": "Project1\\Block.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwB0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-09T09:23:58.587Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "ICollidable.cs",
+              "DocumentMoniker": "C:\\Users\\32486\\School\\J2\\S1\\Software Engineering\\Project\\Project1\\Project1\\ICollidable.cs",
+              "RelativeDocumentMoniker": "Project1\\ICollidable.cs",
+              "ToolTip": "C:\\Users\\32486\\School\\J2\\S1\\Software Engineering\\Project\\Project1\\Project1\\ICollidable.cs",
+              "RelativeToolTip": "Project1\\ICollidable.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-09T08:48:21.284Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "CollisionManager.cs",
+              "DocumentMoniker": "C:\\Users\\32486\\School\\J2\\S1\\Software Engineering\\Project\\Project1\\Project1\\CollisionManager.cs",
+              "RelativeDocumentMoniker": "Project1\\CollisionManager.cs",
+              "ToolTip": "C:\\Users\\32486\\School\\J2\\S1\\Software Engineering\\Project\\Project1\\Project1\\CollisionManager.cs",
+              "RelativeToolTip": "Project1\\CollisionManager.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-09T08:34:43.419Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "WalkAnimation.cs",
+              "DocumentMoniker": "C:\\Users\\32486\\School\\J2\\S1\\Software Engineering\\Project\\Project1\\Project1\\WalkAnimation.cs",
+              "RelativeDocumentMoniker": "Project1\\WalkAnimation.cs",
+              "ToolTip": "C:\\Users\\32486\\School\\J2\\S1\\Software Engineering\\Project\\Project1\\Project1\\WalkAnimation.cs",
+              "RelativeToolTip": "Project1\\WalkAnimation.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-09T08:17:25.066Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "HurtAnimation.cs",
+              "DocumentMoniker": "C:\\Users\\32486\\School\\J2\\S1\\Software Engineering\\Project\\Project1\\Project1\\HurtAnimation.cs",
+              "RelativeDocumentMoniker": "Project1\\HurtAnimation.cs",
+              "ToolTip": "C:\\Users\\32486\\School\\J2\\S1\\Software Engineering\\Project\\Project1\\Project1\\HurtAnimation.cs",
+              "RelativeToolTip": "Project1\\HurtAnimation.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-09T08:17:04.167Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Spike.cs",
+              "DocumentMoniker": "C:\\Users\\32486\\School\\J2\\S1\\Software Engineering\\Project\\Project1\\Project1\\Spike.cs",
+              "RelativeDocumentMoniker": "Project1\\Spike.cs",
+              "ToolTip": "C:\\Users\\32486\\School\\J2\\S1\\Software Engineering\\Project\\Project1\\Project1\\Spike.cs",
+              "RelativeToolTip": "Project1\\Spike.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAxwAgAAABZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-02T10:33:58.199Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
               "Title": "Animation.cs",
               "DocumentMoniker": "C:\\Users\\32486\\School\\J2\\S1\\Software Engineering\\Project\\Project1\\Project1\\Animation.cs",
               "RelativeDocumentMoniker": "Project1\\Animation.cs",
@@ -63,18 +234,17 @@
               "RelativeToolTip": "Project1\\Animation.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAADIAAAAYAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-02T09:52:18.896Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-02T09:52:18.896Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "Game1.cs",
               "DocumentMoniker": "C:\\Users\\32486\\School\\J2\\S1\\Software Engineering\\Project\\Project1\\Project1\\Game1.cs",
               "RelativeDocumentMoniker": "Project1\\Game1.cs",
               "ToolTip": "C:\\Users\\32486\\School\\J2\\S1\\Software Engineering\\Project\\Project1\\Project1\\Game1.cs",
               "RelativeToolTip": "Project1\\Game1.cs",
-              "ViewState": "AgIAABsAAAAAAAAAAAAtwCQAAABiAAAAAAAAAA==",
+              "ViewState": "AgIAACQAAAAAAAAAAAAUwDUAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-11-14T11:04:52.96Z",
               "EditorCaption": ""

@@ -3,7 +3,7 @@ using Microsoft.Xna.Framework.Input;
 
 namespace Project1.Input
 {
-    internal class KeyBoardReader : IInputReader
+    public class KeyBoardReader : IInputReader
     {
         public Vector2 ReadInput()
         {

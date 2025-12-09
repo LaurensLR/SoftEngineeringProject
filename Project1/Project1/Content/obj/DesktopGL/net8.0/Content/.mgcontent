@@ -7,9 +7,11 @@
     <File>C:/Users/32486/School/J2/S1/Software Engineering/Project/Project1/Project1/Content/death.png</File>
     <File>C:/Users/32486/School/J2/S1/Software Engineering/Project/Project1/Project1/Content/hurt.png</File>
     <File>C:/Users/32486/School/J2/S1/Software Engineering/Project/Project1/Project1/Content/idle.png</File>
+    <File>C:/Users/32486/School/J2/S1/Software Engineering/Project/Project1/Project1/Content/spike.png</File>
     <File>C:/Users/32486/School/J2/S1/Software Engineering/Project/Project1/Project1/Content/walk.png</File>
   </SourceFiles>
   <DestFiles>
+    <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />

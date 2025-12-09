@@ -1,24 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Microsoft.Xna.Framework;
+using Project1;
 
-namespace Project1
+internal class MovementManager
 {
-    internal class MovementManager
+    public void Move(IMovable movable)
     {
-        public void Move(IMovable movable)
-        {
-            var direction = movable.InputReader.ReadInput();
+        var direction = movable.InputReader.ReadInput();
+        var distance = new Vector2(direction.X * movable.Speed.X, 0);
 
-            var distance = direction * movable.Speed;
-            var futurePosition = movable.Position + distance;
-            if((futurePosition.X < (800-26)&& futurePosition.X > 0)&& (futurePosition.Y < (480-28)&&futurePosition.Y > 0))
-            {
-                movable.Position = futurePosition;
-            }
-
-        }
+        movable.Position = new Vector2(movable.Position.X + distance.X, movable.Position.Y);
     }
 }

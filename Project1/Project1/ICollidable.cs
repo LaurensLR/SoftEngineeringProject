@@ -1,14 +1,18 @@
 ﻿using Microsoft.Xna.Framework;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Project1
 {
-    internal interface ICollidable:IGameObject
+    public enum CollisionType
     {
-        void Update(GameTime gameTime, List<Rectangle> obstacles);
+        Hero,
+        Block,
+        Spike
+    }
+
+    public interface ICollidable
+    {
+        Rectangle Bounds { get; }
+        CollisionType CollisionType { get; }
+        void OnCollision(ICollidable other);
     }
 }

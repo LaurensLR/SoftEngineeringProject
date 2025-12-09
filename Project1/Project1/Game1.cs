@@ -10,56 +10,57 @@ namespace Project1
     {
         private GraphicsDeviceManager _graphics;
         private SpriteBatch _spriteBatch;
-        private Texture2D _heroWalkTexture;
-        private Texture2D _heroIdleTexture;
-        private Texture2D _heroHurtTexture;
-        private Texture2D _heroDeathTexture;
-        private Texture2D _blockTexture;
+
+        private Texture2D _walkTex, _idleTex, _hurtTex, _deathTex;
+        private Texture2D _blockTex, _spikeTex;
 
         private Hero hero;
-
-        private List<Rectangle> _obstacles;
+        private List<ICollidable> worldObjects;
 
         public Game1()
         {
             _graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
             IsMouseVisible = true;
-            _obstacles = new List<Rectangle>();
-        }
 
-        protected override void Initialize()
-        {
-            // TODO: Add your initialization logic here
-            
-            base.Initialize();
-            float groundLevel = 400f;
-            hero = new Hero(_heroWalkTexture, _heroIdleTexture, _heroHurtTexture,_heroDeathTexture , new KeyBoardReader(), groundLevel);
-
-            _obstacles.Add(new Rectangle(150, (int)groundLevel-15, 25, 25));
-            _obstacles.Add(new Rectangle(75, (int)groundLevel - 10, 25, 25));
+            worldObjects = new List<ICollidable>();
         }
 
         protected override void LoadContent()
         {
             _spriteBatch = new SpriteBatch(GraphicsDevice);
 
-            // TODO: use this.Content to load your game content here
-            _heroWalkTexture = Content.Load<Texture2D>("walk");
-            _heroIdleTexture = Content.Load<Texture2D>("idle");
-            _heroHurtTexture = Content.Load<Texture2D>("hurt");
-            _heroDeathTexture = Content.Load<Texture2D>("death");
-            _blockTexture = new Texture2D(GraphicsDevice, 1, 1);
-            _blockTexture.SetData(new[] { Color.Red });
+            _walkTex = Content.Load<Texture2D>("walk");
+            _idleTex = Content.Load<Texture2D>("idle");
+            _hurtTex = Content.Load<Texture2D>("hurt");
+            _deathTex = Content.Load<Texture2D>("death");
+            _spikeTex = Content.Load<Texture2D>("spike");
+
+            _blockTex = new Texture2D(GraphicsDevice, 1, 1);
+            _blockTex.SetData(new[] { Color.Red });
+
+            float ground = 400f;
+
+            // Create hero
+            hero = new Hero(_walkTex, _idleTex, _hurtTex, _deathTex, new KeyBoardReader(), ground);
+            worldObjects.Add(hero);
+
+            // Add blocks
+            worldObjects.Add(new Block(_blockTex, new Rectangle(150, (int)ground - 15, 25, 25)));
+            worldObjects.Add(new Block(_blockTex, new Rectangle(75, (int)ground - 10, 25, 25)));
+
+            // Add spike
+            worldObjects.Add(new Spike(_spikeTex, new Vector2(250, ground - 25)));
+
         }
 
         protected override void Update(GameTime gameTime)
         {
-            if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
+            if (Keyboard.GetState().IsKeyDown(Keys.Escape))
                 Exit();
 
-            // TODO: Add your update logic here
-            hero.Update(gameTime, _obstacles);
+            hero.Update(gameTime, worldObjects);
+
             base.Update(gameTime);
         }
 
@@ -68,14 +69,16 @@ namespace Project1
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
             _spriteBatch.Begin();
-            // TODO: Add your drawing code here
-            hero.Draw(_spriteBatch);
-            foreach (var obstacle in _obstacles)
-            {
-                _spriteBatch.Draw(_blockTexture, obstacle, Color.Brown);
-            }
-            _spriteBatch.End();
 
+            hero.Draw(_spriteBatch);
+
+            foreach (var obj in worldObjects)
+            {
+                if (obj is Block b) b.Draw(_spriteBatch);
+                if (obj is Spike s) s.Draw(_spriteBatch);
+            }
+
+            _spriteBatch.End();
 
             base.Draw(gameTime);
         }

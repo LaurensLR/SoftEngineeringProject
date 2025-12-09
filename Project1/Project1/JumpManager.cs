@@ -10,6 +10,12 @@ namespace Project1
         private float _groundLevel;
         private bool _isGrounded = true;
 
+        public float VelocityY
+        {
+            get => _velocityY;
+            set => _velocityY = value;
+        }
+
         public bool IsGrounded => _isGrounded;
 
         public JumpManager(float groundLevel)
@@ -28,13 +34,12 @@ namespace Project1
 
         public void CancelJump()
         {
-            if (_velocityY > 0)
+            if (_velocityY < 0) // only cancel upward movement
                 _velocityY = 0f;
         }
 
         public void Land()
         {
-            // called when landing on a platform
             _velocityY = 0f;
             _isGrounded = true;
         }
@@ -44,10 +49,10 @@ namespace Project1
             // Apply gravity
             _velocityY += _gravity;
 
-            // Update position
+            // Update vertical position
             movable.Position = new Vector2(movable.Position.X, movable.Position.Y + _velocityY);
 
-            // Check if landed on ground level
+            // Ground check
             if (movable.Position.Y >= _groundLevel)
             {
                 movable.Position = new Vector2(movable.Position.X, _groundLevel);
