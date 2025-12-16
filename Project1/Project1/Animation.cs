@@ -16,15 +16,28 @@ namespace Project1
         private int _counter;
         private double _secondCounter = 0;
 
+        private bool _loop = true;
+        private bool _isFinished = false;
+
+        public bool IsFinished => _isFinished;
+
         public Animation()
         {
             _frames = new List<AnimationFrame>();
         }
 
+        public Animation(bool loop = true)
+        {
+            _frames = new List<AnimationFrame>();
+            _loop = loop;
+        }
+
         public void AddFrame(AnimationFrame frame)
         {
             _frames.Add(frame);
-            CurrentFrame = _frames[0];
+
+            if (CurrentFrame == null)
+                CurrentFrame = frame;
         }
 
 
@@ -45,19 +58,37 @@ namespace Project1
 
         public void Update(GameTime gameTime)
         {
+            if (_isFinished) return;
+
             CurrentFrame = _frames[_counter];
 
             _secondCounter += gameTime.ElapsedGameTime.TotalSeconds;
             int fps = 10;
+
             if (_secondCounter >= 1d / fps)
             {
                 _counter++;
                 _secondCounter = 0;
             }
-            if (_counter >= _frames.Count())
+
+            if (_counter >= _frames.Count)
             {
-                _counter = 0;
+                if (_loop)
+                {
+                    _counter = 0;
+                }
+                else
+                {
+                    _counter = _frames.Count - 1;
+                    _isFinished = true;
+                }
             }
+        }
+        public void Reset()
+        {
+            _counter = 0;
+            _secondCounter = 0;
+            _isFinished = false;
         }
     }
 }

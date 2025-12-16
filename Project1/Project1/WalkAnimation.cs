@@ -6,7 +6,7 @@ namespace Project1
     internal class WalkAnimation : Animation
     {
 
-        public WalkAnimation(Texture2D texture)
+        public WalkAnimation(Texture2D texture) : base(loop: true)
         {
             Texture = texture;
 

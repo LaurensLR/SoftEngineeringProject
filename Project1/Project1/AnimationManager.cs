@@ -7,6 +7,14 @@ using System.Text;
 using System.Threading.Tasks;
 namespace Project1
 {
+    internal enum AnimationState
+    {
+        Idle,
+        Walk,
+        Hurt,
+        Dead
+    }
+
     internal class AnimationManager
     {
         private Animation _idleAnimation;
@@ -14,6 +22,8 @@ namespace Project1
         private Animation _hurtAnimation;
         private Animation _deathAnimation;
         private Animation _currentAnimation;
+        private AnimationState _state = AnimationState.Idle;
+
         private bool _facingLeft;
         public Animation CurrentAnimation => _currentAnimation;
         public bool FacingLeft => _facingLeft;
@@ -28,26 +38,73 @@ namespace Project1
         }
         public void Update(Vector2 direction, GameTime gameTime)
         {
-            bool isMoving = direction != Vector2.Zero;
-            // Update facing direction
+            if (_state == AnimationState.Dead)
+            {
+                // Always update death animation until it finishes
+                _currentAnimation.Update(gameTime);
+                return;
+            }
+
+            // Hurt animation logic remains the same
+            if (_state == AnimationState.Hurt)
+            {
+                _currentAnimation.Update(gameTime);
+
+                if (_currentAnimation.IsFinished)
+                {
+                    _state = AnimationState.Idle;
+                    _currentAnimation = _idleAnimation;
+                }
+                return;
+            }
+
+
+            // Facing direction
             if (direction.X < 0)
-            {
                 _facingLeft = true;
-            }
             else if (direction.X > 0)
-            {
                 _facingLeft = false;
-            }
-            // Switch animations based on movement
-            if (isMoving && _currentAnimation != _walkAnimation)
+
+            // Movement animations
+            if (direction.X != 0)
             {
-                _currentAnimation = _walkAnimation;
+                if (_state != AnimationState.Walk)
+                {
+                    _state = AnimationState.Walk;
+                    _currentAnimation = _walkAnimation;
+                }
             }
-            else if (!isMoving && _currentAnimation != _idleAnimation)
+            else
             {
-                _currentAnimation = _idleAnimation;
+                if (_state != AnimationState.Idle)
+                {
+                    _state = AnimationState.Idle;
+                    _currentAnimation = _idleAnimation;
+                }
             }
+
             _currentAnimation.Update(gameTime);
         }
+
+
+        public void PlayHurt()
+        {
+            if (_state == AnimationState.Hurt) return;
+
+            _state = AnimationState.Hurt;
+            _currentAnimation = _hurtAnimation;
+            _currentAnimation.Reset();
+        }
+
+
+
+        public void PlayDeath()
+        {
+            _state = AnimationState.Dead;
+            _currentAnimation = _deathAnimation;
+            _currentAnimation.Reset();
+        }
+
+
     }
 }

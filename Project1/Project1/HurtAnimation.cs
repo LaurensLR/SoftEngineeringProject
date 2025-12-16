@@ -10,7 +10,7 @@ namespace Project1
 {
     internal class HurtAnimation : Animation
     {
-        public HurtAnimation(Texture2D texture)
+        public HurtAnimation(Texture2D texture) : base(loop:false)
         {
             Texture = texture;
 

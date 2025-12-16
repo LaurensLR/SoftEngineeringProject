@@ -6,7 +6,7 @@ namespace Project1
     internal class IdleAnimation : Animation
     {
 
-        public IdleAnimation(Texture2D texture)
+        public IdleAnimation(Texture2D texture) : base(loop:true)
         {
             Texture = texture;
 

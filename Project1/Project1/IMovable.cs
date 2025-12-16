@@ -8,5 +8,9 @@ namespace Project1
         Vector2 Position { get; set; }
         Vector2 Speed { get; set; }
         IInputReader InputReader { get; set; }
+
+        // Add these so movement manager can compute collision
+        int Width { get; }
+        int Height { get; }
     }
 }

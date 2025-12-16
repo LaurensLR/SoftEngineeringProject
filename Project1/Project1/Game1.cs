@@ -50,7 +50,7 @@ namespace Project1
             worldObjects.Add(new Block(_blockTex, new Rectangle(75, (int)ground - 10, 25, 25)));
 
             // Add spike
-            worldObjects.Add(new Spike(_spikeTex, new Vector2(250, ground - 25)));
+            worldObjects.Add(new Spike(_spikeTex, new Vector2(250, ground)));
 
         }
 

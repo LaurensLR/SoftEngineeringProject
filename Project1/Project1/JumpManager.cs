@@ -2,7 +2,7 @@
 
 namespace Project1
 {
-    internal class JumpManager
+    public class JumpManager
     {
         private float _gravity = 0.3f;
         private float _jumpStrength = -5f;

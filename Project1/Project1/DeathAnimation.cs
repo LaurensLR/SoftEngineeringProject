@@ -10,7 +10,7 @@ namespace Project1
 {
     internal class DeathAnimation : Animation
     {
-        public DeathAnimation(Texture2D texture)
+        public DeathAnimation(Texture2D texture) : base(loop:false)
         {
             Texture = texture;
 
