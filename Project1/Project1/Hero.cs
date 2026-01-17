@@ -11,9 +11,6 @@ namespace Project1
         public Vector2 Speed { get; set; }
         public IInputReader InputReader { get; set; }
         
-        // FIXED: Decouple physics size from animation frame size
-        // This prevents the player from "teleporting" or getting stuck when 
-        // switching to animations with different dimensions (like Hurt/Death)
         private const int FixedWidth = 26;
         private const int FixedHeight = 28;
 
@@ -30,7 +27,7 @@ namespace Project1
         private int _lives = 3;
         private bool _isDead = false;
         private float _hurtTimer = 0f;
-        private const float HurtCooldown = 1f;
+        private const float HurtCooldown = 1.0f; // 1 second of invulnerability
 
         public Hero(Texture2D walkTexture, Texture2D idleTexture, Texture2D hurtTexture, Texture2D deathTexture, IInputReader inputReader)
         {
@@ -54,13 +51,14 @@ namespace Project1
              _lives = 3;
              _isDead = false;
              _hurtTimer = 0;
-             // Just resetting position is enough; animation state updates automatically on input
         }
 
         public void Update(GameTime gameTime, List<ICollidable> worldObjects)
         {
             if (!_isDead)
             {
+                // Only allow player control if NOT currently hurt/bouncing (optional choice)
+                // For better feel, we usually allow air control even when hurt, but bounce dominates momentarily.
                 _movementManager.MoveHorizontally(this, worldObjects);
                 _movementManager.MoveVertically(this, _jumpManager, worldObjects);
 
@@ -71,6 +69,7 @@ namespace Project1
             Vector2 input = !_isDead ? new Vector2(InputReader.ReadInput().X, 0) : Vector2.Zero;
             _animationManager.Update(input, gameTime);
 
+            // Handle spikes - only if not already under invulnerability period
             if (!_isDead && _hurtTimer <= 0)
             {
                 foreach (var obj in worldObjects)
@@ -101,6 +100,26 @@ namespace Project1
             }
 
             _animationManager.PlayHurt();
+            Bounce();
+        }
+
+        private void Bounce()
+        {
+            // Apply a vertical jump impulse ("pop up")
+            _jumpManager.VelocityY = -5f; 
+
+            // Apply horizontal knockback based on direction
+            // If facing left, bounce right. If facing right, bounce left.
+            // Since we don't have a dedicated "velocity" vector for X in this simple setup
+            // (MoveHorizontally calculates it per frame from input), we can just manually nudge Position 
+            // slightly to "start" the bounce away from the spike, or rely on the visual "Jump" to clear it.
+            
+            // For a simple "Super Mario" style damage hop, just resetting vertical velocity is usually enough 
+            // to break contact with the spike below you.
+            
+            // If you want horizontal knockback (pushed away):
+            float pushDir = _animationManager.FacingLeft ? 10f : -10f; // Push opposite to face
+            Position = new Vector2(Position.X + pushDir, Position.Y - 2); // Slight immediate nudge up/away
         }
 
         private void Die()
@@ -113,6 +132,16 @@ namespace Project1
 
         public void Draw(SpriteBatch spriteBatch)
         {
+            // Flicker effect: 
+            // If hurtTimer is active, only draw every ~0.1 seconds (simple modulo check)
+            if (_hurtTimer > 0)
+            {
+                // "Flicker" logic: check if the timer (in tenths of a second) is even/odd
+                int flicker = (int)(_hurtTimer * 20); // * 20 gives a fast strobe
+                if (flicker % 2 == 0) 
+                    return; // Skip drawing this frame to create "invisible" blink
+            }
+
             var anim = _animationManager.CurrentAnimation;
             if (anim == null || anim.CurrentFrame == null || anim.Texture == null) return;
 
