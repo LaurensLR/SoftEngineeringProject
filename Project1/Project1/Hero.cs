@@ -10,8 +10,15 @@ namespace Project1
         public Vector2 Position { get; set; }
         public Vector2 Speed { get; set; }
         public IInputReader InputReader { get; set; }
-        public int Width => _animationManager.CurrentAnimation?.CurrentFrame?.SourceRectangle.Width ?? 1;
-        public int Height => _animationManager.CurrentAnimation?.CurrentFrame?.SourceRectangle.Height ?? 1;
+        
+        // FIXED: Decouple physics size from animation frame size
+        // This prevents the player from "teleporting" or getting stuck when 
+        // switching to animations with different dimensions (like Hurt/Death)
+        private const int FixedWidth = 26;
+        private const int FixedHeight = 28;
+
+        public int Width => FixedWidth;
+        public int Height => FixedHeight;
 
         public Rectangle Bounds => new Rectangle((int)Position.X, (int)Position.Y, Width, Height);
         public CollisionType CollisionType => CollisionType.Hero;
@@ -25,8 +32,7 @@ namespace Project1
         private float _hurtTimer = 0f;
         private const float HurtCooldown = 1f;
 
-        public Hero(Texture2D walkTexture, Texture2D idleTexture, Texture2D hurtTexture, Texture2D deathTexture,
-                    IInputReader inputReader, float groundLevel)
+        public Hero(Texture2D walkTexture, Texture2D idleTexture, Texture2D hurtTexture, Texture2D deathTexture, IInputReader inputReader)
         {
             InputReader = inputReader;
 
@@ -37,30 +43,34 @@ namespace Project1
 
             _animationManager = new AnimationManager(idle, walk, hurt, death);
             _movementManager = new MovementManager();
-            _jumpManager = new JumpManager(groundLevel);
+            _jumpManager = new JumpManager();
 
-            Position = new Vector2(100, groundLevel);
-            Speed = new Vector2(2f, 0); // horizontal speed
+            Speed = new Vector2(2f, 0);
+        }
+
+        public void ResetResponse(Vector2 startPos)
+        {
+             Position = startPos;
+             _lives = 3;
+             _isDead = false;
+             _hurtTimer = 0;
+             // Just resetting position is enough; animation state updates automatically on input
         }
 
         public void Update(GameTime gameTime, List<ICollidable> worldObjects)
         {
             if (!_isDead)
             {
-                // Horizontal & vertical movement handled by MovementManager
                 _movementManager.MoveHorizontally(this, worldObjects);
                 _movementManager.MoveVertically(this, _jumpManager, worldObjects);
 
-                // Jump input
                 if (InputReader.ReadInput().Y > 0)
                     _jumpManager.Jump();
             }
 
-            // Update animation (always, so death animation can play)
             Vector2 input = !_isDead ? new Vector2(InputReader.ReadInput().X, 0) : Vector2.Zero;
             _animationManager.Update(input, gameTime);
 
-            // Handle spikes
             if (!_isDead && _hurtTimer <= 0)
             {
                 foreach (var obj in worldObjects)
@@ -73,9 +83,10 @@ namespace Project1
                 }
             }
 
-            // Hurt cooldown
             if (_hurtTimer > 0)
                 _hurtTimer -= (float)gameTime.ElapsedGameTime.TotalSeconds;
+            
+            if (Position.Y > 2000) Die();
         }
 
         private void TakeDamage()
@@ -102,12 +113,15 @@ namespace Project1
 
         public void Draw(SpriteBatch spriteBatch)
         {
+            var anim = _animationManager.CurrentAnimation;
+            if (anim == null || anim.CurrentFrame == null || anim.Texture == null) return;
+
             var effect = _animationManager.FacingLeft ? SpriteEffects.FlipHorizontally : SpriteEffects.None;
-            spriteBatch.Draw(_animationManager.CurrentAnimation.Texture, Position,
-                             _animationManager.CurrentAnimation.CurrentFrame.SourceRectangle,
+            spriteBatch.Draw(anim.Texture, Position,
+                             anim.CurrentFrame.SourceRectangle,
                              Color.White, 0f, Vector2.Zero, 1f, effect, 0f);
         }
 
-        public void OnCollision(ICollidable other) { /* spikes handled in Update */ }
+        public void OnCollision(ICollidable other) { }
     }
 }

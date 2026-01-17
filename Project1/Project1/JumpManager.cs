@@ -4,11 +4,10 @@ namespace Project1
 {
     public class JumpManager
     {
-        private float _gravity = 0.3f;
-        private float _jumpStrength = -5f;
+        private float _gravity = 0.5f;
+        private float _jumpStrength = -8.5f; // Tuned for 16px tiles: ~70px height (approx 4.5 blocks)
         private float _velocityY = 0f;
-        private float _groundLevel;
-        private bool _isGrounded = true;
+        private bool _isGrounded = false;
 
         public float VelocityY
         {
@@ -18,9 +17,8 @@ namespace Project1
 
         public bool IsGrounded => _isGrounded;
 
-        public JumpManager(float groundLevel)
+        public JumpManager()
         {
-            _groundLevel = groundLevel;
         }
 
         public void Jump()
@@ -34,8 +32,8 @@ namespace Project1
 
         public void CancelJump()
         {
-            if (_velocityY < 0) // only cancel upward movement
-                _velocityY = 0f;
+            if (_velocityY < 0)
+                _velocityY *= 0.5f; 
         }
 
         public void Land()
@@ -44,25 +42,11 @@ namespace Project1
             _isGrounded = true;
         }
 
-        public void Update(IMovable movable)
+        public float Update(IMovable movable)
         {
-            // Apply gravity
             _velocityY += _gravity;
-
-            // Update vertical position
-            movable.Position = new Vector2(movable.Position.X, movable.Position.Y + _velocityY);
-
-            // Ground check
-            if (movable.Position.Y >= _groundLevel)
-            {
-                movable.Position = new Vector2(movable.Position.X, _groundLevel);
-                _velocityY = 0f;
-                _isGrounded = true;
-            }
-            else
-            {
-                _isGrounded = false;
-            }
+            _isGrounded = false; 
+            return _velocityY;
         }
     }
 }

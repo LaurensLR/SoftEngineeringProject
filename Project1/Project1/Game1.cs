@@ -14,22 +14,21 @@ namespace Project1
         private Texture2D _walkTex, _idleTex, _hurtTex, _deathTex;
         private Texture2D _blockTex, _spikeTex;
 
-        private Hero hero;
-        private List<ICollidable> worldObjects;
+        private Hero _hero;
+        private Level _currentLevel;
 
         public Game1()
         {
             _graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
             IsMouseVisible = true;
-
-            worldObjects = new List<ICollidable>();
         }
 
         protected override void LoadContent()
         {
             _spriteBatch = new SpriteBatch(GraphicsDevice);
 
+            // Load textures
             _walkTex = Content.Load<Texture2D>("walk");
             _idleTex = Content.Load<Texture2D>("idle");
             _hurtTex = Content.Load<Texture2D>("hurt");
@@ -39,19 +38,12 @@ namespace Project1
             _blockTex = new Texture2D(GraphicsDevice, 1, 1);
             _blockTex.SetData(new[] { Color.Red });
 
-            float ground = 400f;
+            // Create Level
+            _currentLevel = new Level(_blockTex, _spikeTex);
 
-            // Create hero
-            hero = new Hero(_walkTex, _idleTex, _hurtTex, _deathTex, new KeyBoardReader(), ground);
-            worldObjects.Add(hero);
-
-            // Add blocks
-            worldObjects.Add(new Block(_blockTex, new Rectangle(150, (int)ground - 15, 25, 25)));
-            worldObjects.Add(new Block(_blockTex, new Rectangle(75, (int)ground - 10, 25, 25)));
-
-            // Add spike
-            worldObjects.Add(new Spike(_spikeTex, new Vector2(250, ground)));
-
+            // Create Hero (Spawn him in the air, let him fall to the map)
+            _hero = new Hero(_walkTex, _idleTex, _hurtTex, _deathTex, new KeyBoardReader());
+            _hero.Position = new Vector2(100, 100);
         }
 
         protected override void Update(GameTime gameTime)
@@ -59,7 +51,8 @@ namespace Project1
             if (Keyboard.GetState().IsKeyDown(Keys.Escape))
                 Exit();
 
-            hero.Update(gameTime, worldObjects);
+            // Pass the level's objects to the hero
+            _hero.Update(gameTime, _currentLevel.LevelObjects);
 
             base.Update(gameTime);
         }
@@ -70,12 +63,13 @@ namespace Project1
 
             _spriteBatch.Begin();
 
-            hero.Draw(_spriteBatch);
+            _hero.Draw(_spriteBatch);
 
-            foreach (var obj in worldObjects)
+            // Draw level objects
+            foreach (var obj in _currentLevel.LevelObjects)
             {
                 if (obj is Block b) b.Draw(_spriteBatch);
-                if (obj is Spike s) s.Draw(_spriteBatch);
+                else if (obj is Spike s) s.Draw(_spriteBatch);
             }
 
             _spriteBatch.End();

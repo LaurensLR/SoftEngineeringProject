@@ -1,10 +1,6 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Project1
 {
@@ -20,6 +16,9 @@ namespace Project1
         private bool _isFinished = false;
 
         public bool IsFinished => _isFinished;
+
+        // frame rate (frames per second) — small improvement to make it simple to tune
+        protected int _fps = 10;
 
         public Animation()
         {
@@ -40,32 +39,15 @@ namespace Project1
                 CurrentFrame = frame;
         }
 
-
-        //TODO: fix textures to be on 1 png and over whole length
-        //public void GetFramesFromTextureProperties(int width, int height, int numberOfWidthSprites, int numberofHeightSprites)
-        //{
-        //    int widthOfFrame = width / numberOfWidthSprites;
-        //    int heightOfFrame = height / numberofHeightSprites;
-
-        //    for (int y = 0; y <= height - heightOfFrame; y+=heightOfFrame)
-        //    {
-        //        for (int x = 0; x <= width / widthOfFrame; x+= widthOfFrame)
-        //        {
-        //            _frames.Add(new AnimationFrame(new Rectangle(x, y, widthOfFrame, heightOfFrame)));
-        //        }
-        //    }
-        //}
-
         public void Update(GameTime gameTime)
         {
             if (_isFinished) return;
+            if (_frames == null || _frames.Count == 0) return;
 
             CurrentFrame = _frames[_counter];
 
             _secondCounter += gameTime.ElapsedGameTime.TotalSeconds;
-            int fps = 10;
-
-            if (_secondCounter >= 1d / fps)
+            if (_secondCounter >= 1d / _fps)
             {
                 _counter++;
                 _secondCounter = 0;
@@ -84,11 +66,13 @@ namespace Project1
                 }
             }
         }
+
         public void Reset()
         {
             _counter = 0;
             _secondCounter = 0;
             _isFinished = false;
+            CurrentFrame = _frames != null && _frames.Count > 0 ? _frames[0] : null;
         }
     }
 }
