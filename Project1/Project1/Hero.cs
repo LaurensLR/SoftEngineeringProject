@@ -38,7 +38,7 @@ namespace Project1
         internal LevelManager LevelManager { get; private set; }
 
         private IHeroState _currentState;
-        private int _lives = 3;
+        private int _lives = 1000000;
 
         // Encapsulated property that notifies observers via the Observer Pattern
         public int Lives
@@ -70,7 +70,7 @@ namespace Project1
                 new DeathAnimation(death));
             MovementManager = new MovementManager();
             JumpManager = new JumpManager();
-            Speed = new Vector2(2f, 0);
+            Speed = new Vector2(150f, 0);
 
             // Set initial state
             SetState(new NormalState());
@@ -116,26 +116,56 @@ namespace Project1
         public void OnCollision(IGameObject other)
         {
             if (_currentState is DeadState || _hurtTimer > 0) return;
-            if (other.CollisionType == CollisionType.Spike) TakeDamage();
+
+            if (other.CollisionType == CollisionType.Spike)
+            {
+                // DESIGN PATTERN - Strategy/Observer:
+                // We pass the spike's reference to TakeDamage so we can calculate bounce direction.
+                TakeDamage(other);
+            }
         }
 
-        private void TakeDamage()
+        private void TakeDamage(IGameObject spike)
         {
-            Lives--; // Property setter triggers the Observer 'LivesChanged' event
+            Lives--;
             _hurtTimer = HurtCooldown;
 
             if (Lives <= 0) SetState(new DeadState());
             else
             {
                 AnimationManager.PlayHurt();
-                Bounce();
+                // We now pass the spike to the Bounce method
+                Bounce(spike);
             }
         }
 
-        private void Bounce()
+        private void Bounce(IGameObject spike)
         {
-            JumpManager.VelocityY = -5f;
-            float pushDir = AnimationManager.FacingLeft ? 10f : -10f;
+            /* 
+             * SOLID - Frame Independence:
+             * Using pixels-per-second values for a clear vertical "pop".
+             * This upward movement is handled by JumpManager and is smooth (over time).
+             */
+            JumpManager.VelocityY = -350f;
+
+            /* 
+             * CALCULATING TRAJECTORY:
+             * We compare the horizontal center of the Hero with the horizontal center 
+             * of the Spike to determine which way to "bounce away".
+             */
+            float heroCenter = Bounds.Center.X;
+            float spikeCenter = spike.Bounds.Center.X;
+
+            /*
+             * BUG FIX - Smoother Knockback:
+             * Previously, pushAmount was 30f, which caused an instant teleport.
+             * We reduce this to a tiny nudge (2f) to break the collision overlap,
+             * and rely on the upward JumpManager velocity to create the "arch" away.
+             */
+            float nudgeAmount = 2f; 
+            float pushDir = (heroCenter < spikeCenter) ? -nudgeAmount : nudgeAmount;
+
+            // Apply minor immediate nudge + lift slightly out of the spike
             Position = new Vector2(Position.X + pushDir, Position.Y - 2);
         }
 

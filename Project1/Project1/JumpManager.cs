@@ -2,10 +2,15 @@
 
 namespace Project1
 {
+    /* 
+    * SOLID - Single Responsibility: 
+    * Manages vertical velocity only.
+    */
     public class JumpManager
     {
-        private float _gravity = 0.5f;
-        private float _jumpStrength = -8.5f; // Tuned for 16px tiles: ~70px height (approx 4.5 blocks)
+        // Now using pixels per second squared (gravity) and pixels per second (jump)
+        private float _gravity = 1500f; 
+        private float _jumpStrength = -450f; 
         private float _velocityY = 0f;
         private bool _isGrounded = false;
 
@@ -16,10 +21,6 @@ namespace Project1
         }
 
         public bool IsGrounded => _isGrounded;
-
-        public JumpManager()
-        {
-        }
 
         public void Jump()
         {
@@ -33,7 +34,7 @@ namespace Project1
         public void CancelJump()
         {
             if (_velocityY < 0)
-                _velocityY *= 0.5f; 
+                _velocityY = 0f;
         }
 
         public void Land()
@@ -42,11 +43,23 @@ namespace Project1
             _isGrounded = true;
         }
 
-        public float Update(IMovable movable)
+        /* 
+        * REFACTORING - Frame Independence:
+        * We multiply our values by deltaTime (seconds passed since last frame).
+        * This ensures gravity feels the same regardless of frame rate.
+        */
+        public float CalculateDeltaY(GameTime gameTime)
         {
-            _velocityY += _gravity;
+            float dt = (float)gameTime.ElapsedGameTime.TotalSeconds;
+
+            // Update velocity: Acceleration * Time
+            _velocityY += _gravity * dt;
+
+            // Reset grounded state (MovementManager will set it to true if we hit a block)
             _isGrounded = false; 
-            return _velocityY;
+
+            // Return movement distance: Velocity * Time
+            return _velocityY * dt;
         }
     }
 }

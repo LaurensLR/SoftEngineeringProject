@@ -7,39 +7,29 @@ namespace Project1
     /* 
     * SOLID - Single Responsibility Principle (SRP):
     * This class is ONLY responsible for the horizontal and vertical physics math. 
-    * It doesn't know what a Hero is, only what an IMovable is.
     */
     public class MovementManager
     {
-        public void MoveHorizontally(IMovable movable, List<IGameObject> worldObjects)
+        public void MoveHorizontally(IMovable movable, List<IGameObject> worldObjects, GameTime gameTime)
         {
+            float dt = (float)gameTime.ElapsedGameTime.TotalSeconds;
             Vector2 input = movable.InputReader.ReadInput();
-            float desiredMoveX = input.X * movable.Speed.X;
-            
-            /* 
-             * REFACTORING - SRP & DRY:
-             * Extracted the horizontal collision logic into a specialized calculation method.
-             * This makes the main movement flow much easier to read and maintain.
-             */
+
+            // REFACTORING: Horizontal displacement is now pixels-per-second * deltaTime
+            float desiredMoveX = input.X * movable.Speed.X * dt;
+
             float moveX = CalculateHorizontalAllowance(movable, desiredMoveX, worldObjects);
 
             movable.Position = new Vector2(movable.Position.X + moveX, movable.Position.Y);
         }
 
-        public void MoveVertically(IMovable movable, JumpManager jumpManager, List<IGameObject> worldObjects)
+        public void MoveVertically(IMovable movable, JumpManager jumpManager, List<IGameObject> worldObjects, GameTime gameTime)
         {
-            // Apply vertical physics (gravity/jump)
-            float desiredMoveY = jumpManager.Update(movable);
-            
-            /* 
-             * REFACTORING - SRP:
-             * Vertical collision resolution involves state changes in JumpManager (Land/Cancel).
-             * Moving this into a dedicated method isolates the complex branching logic from 
-             * the high-level update loop.
-             */
+            // Calculate vertical delta based on seconds passed
+            float desiredMoveY = jumpManager.CalculateDeltaY(gameTime);
+
             bool collided = ResolveVerticalCollision(movable, jumpManager, desiredMoveY, worldObjects, out float moveY);
 
-            // Apply the final calculated vertical movement to the object's position
             movable.Position = new Vector2(movable.Position.X, movable.Position.Y + moveY);
 
             if (collided)

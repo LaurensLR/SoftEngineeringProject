@@ -11,11 +11,17 @@ namespace Project1
         public void Update(Hero hero, GameTime gameTime)
         {
             var objects = hero.LevelManager.CurrentLevelObjects;
-            
-            hero.MovementManager.MoveHorizontally(hero, objects);
-            hero.MovementManager.MoveVertically(hero, hero.JumpManager, objects);
 
-            if (hero.InputReader.ReadInput().Y > 0) 
+            /* 
+             * REFACTORING - Frame Independence:
+             * We now pass gameTime into the MovementManager. 
+             * This ensures that speed * deltaTime is calculated properly inside those methods.
+             */
+            hero.MovementManager.MoveHorizontally(hero, objects, gameTime);
+            hero.MovementManager.MoveVertically(hero, hero.JumpManager, objects, gameTime);
+
+            // Command logic (or old input check) 
+            if (hero.InputReader.ReadInput().Y > 0)
                 hero.JumpManager.Jump();
 
             hero.AnimationManager.Update(new Vector2(hero.InputReader.ReadInput().X, 0), gameTime);
