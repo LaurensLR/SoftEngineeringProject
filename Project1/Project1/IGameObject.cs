@@ -8,9 +8,11 @@ using System.Threading.Tasks;
 
 namespace Project1
 {
-    internal interface IGameObject
-    {
-        void Update(GameTime gameTime);
-        void Draw(SpriteBatch spriteBatch);
-    }
+    /* 
+     * DESIGN PATTERN - Composite Pattern:
+     * IGameObject acts as a composite that brings together Updating, Drawing, and Collision.
+     * SOLID - Liskov Substitution Principle (LSP):
+     * Any class that implements IGameObject can be treated uniformly by the Game engine loops.
+     */
+    public interface IGameObject : IUpdatable, IDrawable, ICollidable { }
 }

@@ -1,156 +1,152 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Project1.Input;
+using System;
 using System.Collections.Generic;
 
 namespace Project1
 {
-    public class Hero : ICollidable, IMovable
+    /* 
+     * SOLID - Single Responsibility Principle (SRP):
+     * Hero is responsible for Hero logic (health, input, animation state). 
+     * It delegates Physics to Movement/Jump Managers and behavior to States.
+     * 
+     * SOLID - Dependency Inversion Principle (DIP):
+     * Hero depends on LevelManager (an abstraction/manager) to see the world.
+     */
+    public class Hero : IGameObject, IMovable
     {
-        public Vector2 Position { get; set; }
-        public Vector2 Speed { get; set; }
-        public IInputReader InputReader { get; set; }
-        
         private const int FixedWidth = 26;
         private const int FixedHeight = 28;
 
+        public Vector2 Position { get; set; }
+        public Vector2 Speed { get; set; }
+        public IInputReader InputReader { get; set; }
         public int Width => FixedWidth;
         public int Height => FixedHeight;
-
         public Rectangle Bounds => new Rectangle((int)Position.X, (int)Position.Y, Width, Height);
         public CollisionType CollisionType => CollisionType.Hero;
 
-        private AnimationManager _animationManager;
-        private MovementManager _movementManager;
-        private JumpManager _jumpManager;
+        // DESIGN PATTERN - Observer Pattern: Events that other classes (Observers) can subscribe to
+        public event EventHandler<int> LivesChanged;
+        public event EventHandler Died;
 
+        // Managers are internal/protected so States can access them
+        internal AnimationManager AnimationManager { get; private set; }
+        internal MovementManager MovementManager { get; private set; }
+        internal JumpManager JumpManager { get; private set; }
+        internal LevelManager LevelManager { get; private set; }
+
+        private IHeroState _currentState;
         private int _lives = 3;
-        private bool _isDead = false;
-        private float _hurtTimer = 0f;
-        private const float HurtCooldown = 1.0f; // 1 second of invulnerability
 
-        public Hero(Texture2D walkTexture, Texture2D idleTexture, Texture2D hurtTexture, Texture2D deathTexture, IInputReader inputReader)
+        // Encapsulated property that notifies observers via the Observer Pattern
+        public int Lives
         {
-            InputReader = inputReader;
-
-            var idle = new IdleAnimation(idleTexture);
-            var walk = new WalkAnimation(walkTexture);
-            var hurt = new HurtAnimation(hurtTexture);
-            var death = new DeathAnimation(deathTexture);
-
-            _animationManager = new AnimationManager(idle, walk, hurt, death);
-            _movementManager = new MovementManager();
-            _jumpManager = new JumpManager();
-
-            Speed = new Vector2(2f, 0);
-        }
-
-        public void ResetResponse(Vector2 startPos)
-        {
-             Position = startPos;
-             _lives = 3;
-             _isDead = false;
-             _hurtTimer = 0;
-        }
-
-        public void Update(GameTime gameTime, List<ICollidable> worldObjects)
-        {
-            if (!_isDead)
+            get => _lives;
+            private set
             {
-                // Only allow player control if NOT currently hurt/bouncing (optional choice)
-                // For better feel, we usually allow air control even when hurt, but bounce dominates momentarily.
-                _movementManager.MoveHorizontally(this, worldObjects);
-                _movementManager.MoveVertically(this, _jumpManager, worldObjects);
+                _lives = value;
+                // Notify Observers that something changed
+                LivesChanged?.Invoke(this, _lives);
 
-                if (InputReader.ReadInput().Y > 0)
-                    _jumpManager.Jump();
-            }
-
-            Vector2 input = !_isDead ? new Vector2(InputReader.ReadInput().X, 0) : Vector2.Zero;
-            _animationManager.Update(input, gameTime);
-
-            // Handle spikes - only if not already under invulnerability period
-            if (!_isDead && _hurtTimer <= 0)
-            {
-                foreach (var obj in worldObjects)
+                if (_lives <= 0)
                 {
-                    if (obj.CollisionType == CollisionType.Spike && Bounds.Intersects(obj.Bounds))
-                    {
-                        TakeDamage();
-                        break;
-                    }
+                    Died?.Invoke(this, EventArgs.Empty);
                 }
             }
+        }
+        private float _hurtTimer;
+        private const float HurtCooldown = 1.0f;
+
+        public Hero(Texture2D walk, Texture2D idle, Texture2D hurt, Texture2D death, IInputReader input, LevelManager levelManager)
+        {
+            InputReader = input;
+            LevelManager = levelManager;
+            AnimationManager = new AnimationManager(
+                new IdleAnimation(idle), 
+                new WalkAnimation(walk), 
+                new HurtAnimation(hurt), 
+                new DeathAnimation(death));
+            MovementManager = new MovementManager();
+            JumpManager = new JumpManager();
+            Speed = new Vector2(2f, 0);
+
+            // Set initial state
+            SetState(new NormalState());
+        }
+
+        /*
+         * DESIGN PATTERN - State Pattern Switch:
+         * This method handles changing the behavior of the hero.
+         */
+        public void SetState(IHeroState newState)
+        {
+            _currentState = newState;
+            _currentState.Enter(this);
+        }
+
+        public void Update(GameTime gameTime)
+        {
+            // Delegate ALL update logic to the current state
+            _currentState.Update(this, gameTime);
+
+            CheckCollisions(LevelManager.CurrentLevelObjects);
 
             if (_hurtTimer > 0)
                 _hurtTimer -= (float)gameTime.ElapsedGameTime.TotalSeconds;
-            
-            if (Position.Y > 2000) Die();
+
+            if (Position.Y > 2000 && !(_currentState is DeadState)) 
+                SetState(new DeadState());
+        }
+
+        private void CheckCollisions(List<IGameObject> worldObjects)
+        {
+            foreach (var obj in worldObjects)
+            {
+                // Polymorphism: We treat every item in the list as IGameObject
+                if (obj != this && Bounds.Intersects(obj.Bounds))
+                {
+                    obj.OnCollision(this); 
+                    this.OnCollision(obj);
+                }
+            }
+        }
+
+        public void OnCollision(IGameObject other)
+        {
+            if (_currentState is DeadState || _hurtTimer > 0) return;
+            if (other.CollisionType == CollisionType.Spike) TakeDamage();
         }
 
         private void TakeDamage()
         {
-            _lives--;
+            Lives--; // Property setter triggers the Observer 'LivesChanged' event
             _hurtTimer = HurtCooldown;
 
-            if (_lives <= 0)
+            if (Lives <= 0) SetState(new DeadState());
+            else
             {
-                Die();
-                return;
+                AnimationManager.PlayHurt();
+                Bounce();
             }
-
-            _animationManager.PlayHurt();
-            Bounce();
         }
 
         private void Bounce()
         {
-            // Apply a vertical jump impulse ("pop up")
-            _jumpManager.VelocityY = -5f; 
-
-            // Apply horizontal knockback based on direction
-            // If facing left, bounce right. If facing right, bounce left.
-            // Since we don't have a dedicated "velocity" vector for X in this simple setup
-            // (MoveHorizontally calculates it per frame from input), we can just manually nudge Position 
-            // slightly to "start" the bounce away from the spike, or rely on the visual "Jump" to clear it.
-            
-            // For a simple "Super Mario" style damage hop, just resetting vertical velocity is usually enough 
-            // to break contact with the spike below you.
-            
-            // If you want horizontal knockback (pushed away):
-            float pushDir = _animationManager.FacingLeft ? 10f : -10f; // Push opposite to face
-            Position = new Vector2(Position.X + pushDir, Position.Y - 2); // Slight immediate nudge up/away
-        }
-
-        private void Die()
-        {
-            _isDead = true;
-            Speed = Vector2.Zero;
-            _jumpManager.CancelJump();
-            _animationManager.PlayDeath();
+            JumpManager.VelocityY = -5f;
+            float pushDir = AnimationManager.FacingLeft ? 10f : -10f;
+            Position = new Vector2(Position.X + pushDir, Position.Y - 2);
         }
 
         public void Draw(SpriteBatch spriteBatch)
         {
-            // Flicker effect: 
-            // If hurtTimer is active, only draw every ~0.1 seconds (simple modulo check)
-            if (_hurtTimer > 0)
-            {
-                // "Flicker" logic: check if the timer (in tenths of a second) is even/odd
-                int flicker = (int)(_hurtTimer * 20); // * 20 gives a fast strobe
-                if (flicker % 2 == 0) 
-                    return; // Skip drawing this frame to create "invisible" blink
-            }
+            if (_hurtTimer > 0 && (int)(_hurtTimer * 20) % 2 == 0) return;
+            var anim = AnimationManager.CurrentAnimation;
+            if (anim?.CurrentFrame == null) return;
 
-            var anim = _animationManager.CurrentAnimation;
-            if (anim == null || anim.CurrentFrame == null || anim.Texture == null) return;
-
-            var effect = _animationManager.FacingLeft ? SpriteEffects.FlipHorizontally : SpriteEffects.None;
-            spriteBatch.Draw(anim.Texture, Position,
-                             anim.CurrentFrame.SourceRectangle,
-                             Color.White, 0f, Vector2.Zero, 1f, effect, 0f);
+            var effect = AnimationManager.FacingLeft ? SpriteEffects.FlipHorizontally : SpriteEffects.None;
+            spriteBatch.Draw(anim.Texture, Position, anim.CurrentFrame.SourceRectangle, Color.White, 0f, Vector2.Zero, 1f, effect, 0f);
         }
-
-        public void OnCollision(ICollidable other) { }
     }
 }

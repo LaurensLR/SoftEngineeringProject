@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <SourceFile>C:/Users/32486/School/J2/S1/Software Engineering/Project/Project1/Project1/Content/idle.png</SourceFile>
-  <SourceTime>2025-11-25T11:14:08.2896284+01:00</SourceTime>
-  <DestFile>C:/Users/32486/School/J2/S1/Software Engineering/Project/Project1/Project1/Content/bin/DesktopGL/idle.xnb</DestFile>
-  <DestTime>2025-11-25T11:14:29.1291117+01:00</DestTime>
+  <SourceFile>C:/Users/laure_3y8jzli/School/J2/S1/SoftwareEngineering/SoftEngineeringProject/Project1/Project1/Content/idle.png</SourceFile>
+  <SourceTime>2025-11-30T14:45:13.4698956+01:00</SourceTime>
+  <DestFile>C:/Users/laure_3y8jzli/School/J2/S1/SoftwareEngineering/SoftEngineeringProject/Project1/Project1/Content/bin/DesktopGL/idle.xnb</DestFile>
+  <DestTime>2026-01-17T18:10:34.4198837+01:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2025-06-02T12:31:02+02:00</ImporterTime>
   <Processor>TextureProcessor</Processor>

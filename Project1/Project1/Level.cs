@@ -4,37 +4,42 @@ using System.Collections.Generic;
 
 namespace Project1
 {
+    /*
+     * SOLID - Single Responsibility: This class now ONLY manages the map layout.
+     * It doesn't know HOW to create a block or a spike; it asks the Factory.
+     */
     public class Level
     {
-        public List<ICollidable> LevelObjects { get; private set; }
-        private int _tileSize = 16; 
-        
-        private List<string[]> _levels = new List<string[]>();
+        // Use IGameObject to support both physics and drawing
+        public List<IGameObject> LevelObjects { get; private set; } = new();
+        private readonly int _tileSize = 16;
+        private readonly List<string[]> _levels = new();
+        private readonly LevelObjectFactory _factory;
 
-        public Level(Texture2D blockTexture, Texture2D spikeTexture)
+        public Level(LevelObjectFactory factory)
         {
-            LevelObjects = new List<ICollidable>();
+            _factory = factory;
             InitializeLevels();
-            LoadLevel(0, blockTexture, spikeTexture); 
+            LoadLevel(0);
         }
 
         private void InitializeLevels()
         {
-            // Same level data...
-             _levels.Add(new string[]
+            // Level layout string array (kept same as before)
+            _levels.Add(new string[]
             {
                 "..................................................",
                 "..................................................",
+                "..........#####...................................",
                 "..................................................",
-                "..................................................",
-                "..................................................",
+                ".....................###..........................",
                 ".........###......................................",
                 "..................................................",
+                "..........................^^...###................",
+                ".....###..................####....................",
+                ".....................#####........................",
                 "..................................................",
-                ".....###...........................###............",
-                ".................................###..............",
-                "...............................###................",
-                "...........###...............###..................",
+                "...........###....................................",
                 "..................................................",
                 ".......................................^^^........",
                 ".....................................#####........",
@@ -54,41 +59,22 @@ namespace Project1
                 ".#....................#####..............#...#....",
                 "##################################################", 
             });
-             _levels.Add(new string[]
-            {
-                "..................................................",
-                "..................................................",
-                "##################################################",
-            });
         }
 
-        public void LoadLevel(int levelIndex, Texture2D blockTex, Texture2D spikeTex)
+        public void LoadLevel(int index)
         {
-            if (levelIndex < 0 || levelIndex >= _levels.Count) return;
+            if (index < 0 || index >= _levels.Count) return;
 
             LevelObjects.Clear();
-            string[] map = _levels[levelIndex];
+            string[] map = _levels[index];
 
             for (int y = 0; y < map.Length; y++)
             {
                 for (int x = 0; x < map[y].Length; x++)
                 {
-                    char tile = map[y][x];
-                    Vector2 position = new Vector2(x * _tileSize, y * _tileSize);
-
-                    if (tile == '#') // Block
-                    {
-                        Rectangle rect = new Rectangle((int)position.X, (int)position.Y, _tileSize, _tileSize);
-                        LevelObjects.Add(new Block(blockTex, rect));
-                    }
-                    else if (tile == '^') // Spike
-                    {
-                        // Align to bottom of 16px tile.
-                        // Spike is 13px high.
-                        // Y = position.Y + (16 - 13) = position.Y + 3
-                        Vector2 spikePos = new Vector2(position.X, position.Y + 3);
-                        LevelObjects.Add(new Spike(spikeTex, spikePos));
-                    }
+                    // The factory now returns an object that implements IGameObject
+                    var obj = _factory.CreateObject(map[y][x], new Vector2(x * _tileSize, y * _tileSize), _tileSize);
+                    if (obj != null) LevelObjects.Add(obj);
                 }
             }
         }

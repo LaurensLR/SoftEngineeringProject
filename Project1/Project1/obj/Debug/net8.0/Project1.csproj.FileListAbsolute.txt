@@ -76,3 +76,4 @@ C:\Users\32486\School\J2\S1\Software Engineering\Project\Project1\Project1\bin\D
 C:\Users\laure_3y8jzli\School\J2\S1\SoftwareEngineering\SoftEngineeringProject\Project1\Project1\bin\Debug\net8.0\Content\death.xnb
 C:\Users\laure_3y8jzli\School\J2\S1\SoftwareEngineering\SoftEngineeringProject\Project1\Project1\bin\Debug\net8.0\Content\hurt.xnb
 C:\Users\laure_3y8jzli\School\J2\S1\SoftwareEngineering\SoftEngineeringProject\Project1\Project1\bin\Debug\net8.0\Content\spike.xnb
+C:\Users\laure_3y8jzli\School\J2\S1\SoftwareEngineering\SoftEngineeringProject\Project1\Project1\bin\Debug\net8.0\Content\font.xnb

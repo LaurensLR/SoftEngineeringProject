@@ -3,36 +3,84 @@
   "WorkspaceRootPath": "C:\\Users\\laure_3y8jzli\\School\\J2\\S1\\SoftwareEngineering\\SoftEngineeringProject\\Project1\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{61340343-5B1B-4F30-A711-DD84BA788FF8}|Project1\\Project1.csproj|c:\\users\\laure_3y8jzli\\school\\j2\\s1\\softwareengineering\\softengineeringproject\\project1\\project1\\hero.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{61340343-5B1B-4F30-A711-DD84BA788FF8}|Project1\\Project1.csproj|solutionrelative:project1\\hero.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{61340343-5B1B-4F30-A711-DD84BA788FF8}|Project1\\Project1.csproj|c:\\users\\laure_3y8jzli\\school\\j2\\s1\\softwareengineering\\softengineeringproject\\project1\\project1\\content\\content.mgcb||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{61340343-5B1B-4F30-A711-DD84BA788FF8}|Project1\\Project1.csproj|solutionrelative:project1\\content\\content.mgcb||{8B382828-6202-11D1-8870-0000F87579D2}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{61340343-5B1B-4F30-A711-DD84BA788FF8}|Project1\\Project1.csproj|c:\\users\\laure_3y8jzli\\school\\j2\\s1\\softwareengineering\\softengineeringproject\\project1\\project1\\level.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{61340343-5B1B-4F30-A711-DD84BA788FF8}|Project1\\Project1.csproj|solutionrelative:project1\\level.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{61340343-5B1B-4F30-A711-DD84BA788FF8}|Project1\\Project1.csproj|c:\\users\\laure_3y8jzli\\school\\j2\\s1\\softwareengineering\\softengineeringproject\\project1\\project1\\spike.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{61340343-5B1B-4F30-A711-DD84BA788FF8}|Project1\\Project1.csproj|solutionrelative:project1\\spike.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{61340343-5B1B-4F30-A711-DD84BA788FF8}|Project1\\Project1.csproj|c:\\users\\laure_3y8jzli\\school\\j2\\s1\\softwareengineering\\softengineeringproject\\project1\\project1\\jumpmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{61340343-5B1B-4F30-A711-DD84BA788FF8}|Project1\\Project1.csproj|solutionrelative:project1\\jumpmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{61340343-5B1B-4F30-A711-DD84BA788FF8}|Project1\\Project1.csproj|c:\\users\\laure_3y8jzli\\school\\j2\\s1\\softwareengineering\\softengineeringproject\\project1\\project1\\.config\\dotnet-tools.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{61340343-5B1B-4F30-A711-DD84BA788FF8}|Project1\\Project1.csproj|solutionrelative:project1\\.config\\dotnet-tools.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{61340343-5B1B-4F30-A711-DD84BA788FF8}|Project1\\Project1.csproj|c:\\users\\laure_3y8jzli\\school\\j2\\s1\\softwareengineering\\softengineeringproject\\project1\\project1\\game1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{61340343-5B1B-4F30-A711-DD84BA788FF8}|Project1\\Project1.csproj|solutionrelative:project1\\game1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{61340343-5B1B-4F30-A711-DD84BA788FF8}|Project1\\Project1.csproj|c:\\users\\laure_3y8jzli\\school\\j2\\s1\\softwareengineering\\softengineeringproject\\project1\\project1\\animationmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{61340343-5B1B-4F30-A711-DD84BA788FF8}|Project1\\Project1.csproj|solutionrelative:project1\\animationmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{61340343-5B1B-4F30-A711-DD84BA788FF8}|Project1\\Project1.csproj|c:\\users\\laure_3y8jzli\\school\\j2\\s1\\softwareengineering\\softengineeringproject\\project1\\project1\\hero.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{61340343-5B1B-4F30-A711-DD84BA788FF8}|Project1\\Project1.csproj|solutionrelative:project1\\hero.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{61340343-5B1B-4F30-A711-DD84BA788FF8}|Project1\\Project1.csproj|c:\\users\\laure_3y8jzli\\school\\j2\\s1\\softwareengineering\\softengineeringproject\\project1\\project1\\uimanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{61340343-5B1B-4F30-A711-DD84BA788FF8}|Project1\\Project1.csproj|solutionrelative:project1\\uimanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{61340343-5B1B-4F30-A711-DD84BA788FF8}|Project1\\Project1.csproj|c:\\users\\laure_3y8jzli\\school\\j2\\s1\\softwareengineering\\softengineeringproject\\project1\\project1\\movementmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{61340343-5B1B-4F30-A711-DD84BA788FF8}|Project1\\Project1.csproj|solutionrelative:project1\\movementmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{61340343-5B1B-4F30-A711-DD84BA788FF8}|Project1\\Project1.csproj|c:\\users\\laure_3y8jzli\\school\\j2\\s1\\softwareengineering\\softengineeringproject\\project1\\project1\\herostates.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{61340343-5B1B-4F30-A711-DD84BA788FF8}|Project1\\Project1.csproj|solutionrelative:project1\\herostates.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{61340343-5B1B-4F30-A711-DD84BA788FF8}|Project1\\Project1.csproj|c:\\users\\laure_3y8jzli\\school\\j2\\s1\\softwareengineering\\softengineeringproject\\project1\\project1\\iherostate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{61340343-5B1B-4F30-A711-DD84BA788FF8}|Project1\\Project1.csproj|solutionrelative:project1\\iherostate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{61340343-5B1B-4F30-A711-DD84BA788FF8}|Project1\\Project1.csproj|c:\\users\\laure_3y8jzli\\school\\j2\\s1\\softwareengineering\\softengineeringproject\\project1\\project1\\levelmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{61340343-5B1B-4F30-A711-DD84BA788FF8}|Project1\\Project1.csproj|solutionrelative:project1\\levelmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{61340343-5B1B-4F30-A711-DD84BA788FF8}|Project1\\Project1.csproj|c:\\users\\laure_3y8jzli\\school\\j2\\s1\\softwareengineering\\softengineeringproject\\project1\\project1\\levelfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{61340343-5B1B-4F30-A711-DD84BA788FF8}|Project1\\Project1.csproj|solutionrelative:project1\\levelfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{61340343-5B1B-4F30-A711-DD84BA788FF8}|Project1\\Project1.csproj|c:\\users\\laure_3y8jzli\\school\\j2\\s1\\softwareengineering\\softengineeringproject\\project1\\project1\\igameobject.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{61340343-5B1B-4F30-A711-DD84BA788FF8}|Project1\\Project1.csproj|solutionrelative:project1\\igameobject.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{61340343-5B1B-4F30-A711-DD84BA788FF8}|Project1\\Project1.csproj|c:\\users\\laure_3y8jzli\\school\\j2\\s1\\softwareengineering\\softengineeringproject\\project1\\project1\\iupdatable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{61340343-5B1B-4F30-A711-DD84BA788FF8}|Project1\\Project1.csproj|solutionrelative:project1\\iupdatable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{61340343-5B1B-4F30-A711-DD84BA788FF8}|Project1\\Project1.csproj|c:\\users\\laure_3y8jzli\\school\\j2\\s1\\softwareengineering\\softengineeringproject\\project1\\project1\\icollidable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{61340343-5B1B-4F30-A711-DD84BA788FF8}|Project1\\Project1.csproj|solutionrelative:project1\\icollidable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{61340343-5B1B-4F30-A711-DD84BA788FF8}|Project1\\Project1.csproj|c:\\users\\laure_3y8jzli\\school\\j2\\s1\\softwareengineering\\softengineeringproject\\project1\\project1\\idrawable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{61340343-5B1B-4F30-A711-DD84BA788FF8}|Project1\\Project1.csproj|solutionrelative:project1\\idrawable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{61340343-5B1B-4F30-A711-DD84BA788FF8}|Project1\\Project1.csproj|c:\\users\\laure_3y8jzli\\school\\j2\\s1\\softwareengineering\\softengineeringproject\\project1\\project1\\block.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{61340343-5B1B-4F30-A711-DD84BA788FF8}|Project1\\Project1.csproj|solutionrelative:project1\\block.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{61340343-5B1B-4F30-A711-DD84BA788FF8}|Project1\\Project1.csproj|c:\\users\\laure_3y8jzli\\school\\j2\\s1\\softwareengineering\\softengineeringproject\\project1\\project1\\spike.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{61340343-5B1B-4F30-A711-DD84BA788FF8}|Project1\\Project1.csproj|solutionrelative:project1\\spike.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{61340343-5B1B-4F30-A711-DD84BA788FF8}|Project1\\Project1.csproj|c:\\users\\laure_3y8jzli\\school\\j2\\s1\\softwareengineering\\softengineeringproject\\project1\\project1\\level.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{61340343-5B1B-4F30-A711-DD84BA788FF8}|Project1\\Project1.csproj|solutionrelative:project1\\level.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{61340343-5B1B-4F30-A711-DD84BA788FF8}|Project1\\Project1.csproj|c:\\users\\laure_3y8jzli\\school\\j2\\s1\\softwareengineering\\softengineeringproject\\project1\\project1\\animation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{61340343-5B1B-4F30-A711-DD84BA788FF8}|Project1\\Project1.csproj|solutionrelative:project1\\animation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{61340343-5B1B-4F30-A711-DD84BA788FF8}|Project1\\Project1.csproj|c:\\users\\laure_3y8jzli\\school\\j2\\s1\\softwareengineering\\softengineeringproject\\project1\\project1\\movementmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{61340343-5B1B-4F30-A711-DD84BA788FF8}|Project1\\Project1.csproj|solutionrelative:project1\\movementmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{61340343-5B1B-4F30-A711-DD84BA788FF8}|Project1\\Project1.csproj|c:\\users\\laure_3y8jzli\\school\\j2\\s1\\softwareengineering\\softengineeringproject\\project1\\project1\\jumpmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{61340343-5B1B-4F30-A711-DD84BA788FF8}|Project1\\Project1.csproj|solutionrelative:project1\\jumpmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{61340343-5B1B-4F30-A711-DD84BA788FF8}|Project1\\Project1.csproj|c:\\users\\laure_3y8jzli\\school\\j2\\s1\\softwareengineering\\softengineeringproject\\project1\\project1\\animationmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{61340343-5B1B-4F30-A711-DD84BA788FF8}|Project1\\Project1.csproj|solutionrelative:project1\\animationmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -42,63 +90,221 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 1,
           "Children": [
             {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Spike.cs",
-              "DocumentMoniker": "C:\\Users\\laure_3y8jzli\\School\\J2\\S1\\SoftwareEngineering\\SoftEngineeringProject\\Project1\\Project1\\Spike.cs",
-              "RelativeDocumentMoniker": "Project1\\Spike.cs",
-              "ToolTip": "C:\\Users\\laure_3y8jzli\\School\\J2\\S1\\SoftwareEngineering\\SoftEngineeringProject\\Project1\\Project1\\Spike.cs",
-              "RelativeToolTip": "Project1\\Spike.cs",
-              "ViewState": "AgIAAA8AAAAAAAAAAAAcwAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-17T11:40:34.469Z",
-              "EditorCaption": ""
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Game1.cs",
-              "DocumentMoniker": "C:\\Users\\laure_3y8jzli\\School\\J2\\S1\\SoftwareEngineering\\SoftEngineeringProject\\Project1\\Project1\\Game1.cs",
-              "RelativeDocumentMoniker": "Project1\\Game1.cs",
-              "ToolTip": "C:\\Users\\laure_3y8jzli\\School\\J2\\S1\\SoftwareEngineering\\SoftEngineeringProject\\Project1\\Project1\\Game1.cs",
-              "RelativeToolTip": "Project1\\Game1.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-17T11:27:26.833Z",
+              "DocumentIndex": 0,
+              "Title": "Content.mgcb",
+              "DocumentMoniker": "C:\\Users\\laure_3y8jzli\\School\\J2\\S1\\SoftwareEngineering\\SoftEngineeringProject\\Project1\\Project1\\Content\\Content.mgcb",
+              "RelativeDocumentMoniker": "Project1\\Content\\Content.mgcb",
+              "ToolTip": "C:\\Users\\laure_3y8jzli\\School\\J2\\S1\\SoftwareEngineering\\SoftEngineeringProject\\Project1\\Project1\\Content\\Content.mgcb",
+              "RelativeToolTip": "Project1\\Content\\Content.mgcb",
+              "ViewState": "AgIAACUAAAAAAAAAAAAAwDcAAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2026-01-17T17:00:18.001Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "dotnet-tools.json",
+              "DocumentMoniker": "C:\\Users\\laure_3y8jzli\\School\\J2\\S1\\SoftwareEngineering\\SoftEngineeringProject\\Project1\\Project1\\.config\\dotnet-tools.json",
+              "RelativeDocumentMoniker": "Project1\\.config\\dotnet-tools.json",
+              "ToolTip": "C:\\Users\\laure_3y8jzli\\School\\J2\\S1\\SoftwareEngineering\\SoftEngineeringProject\\Project1\\Project1\\.config\\dotnet-tools.json",
+              "RelativeToolTip": "Project1\\.config\\dotnet-tools.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-01-17T16:54:02.435Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "IHeroState.cs",
+              "DocumentMoniker": "C:\\Users\\laure_3y8jzli\\School\\J2\\S1\\SoftwareEngineering\\SoftEngineeringProject\\Project1\\Project1\\IHeroState.cs",
+              "RelativeDocumentMoniker": "Project1\\IHeroState.cs",
+              "ToolTip": "C:\\Users\\laure_3y8jzli\\School\\J2\\S1\\SoftwareEngineering\\SoftEngineeringProject\\Project1\\Project1\\IHeroState.cs",
+              "RelativeToolTip": "Project1\\IHeroState.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-17T15:54:58.211Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "IDrawable.cs",
+              "DocumentMoniker": "C:\\Users\\laure_3y8jzli\\School\\J2\\S1\\SoftwareEngineering\\SoftEngineeringProject\\Project1\\Project1\\IDrawable.cs",
+              "RelativeDocumentMoniker": "Project1\\IDrawable.cs",
+              "ToolTip": "C:\\Users\\laure_3y8jzli\\School\\J2\\S1\\SoftwareEngineering\\SoftEngineeringProject\\Project1\\Project1\\IDrawable.cs",
+              "RelativeToolTip": "Project1\\IDrawable.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-17T14:38:04.245Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "IGameObject.cs",
+              "DocumentMoniker": "C:\\Users\\laure_3y8jzli\\School\\J2\\S1\\SoftwareEngineering\\SoftEngineeringProject\\Project1\\Project1\\IGameObject.cs",
+              "RelativeDocumentMoniker": "Project1\\IGameObject.cs",
+              "ToolTip": "C:\\Users\\laure_3y8jzli\\School\\J2\\S1\\SoftwareEngineering\\SoftEngineeringProject\\Project1\\Project1\\IGameObject.cs",
+              "RelativeToolTip": "Project1\\IGameObject.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-17T14:36:59.672Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "Block.cs",
+              "DocumentMoniker": "C:\\Users\\laure_3y8jzli\\School\\J2\\S1\\SoftwareEngineering\\SoftEngineeringProject\\Project1\\Project1\\Block.cs",
+              "RelativeDocumentMoniker": "Project1\\Block.cs",
+              "ToolTip": "C:\\Users\\laure_3y8jzli\\School\\J2\\S1\\SoftwareEngineering\\SoftEngineeringProject\\Project1\\Project1\\Block.cs",
+              "RelativeToolTip": "Project1\\Block.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-17T14:28:18.205Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "ICollidable.cs",
+              "DocumentMoniker": "C:\\Users\\laure_3y8jzli\\School\\J2\\S1\\SoftwareEngineering\\SoftEngineeringProject\\Project1\\Project1\\ICollidable.cs",
+              "RelativeDocumentMoniker": "Project1\\ICollidable.cs",
+              "ToolTip": "C:\\Users\\laure_3y8jzli\\School\\J2\\S1\\SoftwareEngineering\\SoftEngineeringProject\\Project1\\Project1\\ICollidable.cs",
+              "RelativeToolTip": "Project1\\ICollidable.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-17T14:20:19.106Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "LevelFactory.cs",
+              "DocumentMoniker": "C:\\Users\\laure_3y8jzli\\School\\J2\\S1\\SoftwareEngineering\\SoftEngineeringProject\\Project1\\Project1\\LevelFactory.cs",
+              "RelativeDocumentMoniker": "Project1\\LevelFactory.cs",
+              "ToolTip": "C:\\Users\\laure_3y8jzli\\School\\J2\\S1\\SoftwareEngineering\\SoftEngineeringProject\\Project1\\Project1\\LevelFactory.cs",
+              "RelativeToolTip": "Project1\\LevelFactory.cs",
+              "ViewState": "AgIAAAcAAAAAAAAAAAAcwA4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-17T14:19:41.656Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "Spike.cs",
+              "DocumentMoniker": "C:\\Users\\laure_3y8jzli\\School\\J2\\S1\\SoftwareEngineering\\SoftEngineeringProject\\Project1\\Project1\\Spike.cs",
+              "RelativeDocumentMoniker": "Project1\\Spike.cs",
+              "ToolTip": "C:\\Users\\laure_3y8jzli\\School\\J2\\S1\\SoftwareEngineering\\SoftEngineeringProject\\Project1\\Project1\\Spike.cs",
+              "RelativeToolTip": "Project1\\Spike.cs",
+              "ViewState": "AgIAAAcAAAAAAAAAAAA1wA4AAAA5AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-17T11:40:34.469Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Game1.cs",
+              "DocumentMoniker": "C:\\Users\\laure_3y8jzli\\School\\J2\\S1\\SoftwareEngineering\\SoftEngineeringProject\\Project1\\Project1\\Game1.cs",
+              "RelativeDocumentMoniker": "Project1\\Game1.cs",
+              "ToolTip": "C:\\Users\\laure_3y8jzli\\School\\J2\\S1\\SoftwareEngineering\\SoftEngineeringProject\\Project1\\Project1\\Game1.cs",
+              "RelativeToolTip": "Project1\\Game1.cs",
+              "ViewState": "AgIAADQAAAAAAAAAAAAUwEYAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-17T11:27:26.833Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "UIManager.cs",
+              "DocumentMoniker": "C:\\Users\\laure_3y8jzli\\School\\J2\\S1\\SoftwareEngineering\\SoftEngineeringProject\\Project1\\Project1\\UIManager.cs",
+              "RelativeDocumentMoniker": "Project1\\UIManager.cs",
+              "ToolTip": "C:\\Users\\laure_3y8jzli\\School\\J2\\S1\\SoftwareEngineering\\SoftEngineeringProject\\Project1\\Project1\\UIManager.cs",
+              "RelativeToolTip": "Project1\\UIManager.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAC0AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-17T16:14:35.115Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Hero.cs",
+              "DocumentMoniker": "C:\\Users\\laure_3y8jzli\\School\\J2\\S1\\SoftwareEngineering\\SoftEngineeringProject\\Project1\\Project1\\Hero.cs",
+              "RelativeDocumentMoniker": "Project1\\Hero.cs",
+              "ToolTip": "C:\\Users\\laure_3y8jzli\\School\\J2\\S1\\SoftwareEngineering\\SoftEngineeringProject\\Project1\\Project1\\Hero.cs",
+              "RelativeToolTip": "Project1\\Hero.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAIQAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-17T11:17:58.649Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "HeroStates.cs",
+              "DocumentMoniker": "C:\\Users\\laure_3y8jzli\\School\\J2\\S1\\SoftwareEngineering\\SoftEngineeringProject\\Project1\\Project1\\HeroStates.cs",
+              "RelativeDocumentMoniker": "Project1\\HeroStates.cs",
+              "ToolTip": "C:\\Users\\laure_3y8jzli\\School\\J2\\S1\\SoftwareEngineering\\SoftEngineeringProject\\Project1\\Project1\\HeroStates.cs",
+              "RelativeToolTip": "Project1\\HeroStates.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACcAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-17T15:55:46.9Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "MovementManager.cs",
+              "DocumentMoniker": "C:\\Users\\laure_3y8jzli\\School\\J2\\S1\\SoftwareEngineering\\SoftEngineeringProject\\Project1\\Project1\\MovementManager.cs",
+              "RelativeDocumentMoniker": "Project1\\MovementManager.cs",
+              "ToolTip": "C:\\Users\\laure_3y8jzli\\School\\J2\\S1\\SoftwareEngineering\\SoftEngineeringProject\\Project1\\Project1\\MovementManager.cs",
+              "RelativeToolTip": "Project1\\MovementManager.cs",
+              "ViewState": "AgIAAD4AAAAAAAAAAAAwwAgAAABTAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-17T11:16:10.809Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "IUpdatable.cs",
+              "DocumentMoniker": "C:\\Users\\laure_3y8jzli\\School\\J2\\S1\\SoftwareEngineering\\SoftEngineeringProject\\Project1\\Project1\\IUpdatable.cs",
+              "RelativeDocumentMoniker": "Project1\\IUpdatable.cs",
+              "ToolTip": "C:\\Users\\laure_3y8jzli\\School\\J2\\S1\\SoftwareEngineering\\SoftEngineeringProject\\Project1\\Project1\\IUpdatable.cs",
+              "RelativeToolTip": "Project1\\IUpdatable.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-17T14:38:52.575Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "LevelManager.cs",
+              "DocumentMoniker": "C:\\Users\\laure_3y8jzli\\School\\J2\\S1\\SoftwareEngineering\\SoftEngineeringProject\\Project1\\Project1\\LevelManager.cs",
+              "RelativeDocumentMoniker": "Project1\\LevelManager.cs",
+              "ToolTip": "C:\\Users\\laure_3y8jzli\\School\\J2\\S1\\SoftwareEngineering\\SoftEngineeringProject\\Project1\\Project1\\LevelManager.cs",
+              "RelativeToolTip": "Project1\\LevelManager.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAC0AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-17T15:05:14.818Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
               "Title": "Level.cs",
               "DocumentMoniker": "C:\\Users\\laure_3y8jzli\\School\\J2\\S1\\SoftwareEngineering\\SoftEngineeringProject\\Project1\\Project1\\Level.cs",
               "RelativeDocumentMoniker": "Project1\\Level.cs",
               "ToolTip": "C:\\Users\\laure_3y8jzli\\School\\J2\\S1\\SoftwareEngineering\\SoftEngineeringProject\\Project1\\Project1\\Level.cs",
               "RelativeToolTip": "Project1\\Level.cs",
-              "ViewState": "AgIAAEoAAAAAAAAAAAAUwF8AAAABAAAAAAAAAA==",
+              "ViewState": "AgIAADIAAAAAAAAAAAAwwFAAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-17T11:26:38.222Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-01-17T11:26:38.222Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Hero.cs",
-              "DocumentMoniker": "C:\\Users\\laure_3y8jzli\\School\\J2\\S1\\SoftwareEngineering\\SoftEngineeringProject\\Project1\\Project1\\Hero.cs",
-              "RelativeDocumentMoniker": "Project1\\Hero.cs",
-              "ToolTip": "C:\\Users\\laure_3y8jzli\\School\\J2\\S1\\SoftwareEngineering\\SoftEngineeringProject\\Project1\\Project1\\Hero.cs*",
-              "RelativeToolTip": "Project1\\Hero.cs*",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-17T11:17:58.649Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 19,
               "Title": "AnimationManager.cs",
               "DocumentMoniker": "C:\\Users\\laure_3y8jzli\\School\\J2\\S1\\SoftwareEngineering\\SoftEngineeringProject\\Project1\\Project1\\AnimationManager.cs",
               "RelativeDocumentMoniker": "Project1\\AnimationManager.cs",
@@ -110,7 +316,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 17,
               "Title": "Animation.cs",
               "DocumentMoniker": "C:\\Users\\laure_3y8jzli\\School\\J2\\S1\\SoftwareEngineering\\SoftEngineeringProject\\Project1\\Project1\\Animation.cs",
               "RelativeDocumentMoniker": "Project1\\Animation.cs",
@@ -122,19 +328,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "MovementManager.cs",
-              "DocumentMoniker": "C:\\Users\\laure_3y8jzli\\School\\J2\\S1\\SoftwareEngineering\\SoftEngineeringProject\\Project1\\Project1\\MovementManager.cs",
-              "RelativeDocumentMoniker": "Project1\\MovementManager.cs",
-              "ToolTip": "C:\\Users\\laure_3y8jzli\\School\\J2\\S1\\SoftwareEngineering\\SoftEngineeringProject\\Project1\\Project1\\MovementManager.cs",
-              "RelativeToolTip": "Project1\\MovementManager.cs",
-              "ViewState": "AgIAAFgAAAAAAAAAAAAuwAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-17T11:16:10.809Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 18,
               "Title": "JumpManager.cs",
               "DocumentMoniker": "C:\\Users\\laure_3y8jzli\\School\\J2\\S1\\SoftwareEngineering\\SoftEngineeringProject\\Project1\\Project1\\JumpManager.cs",
               "RelativeDocumentMoniker": "Project1\\JumpManager.cs",
@@ -142,8 +336,7 @@
               "RelativeToolTip": "Project1\\JumpManager.cs",
               "ViewState": "AgIAABcAAAAAAAAAAAAwwBYAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-17T11:15:29.924Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-01-17T11:15:29.924Z"
             }
           ]
         }
