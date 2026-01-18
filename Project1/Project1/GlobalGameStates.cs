@@ -1,6 +1,7 @@
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
+using System.Linq;
 
 namespace Project1
 {
@@ -61,6 +62,24 @@ namespace Project1
                 {
                     game.SetGameState(new GameOverState(game.Font, game));
                 }
+                return;
+            }
+            // LEVEL PROGRESSION LOGIC (Only if Alive)
+            /* 
+             * REFACTORING - State Transition Guard:
+             * We only progress if all cherries are collected AND 
+             * the Hero has reached the Door object.
+             */
+            if (game.LevelManager.AllCherriesCollected())
+            {
+                // Find the door in the current level
+                var door = game.LevelManager.CurrentLevelObjects.OfType<Door>().FirstOrDefault();
+
+                if (door != null && door.IsPlayerInside)
+                {
+                    game.LevelManager.NextLevel();
+                    game.Hero.ResetPosition(new Vector2(100, 100)); // Smooth teleport to start of NEXT level
+                }
             }
         }
 
@@ -80,10 +99,12 @@ namespace Project1
     public class GameOverState : IGameState
     {
         private readonly Button _restartButton;
+        private readonly SpriteFont _font;
 
         public GameOverState(SpriteFont font, Game1 game)
         {
-            _restartButton = new Button(new Rectangle(300, 200, 200, 50), "GAME OVER - R TO RESTART", font, Color.Red);
+            _font = font;
+            _restartButton = new Button(new Rectangle(300, 250, 200, 50), "PRESS R TO RESTART", font, Color.White);
         }
 
         public void Update(Game1 game, GameTime gameTime)
@@ -94,10 +115,10 @@ namespace Project1
                 game.RestartGame();
             }
         }
-
-        // Updated signature: 'game' is provided as a parameter to satisfy IGameState.
         public void Draw(Game1 game, SpriteBatch spriteBatch)
         {
+            // DESIGN PATTERN - Responsibility: GameOver screen handles its own text
+            spriteBatch.DrawString(_font, "GAME OVER", new Vector2(320, 180), Color.Red);
             _restartButton.Draw(spriteBatch);
         }
     }

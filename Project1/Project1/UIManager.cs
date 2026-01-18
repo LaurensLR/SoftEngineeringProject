@@ -34,13 +34,8 @@ namespace Project1
 
         public void Draw(SpriteBatch spriteBatch)
         {
-            // Draw the lives at the top-left of the screen
+            // HUD Responsibility: Only show the lives
             spriteBatch.DrawString(_font, $"LIVES: {_heroLives}", new Vector2(20, 20), Color.White);
-            
-            if (_heroLives <= 0)
-            {
-                spriteBatch.DrawString(_font, "GAME OVER", new Vector2(350, 220), Color.Red);
-            }
         }
     }
 }

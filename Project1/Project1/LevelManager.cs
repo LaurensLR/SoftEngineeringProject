@@ -1,6 +1,7 @@
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Project1
 {
@@ -26,13 +27,43 @@ namespace Project1
             _levelData = new Level(_factory); 
         }
 
+        /* 
+         * SOLID - Single Responsibility: 
+         * Logic to check if level requirements are met.
+         */
+        public bool AllCherriesCollected()
+        {
+            return !CurrentLevelObjects.OfType<Cherry>().Any(c => !c.IsCollected);
+        }
+
+        public void ResetLevel()
+        {
+            _levelData.LoadLevel(_currentLevelIndex);
+        }
+
+        public void NextLevel()
+        {
+            _currentLevelIndex++;
+            _levelData.LoadLevel(_currentLevelIndex);
+        }
+
         public void Update(GameTime gameTime)
         {
-            // Update every object in the world without knowing their specific types (Polymorphism)
-            foreach (var obj in CurrentLevelObjects)
+            // REFACTORING: Passing the world list specifically to types that need it.
+            // This is a common pattern in game engines where logic depends on context.
+            foreach (var obj in CurrentLevelObjects.ToList()) // ToList to avoid collection modification errors
             {
-                obj.Update(gameTime);
+                if (obj is Snail snail)
+                {
+                    snail.Update(gameTime, CurrentLevelObjects);
+                }
+                else
+                {
+                    obj.Update(gameTime);
+                }
             }
+
+            _levelData.LevelObjects.RemoveAll(o => o is Cherry c && c.IsCollected);
         }
 
         public void Draw(SpriteBatch spriteBatch)

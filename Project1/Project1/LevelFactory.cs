@@ -9,27 +9,34 @@ namespace Project1
      * need to know how to "new up" a Spike or a Block; it just asks the factory.
      * 
      * SOLID - Open/Closed Principle (OCP):
-     * The system is "Open" for extension (you can add Bird or Coin types here) 
+     * The system is "Open" for extension
      * but "Closed" for modification (you don't have to change the Level loading logic).
      */
     public class LevelObjectFactory
     {
-        private readonly Texture2D _blockTexture;
-        private readonly Texture2D _spikeTexture;
+        private readonly Texture2D _blockTexture, _spikeTexture, _cherryTexture, _doorTexture, _snailTexture, _batTexture;
 
-        public LevelObjectFactory(Texture2D blockTexture, Texture2D spikeTexture)
+        public LevelObjectFactory(Texture2D block, Texture2D spike, Texture2D cherry, Texture2D door, Texture2D snail, Texture2D bat)
         {
-            _blockTexture = blockTexture;
-            _spikeTexture = spikeTexture;
+            _blockTexture = block;
+            _spikeTexture = spike;
+            _cherryTexture = cherry;
+            _doorTexture = door;
+            _snailTexture = snail;
+            _batTexture = bat;
         }
 
-        // Return IGameObject instead of just ICollidable
         public IGameObject CreateObject(char type, Vector2 position, int tileSize)
         {
             return type switch
             {
                 '#' => new Block(_blockTexture, new Rectangle((int)position.X, (int)position.Y, tileSize, tileSize)),
                 '^' => new Spike(_spikeTexture, new Vector2(position.X, position.Y + 3)),
+                'C' => new Cherry(_cherryTexture, position),
+                'D' => new Door(_doorTexture, position), 
+                'S' => new Snail(_snailTexture, position), 
+                'B' => new Bat(_batTexture, position), 
+
                 _ => null
             };
         }

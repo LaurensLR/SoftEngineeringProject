@@ -117,11 +117,14 @@ namespace Project1
         {
             if (_currentState is DeadState || _hurtTimer > 0) return;
 
-            if (other.CollisionType == CollisionType.Spike)
+            if (other.CollisionType == CollisionType.Spike || other.CollisionType == CollisionType.Enemy)
             {
-                // DESIGN PATTERN - Strategy/Observer:
-                // We pass the spike's reference to TakeDamage so we can calculate bounce direction.
                 TakeDamage(other);
+            }
+            else if (other.CollisionType == CollisionType.Cherry)
+            {
+                // Logic for collection can be found in the Cherry.OnCollision,
+                // but any specific Hero reaction (sound, effect) goes here.
             }
         }
 
@@ -144,6 +147,13 @@ namespace Project1
             AnimationManager.Reset();
 
             SetState(new NormalState());
+        }
+
+        // Helper for level transitions
+        public void ResetPosition(Vector2 newPos)
+        {
+            Position = newPos;
+            JumpManager.VelocityY = 0;
         }
 
         private void TakeDamage(IGameObject spike)

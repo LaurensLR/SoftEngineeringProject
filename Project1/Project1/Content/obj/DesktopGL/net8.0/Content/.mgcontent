@@ -4,10 +4,14 @@
   <Platform>DesktopGL</Platform>
   <Config />
   <SourceFiles>
+    <File>C:/Users/laure_3y8jzli/School/J2/S1/SoftwareEngineering/SoftEngineeringProject/Project1/Project1/Content/bat.png</File>
+    <File>C:/Users/laure_3y8jzli/School/J2/S1/SoftwareEngineering/SoftEngineeringProject/Project1/Project1/Content/cherry.png</File>
     <File>C:/Users/laure_3y8jzli/School/J2/S1/SoftwareEngineering/SoftEngineeringProject/Project1/Project1/Content/death.png</File>
+    <File>C:/Users/laure_3y8jzli/School/J2/S1/SoftwareEngineering/SoftEngineeringProject/Project1/Project1/Content/door.png</File>
     <File>C:/Users/laure_3y8jzli/School/J2/S1/SoftwareEngineering/SoftEngineeringProject/Project1/Project1/Content/font.spritefont</File>
     <File>C:/Users/laure_3y8jzli/School/J2/S1/SoftwareEngineering/SoftEngineeringProject/Project1/Project1/Content/hurt.png</File>
     <File>C:/Users/laure_3y8jzli/School/J2/S1/SoftwareEngineering/SoftEngineeringProject/Project1/Project1/Content/idle.png</File>
+    <File>C:/Users/laure_3y8jzli/School/J2/S1/SoftwareEngineering/SoftEngineeringProject/Project1/Project1/Content/Jitsu - Snail small.png</File>
     <File>C:/Users/laure_3y8jzli/School/J2/S1/SoftwareEngineering/SoftEngineeringProject/Project1/Project1/Content/spike.png</File>
     <File>C:/Users/laure_3y8jzli/School/J2/S1/SoftwareEngineering/SoftEngineeringProject/Project1/Project1/Content/walk.png</File>
   </SourceFiles>
@@ -16,6 +20,10 @@
     <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File>snail.png</File>
     <File xsi:nil="true" />
     <File xsi:nil="true" />
   </DestFiles>

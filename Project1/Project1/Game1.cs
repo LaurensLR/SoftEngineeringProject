@@ -51,13 +51,17 @@ namespace Project1
             var hurt = Content.Load<Texture2D>("hurt");
             var death = Content.Load<Texture2D>("death");
             var spike = Content.Load<Texture2D>("spike");
+            var cherry = Content.Load<Texture2D>("cherry");
+            var door = Content.Load<Texture2D>("door");
+            var snail = Content.Load<Texture2D>("snail");
+            var bat = Content.Load<Texture2D>("bat");
             Font = Content.Load<SpriteFont>("font");
 
             var block = new Texture2D(GraphicsDevice, 1, 1);
             block.SetData(new[] { Color.Red });
 
             // Initialize Game Systems
-            var factory = new LevelObjectFactory(block, spike);
+            var factory = new LevelObjectFactory(block, spike, cherry, door, snail, bat);
             LevelManager = new LevelManager(factory);
             Hero = new Hero(walk, idle, hurt, death, new KeyBoardReader(), LevelManager)
             {
@@ -80,9 +84,9 @@ namespace Project1
 
         public void RestartGame()
         {
-            // DESIGN PATTERN - Reset Logic
-            Hero.Reset(new Vector2(100, 100)); // Reset Hero
-            // If you had coins or scores, you'd reset them here too.
+            // DESIGN PATTERN - Reset sequence
+            LevelManager.ResetLevel(); // Re-loads map and re-creates all objects via factory
+            Hero.Reset(new Vector2(100, 100));
             SetGameState(new PlayingState(this));
         }
 

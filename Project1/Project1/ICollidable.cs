@@ -3,9 +3,7 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace Project1
 {
-    public enum CollisionType { Hero, Block, Spike }
-
-
+    public enum CollisionType { Hero, Block, Spike, Cherry, Door, Enemy }
 
     public interface ICollidable
     {
@@ -13,6 +11,4 @@ namespace Project1
         CollisionType CollisionType { get; }
         void OnCollision(IGameObject other);
     }
-
-    
 }
