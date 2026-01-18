@@ -3,6 +3,14 @@
   "WorkspaceRootPath": "C:\\Users\\laure_3y8jzli\\School\\J2\\S1\\SoftwareEngineering\\SoftEngineeringProject\\Project1\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{61340343-5B1B-4F30-A711-DD84BA788FF8}|Project1\\Project1.csproj|c:\\users\\laure_3y8jzli\\school\\j2\\s1\\softwareengineering\\softengineeringproject\\project1\\project1\\globalgamestates.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{61340343-5B1B-4F30-A711-DD84BA788FF8}|Project1\\Project1.csproj|solutionrelative:project1\\globalgamestates.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{61340343-5B1B-4F30-A711-DD84BA788FF8}|Project1\\Project1.csproj|c:\\users\\laure_3y8jzli\\school\\j2\\s1\\softwareengineering\\softengineeringproject\\project1\\project1\\uimanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{61340343-5B1B-4F30-A711-DD84BA788FF8}|Project1\\Project1.csproj|solutionrelative:project1\\uimanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{61340343-5B1B-4F30-A711-DD84BA788FF8}|Project1\\Project1.csproj|c:\\users\\laure_3y8jzli\\school\\j2\\s1\\softwareengineering\\softengineeringproject\\project1\\project1\\snail.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{61340343-5B1B-4F30-A711-DD84BA788FF8}|Project1\\Project1.csproj|solutionrelative:project1\\snail.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -43,10 +51,6 @@
       "RelativeMoniker": "D:0:0:{61340343-5B1B-4F30-A711-DD84BA788FF8}|Project1\\Project1.csproj|solutionrelative:project1\\door.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{61340343-5B1B-4F30-A711-DD84BA788FF8}|Project1\\Project1.csproj|c:\\users\\laure_3y8jzli\\school\\j2\\s1\\softwareengineering\\softengineeringproject\\project1\\project1\\uimanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{61340343-5B1B-4F30-A711-DD84BA788FF8}|Project1\\Project1.csproj|solutionrelative:project1\\uimanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{61340343-5B1B-4F30-A711-DD84BA788FF8}|Project1\\Project1.csproj|c:\\users\\laure_3y8jzli\\school\\j2\\s1\\softwareengineering\\softengineeringproject\\project1\\project1\\cherry.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{61340343-5B1B-4F30-A711-DD84BA788FF8}|Project1\\Project1.csproj|solutionrelative:project1\\cherry.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -82,7 +86,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Bookmark",
@@ -90,7 +94,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
+              "Title": "GlobalGameStates.cs",
+              "DocumentMoniker": "C:\\Users\\laure_3y8jzli\\School\\J2\\S1\\SoftwareEngineering\\SoftEngineeringProject\\Project1\\Project1\\GlobalGameStates.cs",
+              "RelativeDocumentMoniker": "Project1\\GlobalGameStates.cs",
+              "ToolTip": "C:\\Users\\laure_3y8jzli\\School\\J2\\S1\\SoftwareEngineering\\SoftEngineeringProject\\Project1\\Project1\\GlobalGameStates.cs*",
+              "RelativeToolTip": "Project1\\GlobalGameStates.cs*",
+              "ViewState": "AgIAADYAAAAAAAAAAAAtwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-18T15:42:14.702Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "Bat.cs",
               "DocumentMoniker": "C:\\Users\\laure_3y8jzli\\School\\J2\\S1\\SoftwareEngineering\\SoftEngineeringProject\\Project1\\Project1\\Bat.cs",
               "RelativeDocumentMoniker": "Project1\\Bat.cs",
@@ -103,20 +120,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "Snail.cs",
               "DocumentMoniker": "C:\\Users\\laure_3y8jzli\\School\\J2\\S1\\SoftwareEngineering\\SoftEngineeringProject\\Project1\\Project1\\Snail.cs",
               "RelativeDocumentMoniker": "Project1\\Snail.cs",
-              "ToolTip": "C:\\Users\\laure_3y8jzli\\School\\J2\\S1\\SoftwareEngineering\\SoftEngineeringProject\\Project1\\Project1\\Snail.cs*",
-              "RelativeToolTip": "Project1\\Snail.cs*",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAiAAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\laure_3y8jzli\\School\\J2\\S1\\SoftwareEngineering\\SoftEngineeringProject\\Project1\\Project1\\Snail.cs",
+              "RelativeToolTip": "Project1\\Snail.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAhAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-01-18T14:30:29.603Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 7,
               "Title": "Enemy.cs",
               "DocumentMoniker": "C:\\Users\\laure_3y8jzli\\School\\J2\\S1\\SoftwareEngineering\\SoftEngineeringProject\\Project1\\Project1\\Enemy.cs",
               "RelativeDocumentMoniker": "Project1\\Enemy.cs",
@@ -129,7 +146,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 6,
               "Title": "LevelFactory.cs",
               "DocumentMoniker": "C:\\Users\\laure_3y8jzli\\School\\J2\\S1\\SoftwareEngineering\\SoftEngineeringProject\\Project1\\Project1\\LevelFactory.cs",
               "RelativeDocumentMoniker": "Project1\\LevelFactory.cs",
@@ -142,7 +159,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 11,
               "Title": "Door.cs",
               "DocumentMoniker": "C:\\Users\\laure_3y8jzli\\School\\J2\\S1\\SoftwareEngineering\\SoftEngineeringProject\\Project1\\Project1\\Door.cs",
               "RelativeDocumentMoniker": "Project1\\Door.cs",
@@ -155,7 +172,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 5,
               "Title": "Game1.cs",
               "DocumentMoniker": "C:\\Users\\laure_3y8jzli\\School\\J2\\S1\\SoftwareEngineering\\SoftEngineeringProject\\Project1\\Project1\\Game1.cs",
               "RelativeDocumentMoniker": "Project1\\Game1.cs",
@@ -168,19 +185,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 1,
               "Title": "UIManager.cs",
               "DocumentMoniker": "C:\\Users\\laure_3y8jzli\\School\\J2\\S1\\SoftwareEngineering\\SoftEngineeringProject\\Project1\\Project1\\UIManager.cs",
               "RelativeDocumentMoniker": "Project1\\UIManager.cs",
-              "ToolTip": "C:\\Users\\laure_3y8jzli\\School\\J2\\S1\\SoftwareEngineering\\SoftEngineeringProject\\Project1\\Project1\\UIManager.cs",
-              "RelativeToolTip": "Project1\\UIManager.cs",
-              "ViewState": "AgIAABMAAAAAAAAAAAA1wCAAAAAJAAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\laure_3y8jzli\\School\\J2\\S1\\SoftwareEngineering\\SoftEngineeringProject\\Project1\\Project1\\UIManager.cs*",
+              "RelativeToolTip": "Project1\\UIManager.cs*",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADYAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-18T13:25:13.202Z"
+              "WhenOpened": "2026-01-18T13:25:13.202Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 9,
               "Title": "Level.cs",
               "DocumentMoniker": "C:\\Users\\laure_3y8jzli\\School\\J2\\S1\\SoftwareEngineering\\SoftEngineeringProject\\Project1\\Project1\\Level.cs",
               "RelativeDocumentMoniker": "Project1\\Level.cs",
@@ -193,7 +211,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "LevelManager.cs",
               "DocumentMoniker": "C:\\Users\\laure_3y8jzli\\School\\J2\\S1\\SoftwareEngineering\\SoftEngineeringProject\\Project1\\Project1\\LevelManager.cs",
               "RelativeDocumentMoniker": "Project1\\LevelManager.cs",
@@ -206,7 +224,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 8,
               "Title": "Hero.cs",
               "DocumentMoniker": "C:\\Users\\laure_3y8jzli\\School\\J2\\S1\\SoftwareEngineering\\SoftEngineeringProject\\Project1\\Project1\\Hero.cs",
               "RelativeDocumentMoniker": "Project1\\Hero.cs",
@@ -219,7 +237,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 12,
               "Title": "Cherry.cs",
               "DocumentMoniker": "C:\\Users\\laure_3y8jzli\\School\\J2\\S1\\SoftwareEngineering\\SoftEngineeringProject\\Project1\\Project1\\Cherry.cs",
               "RelativeDocumentMoniker": "Project1\\Cherry.cs",
@@ -231,7 +249,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 10,
               "Title": "ICollidable.cs",
               "DocumentMoniker": "C:\\Users\\laure_3y8jzli\\School\\J2\\S1\\SoftwareEngineering\\SoftEngineeringProject\\Project1\\Project1\\ICollidable.cs",
               "RelativeDocumentMoniker": "Project1\\ICollidable.cs",
@@ -244,7 +262,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 13,
               "Title": "CollisionManager.cs",
               "DocumentMoniker": "C:\\Users\\laure_3y8jzli\\School\\J2\\S1\\SoftwareEngineering\\SoftEngineeringProject\\Project1\\Project1\\CollisionManager.cs",
               "RelativeDocumentMoniker": "Project1\\CollisionManager.cs",
@@ -256,7 +274,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 17,
               "Title": "AnimationFrame.cs",
               "DocumentMoniker": "C:\\Users\\laure_3y8jzli\\School\\J2\\S1\\SoftwareEngineering\\SoftEngineeringProject\\Project1\\Project1\\AnimationFrame.cs",
               "RelativeDocumentMoniker": "Project1\\AnimationFrame.cs",
@@ -268,7 +286,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 16,
               "Title": "HeroStates.cs",
               "DocumentMoniker": "C:\\Users\\laure_3y8jzli\\School\\J2\\S1\\SoftwareEngineering\\SoftEngineeringProject\\Project1\\Project1\\HeroStates.cs",
               "RelativeDocumentMoniker": "Project1\\HeroStates.cs",
@@ -280,7 +298,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 15,
               "Title": "Animation.cs",
               "DocumentMoniker": "C:\\Users\\laure_3y8jzli\\School\\J2\\S1\\SoftwareEngineering\\SoftEngineeringProject\\Project1\\Project1\\Animation.cs",
               "RelativeDocumentMoniker": "Project1\\Animation.cs",
@@ -292,7 +310,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 14,
               "Title": "AnimationManager.cs",
               "DocumentMoniker": "C:\\Users\\laure_3y8jzli\\School\\J2\\S1\\SoftwareEngineering\\SoftEngineeringProject\\Project1\\Project1\\AnimationManager.cs",
               "RelativeDocumentMoniker": "Project1\\AnimationManager.cs",
@@ -304,7 +322,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 18,
               "Title": "Button.cs",
               "DocumentMoniker": "C:\\Users\\laure_3y8jzli\\School\\J2\\S1\\SoftwareEngineering\\SoftEngineeringProject\\Project1\\Project1\\Button.cs",
               "RelativeDocumentMoniker": "Project1\\Button.cs",

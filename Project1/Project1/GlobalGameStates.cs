@@ -35,7 +35,7 @@ namespace Project1
     }
 
     /* 
-     * SOLID - Single Responsibility: PlayingState delegates to the game world.
+     * SOLID - Single Responsibility: PlayingState delegates to the game world logic levels.
      */
     public class PlayingState : IGameState
     {
@@ -43,42 +43,39 @@ namespace Project1
 
         public void Update(Game1 game, GameTime gameTime)
         {
-            // Delegate logic to Managers
+            // Update systems
             game.LevelManager.Update(gameTime);
             game.Hero.Update(gameTime);
+            game.UiManager.Update(gameTime); // NEW: Update the UI timer
 
-            // DESIGN PATTERN - State Transition with Delay:
-            // When lives hit 0, the Hero enters 'DeadState', which starts the death animation.
-            // We wait until that specific animation is finished before switching screens.
+            // DEATH LOGIC
             if (game.Hero.Lives <= 0)
             {
-                /* 
-                 * SOLID - Dependency Inversion:
-                 * We query the Hero's component (AnimationManager) to check progress.
-                 * This ensures the player actually sees the character die before 
-                 * the Game Over menu appears.
-                 */
                 if (game.Hero.AnimationManager.CurrentAnimation.IsFinished)
                 {
                     game.SetGameState(new GameOverState(game.Font, game));
                 }
                 return;
             }
-            // LEVEL PROGRESSION LOGIC (Only if Alive)
-            /* 
-             * REFACTORING - State Transition Guard:
-             * We only progress if all cherries are collected AND 
-             * the Hero has reached the Door object.
-             */
-            if (game.LevelManager.AllCherriesCollected())
-            {
-                // Find the door in the current level
-                var door = game.LevelManager.CurrentLevelObjects.OfType<Door>().FirstOrDefault();
 
-                if (door != null && door.IsPlayerInside)
+            // LEVEL PROGRESSION LOGIC
+            var door = game.LevelManager.CurrentLevelObjects.OfType<Door>().FirstOrDefault();
+            
+            if (door != null && door.IsPlayerInside)
+            {
+                if (game.LevelManager.AllCherriesCollected())
                 {
                     game.LevelManager.NextLevel();
-                    game.Hero.ResetPosition(new Vector2(100, 100)); // Smooth teleport to start of NEXT level
+                    game.Hero.ResetPosition(new Vector2(100, 100));
+                }
+                else
+                {
+                    /* 
+                     * DESIGN PATTERN - Strategy/Observer Interaction:
+                     * If the player tries to exit but requirements aren't met, 
+                     * we notify the UI manager to show the warning.
+                     */
+                    game.UiManager.DisplayMessage("COLLECT ALL CHERRIES TO EXIT!", 1.5f);
                 }
             }
         }
