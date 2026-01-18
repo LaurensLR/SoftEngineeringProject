@@ -1,16 +1,11 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Project1
 {
     internal class HurtAnimation : Animation
     {
-        public HurtAnimation(Texture2D texture) : base(loop:false)
+        public HurtAnimation(Texture2D texture) : base(fps: 10, loop: false)
         {
             Texture = texture;
 

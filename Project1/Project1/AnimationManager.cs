@@ -10,7 +10,7 @@ namespace Project1
         Dead
     }
 
-    internal class AnimationManager
+    public class AnimationManager
     {
         private Animation _idleAnimation;
         private Animation _walkAnimation;
@@ -22,6 +22,7 @@ namespace Project1
         private bool _facingLeft;
         public Animation CurrentAnimation => _currentAnimation;
         public bool FacingLeft => _facingLeft;
+
         public AnimationManager(Animation idleAnimation, Animation walkAnimation, Animation hurtAnimation, Animation deathAnimation)
         {
             _idleAnimation = idleAnimation;
@@ -31,6 +32,20 @@ namespace Project1
             _currentAnimation = _idleAnimation;
             _facingLeft = false;
         }
+
+        /* 
+         * SOLID - Single Responsibility: 
+         * This method provides a clean way to force the manager back to a starting state
+         * without recreating the whole object.
+         */
+        public void Reset()
+        {
+            _state = AnimationState.Idle;
+            _currentAnimation = _idleAnimation;
+            _currentAnimation.Reset();
+            _facingLeft = false;
+        }
+
         public void Update(Vector2 direction, GameTime gameTime)
         {
             if (_state == AnimationState.Dead)

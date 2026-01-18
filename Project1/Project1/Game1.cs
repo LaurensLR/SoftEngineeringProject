@@ -9,17 +9,17 @@ namespace Project1
     {
         private GraphicsDeviceManager _graphics;
         private SpriteBatch _spriteBatch;
-        private Hero _hero;
-        private LevelManager _levelManager;
-        private UIManager _uiManager;
+        
+        // Expose components for states to access (DIP)
+        public Hero Hero { get; private set; }
+        public LevelManager LevelManager { get; private set; }
+        public UIManager UiManager { get; private set; }
+        public SpriteFont Font { get; private set; }
 
-        /* 
-         * FLEXIBLE RESOLUTION: We define a "Virtual" resolution (our design size).
-         * Every logic calculation (collisions, movement) stays based on this 800x480 space.
-         */
+        private IGameState _currentState;
+        private Matrix _scaleMatrix;
         private const int VirtualWidth = 800;
         private const int VirtualHeight = 480;
-        private Matrix _scaleMatrix;
 
         public Game1()
         {
@@ -27,97 +27,84 @@ namespace Project1
             Content.RootDirectory = "Content";
             IsMouseVisible = true;
 
-            /* 
-             * CONFIGURATION: Setting the game to Fullscreen.
-             * We use the adapter's current resolution to match the user's monitor.
-             */
             _graphics.PreferredBackBufferWidth = GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Width;
             _graphics.PreferredBackBufferHeight = GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Height;
             _graphics.IsFullScreen = true;
-            _graphics.HardwareModeSwitch = false; // Better for modern Windows (borderless)
+            _graphics.HardwareModeSwitch = false; 
             _graphics.ApplyChanges();
         }
 
         protected override void Initialize()
         {
-            CalculateMatrix();
-            base.Initialize();
-        }
-
-        /* 
-         * DESIGN PATTERN - Strategy/Transformation:
-         * This method calculates how to stretch our 800x480 virtual world to fit any screen.
-         */
-        private void CalculateMatrix()
-        {
-            float scaleX = (float)GraphicsDevice.Viewport.Width / VirtualWidth;
-            float scaleY = (float)GraphicsDevice.Viewport.Height / VirtualHeight;
-            
-            // We use the smaller scale to maintain aspect ratio (Letterboxing)
-            float scale = MathHelper.Min(scaleX, scaleY);
-
+            float scale = MathHelper.Min((float)GraphicsDevice.Viewport.Width / VirtualWidth, (float)GraphicsDevice.Viewport.Height / VirtualHeight);
             _scaleMatrix = Matrix.CreateScale(scale, scale, 1f);
+            base.Initialize();
         }
 
         protected override void LoadContent()
         {
             _spriteBatch = new SpriteBatch(GraphicsDevice);
 
+            // Load assets
             var walk = Content.Load<Texture2D>("walk");
             var idle = Content.Load<Texture2D>("idle");
             var hurt = Content.Load<Texture2D>("hurt");
             var death = Content.Load<Texture2D>("death");
             var spike = Content.Load<Texture2D>("spike");
-            var font = Content.Load<SpriteFont>("font");
+            Font = Content.Load<SpriteFont>("font");
 
             var block = new Texture2D(GraphicsDevice, 1, 1);
             block.SetData(new[] { Color.Red });
 
-            /* 
-             * DESIGN PATTERN - Factory Pattern:
-             * Creating the level via a factory to keep object creation logic separate (SRP).
-             */
+            // Initialize Game Systems
             var factory = new LevelObjectFactory(block, spike);
-            _levelManager = new LevelManager(factory);
-
-            /* 
-             * SOLID - Dependency Inversion:
-             * Passing the Manager into the Hero so it can interact with the world context.
-             */
-            _hero = new Hero(walk, idle, hurt, death, new KeyBoardReader(), _levelManager)
+            LevelManager = new LevelManager(factory);
+            Hero = new Hero(walk, idle, hurt, death, new KeyBoardReader(), LevelManager)
             {
                 Position = new Vector2(100, 100)
             };
+            UiManager = new UIManager(Font, Hero);
 
-            // Initialize the Observer
-            _uiManager = new UIManager(font, _hero);
+            // DESIGN PATTERN - Initial State: Load the Start State
+            SetGameState(new StartState(Font));
+        }
+
+        /* 
+         * DESIGN PATTERN - State Switcher:
+         * This handles the transition between screens.
+         */
+        public void SetGameState(IGameState newState)
+        {
+            _currentState = newState;
+        }
+
+        public void RestartGame()
+        {
+            // DESIGN PATTERN - Reset Logic
+            Hero.Reset(new Vector2(100, 100)); // Reset Hero
+            // If you had coins or scores, you'd reset them here too.
+            SetGameState(new PlayingState(this));
         }
 
         protected override void Update(GameTime gameTime)
         {
             if (Keyboard.GetState().IsKeyDown(Keys.Escape)) Exit();
 
-            _levelManager.Update(gameTime);
-            _hero.Update(gameTime);
+            // SOLID - Open/Closed Principle:
+            // Game1 doesn't care WHAT the screen is doing, it just asks it to Update.
+            _currentState.Update(this, gameTime);
 
             base.Update(gameTime);
         }
 
         protected override void Draw(GameTime gameTime)
         {
-            GraphicsDevice.Clear(Color.Black); // Black background for letterbox edges
+            GraphicsDevice.Clear(Color.Black);
 
-            /* 
-             * SOLID - Open/Closed Principle:
-             * We provide the _scaleMatrix to the SpriteBatch. 
-             * Now, every object (Hero, Blocks) is drawn normally at their 800x480 
-             * coordinates, but the GPU automatically scales them to the full screen.
-             */
             _spriteBatch.Begin(transformMatrix: _scaleMatrix);
 
-            _levelManager.Draw(_spriteBatch);
-            _hero.Draw(_spriteBatch);
-            _uiManager.Draw(_spriteBatch);
+            // SOLID - Dependency Injection: Passing 'this' to satisfy the IGameState.Draw contract.
+            _currentState.Draw(this, _spriteBatch);
 
             _spriteBatch.End();
             base.Draw(gameTime);

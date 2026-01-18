@@ -32,13 +32,13 @@ namespace Project1
         public event EventHandler Died;
 
         // Managers are internal/protected so States can access them
-        internal AnimationManager AnimationManager { get; private set; }
-        internal MovementManager MovementManager { get; private set; }
-        internal JumpManager JumpManager { get; private set; }
-        internal LevelManager LevelManager { get; private set; }
+        public AnimationManager AnimationManager { get; private set; }
+        public MovementManager MovementManager { get; private set; }
+        public JumpManager JumpManager { get; private set; }
+        public LevelManager LevelManager { get; private set; }
 
         private IHeroState _currentState;
-        private int _lives = 1000000;
+        private int _lives = 3;
 
         // Encapsulated property that notifies observers via the Observer Pattern
         public int Lives
@@ -123,6 +123,27 @@ namespace Project1
                 // We pass the spike's reference to TakeDamage so we can calculate bounce direction.
                 TakeDamage(other);
             }
+        }
+
+        /* 
+         * SOLID - Single Responsibility: Provides a way to reset character state 
+         * for the restart functionality.
+         */
+        public void Reset(Vector2 spawnPosition)
+        {
+            Position = spawnPosition;
+            Lives = 3;
+            _hurtTimer = 0;
+            Speed = new Vector2(150f, 0);
+
+            /* 
+             * DESIGN PATTERN - Cleanup: 
+             * Explicitly resetting the animation manager ensures visual state 
+             * matches the logic state after a restart.
+             */
+            AnimationManager.Reset();
+
+            SetState(new NormalState());
         }
 
         private void TakeDamage(IGameObject spike)
