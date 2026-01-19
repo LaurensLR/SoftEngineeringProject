@@ -1,15 +1,19 @@
-﻿using Microsoft.Xna.Framework;
+﻿using CherryCollector.Entities.World;
+using CherryCollector.Levels;
+using CherryCollector.States.GameStates;
+using CherryCollector.Systems;
+using CherryCollector.Systems.Input;
+using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
-using Project1.Input;
 
-namespace Project1
+namespace CherryCollector
 {
     public class Game1 : Game
     {
         private GraphicsDeviceManager _graphics;
         private SpriteBatch _spriteBatch;
-        
+
         // Expose components for states to access (DIP)
         public Hero Hero { get; private set; }
         public LevelManager LevelManager { get; private set; }
@@ -17,9 +21,10 @@ namespace Project1
         public SpriteFont Font { get; private set; }
 
         private IGameState _currentState;
-        private Matrix _scaleMatrix;
+        public Matrix ScaleMatrix { get; private set; }
         private const int VirtualWidth = 800;
         private const int VirtualHeight = 480;
+        private CollisionManager _collisionManager;
 
         public Game1()
         {
@@ -27,17 +32,28 @@ namespace Project1
             Content.RootDirectory = "Content";
             IsMouseVisible = true;
 
+            Window.Title = "Cherry dungeons";
+
             _graphics.PreferredBackBufferWidth = GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Width;
             _graphics.PreferredBackBufferHeight = GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Height;
             _graphics.IsFullScreen = true;
-            _graphics.HardwareModeSwitch = false; 
+            _graphics.HardwareModeSwitch = false;
             _graphics.ApplyChanges();
         }
 
         protected override void Initialize()
         {
-            float scale = MathHelper.Min((float)GraphicsDevice.Viewport.Width / VirtualWidth, (float)GraphicsDevice.Viewport.Height / VirtualHeight);
-            _scaleMatrix = Matrix.CreateScale(scale, scale, 1f);
+            float scaleX = (float)GraphicsDevice.Viewport.Width / VirtualWidth;
+            float scaleY = (float)GraphicsDevice.Viewport.Height / VirtualHeight;
+            float finalScale = MathHelper.Min(scaleX, scaleY);
+
+            // Calculate offset to center the view
+            float posX = (GraphicsDevice.Viewport.Width - VirtualWidth * finalScale) / 2;
+            float posY = (GraphicsDevice.Viewport.Height - VirtualHeight * finalScale) / 2;
+
+            ScaleMatrix = Matrix.CreateScale(finalScale, finalScale, 1f) *
+                          Matrix.CreateTranslation(posX, posY, 0f);
+
             base.Initialize();
         }
 
@@ -53,17 +69,17 @@ namespace Project1
             var spike = Content.Load<Texture2D>("spike");
             var cherry = Content.Load<Texture2D>("cherry");
             var door = Content.Load<Texture2D>("door");
+            var tile = Content.Load<Texture2D>("tile");
             var snail = Content.Load<Texture2D>("snail");
             var bat = Content.Load<Texture2D>("bat");
             Font = Content.Load<SpriteFont>("font");
 
-            var block = new Texture2D(GraphicsDevice, 1, 1);
-            block.SetData(new[] { Color.Red });
-
             // Initialize Game Systems
-            var factory = new LevelObjectFactory(block, spike, cherry, door, snail, bat);
+            var factory = new LevelObjectFactory(tile, spike, cherry, door, snail, bat);
             LevelManager = new LevelManager(factory);
-            Hero = new Hero(walk, idle, hurt, death, new KeyBoardReader(), LevelManager)
+            _collisionManager = new CollisionManager();
+            IInputReader input = new KeyBoardReader();
+            Hero = new Hero(walk, idle, hurt, death, input, LevelManager, _collisionManager)
             {
                 Position = new Vector2(100, 100)
             };
@@ -82,12 +98,26 @@ namespace Project1
             _currentState = newState;
         }
 
-        public void RestartGame()
+        /* 
+         * DESIGN PATTERN - Strategy:
+         * Differentiates between restarting the current challenge (Level) 
+         * vs resetting the entire application state (Game).
+         */
+
+        // Call this when pressing "Start" from the main menu or winning the whole game
+        public void ResetGame()
         {
-            // DESIGN PATTERN - Reset sequence
-            LevelManager.ResetLevel(); // Re-loads map and re-creates all objects via factory
+            LevelManager.ResetLevel(true); // Loops back to Level 0
             Hero.Reset(new Vector2(100, 100));
-            SetGameState(new PlayingState(this));
+            SetGameState(new PlayingState());
+        }
+
+        // Call this from the Game Over screen
+        public void RestartLevel()
+        {
+            LevelManager.ResetLevel(false); // Keeps current level index
+            Hero.Reset(new Vector2(100, 100)); // Resets hero state
+            SetGameState(new PlayingState());
         }
 
         protected override void Update(GameTime gameTime)
@@ -105,7 +135,7 @@ namespace Project1
         {
             GraphicsDevice.Clear(Color.Black);
 
-            _spriteBatch.Begin(transformMatrix: _scaleMatrix);
+            _spriteBatch.Begin(transformMatrix: ScaleMatrix);
 
             // SOLID - Dependency Injection: Passing 'this' to satisfy the IGameState.Draw contract.
             _currentState.Draw(this, _spriteBatch);

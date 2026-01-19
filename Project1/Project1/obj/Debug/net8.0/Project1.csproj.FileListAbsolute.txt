@@ -34,7 +34,20 @@ C:\Users\32486\School\J2\S1\Software Engineering\Project\Project1\Project1\obj\D
 C:\Users\32486\School\J2\S1\Software Engineering\Project\Project1\Project1\bin\Debug\net8.0\Content\idle.xnb
 C:\Users\32486\School\J2\S1\Software Engineering\Project\Project1\Project1\obj\Debug\net8.0\Project1.sourcelink.json
 C:\Users\32486\School\J2\S1\Software Engineering\Project\Project1\Project1\bin\Debug\net8.0\Content\walk.xnb
+C:\Users\32486\School\J2\S1\Software Engineering\Project\Project1\Project1\bin\Debug\net8.0\Content\hurt.xnb
+C:\Users\32486\School\J2\S1\Software Engineering\Project\Project1\Project1\bin\Debug\net8.0\Content\death.xnb
+C:\Users\32486\School\J2\S1\Software Engineering\Project\Project1\Project1\bin\Debug\net8.0\Content\spike.xnb
+C:\Users\laure_3y8jzli\School\J2\S1\SoftwareEngineering\SoftEngineeringProject\Project1\Project1\bin\Debug\net8.0\Content\bat.xnb
+C:\Users\laure_3y8jzli\School\J2\S1\SoftwareEngineering\SoftEngineeringProject\Project1\Project1\bin\Debug\net8.0\Content\cherry.xnb
+C:\Users\laure_3y8jzli\School\J2\S1\SoftwareEngineering\SoftEngineeringProject\Project1\Project1\bin\Debug\net8.0\Content\death.xnb
+C:\Users\laure_3y8jzli\School\J2\S1\SoftwareEngineering\SoftEngineeringProject\Project1\Project1\bin\Debug\net8.0\Content\door.xnb
+C:\Users\laure_3y8jzli\School\J2\S1\SoftwareEngineering\SoftEngineeringProject\Project1\Project1\bin\Debug\net8.0\Content\font.xnb
+C:\Users\laure_3y8jzli\School\J2\S1\SoftwareEngineering\SoftEngineeringProject\Project1\Project1\bin\Debug\net8.0\Content\hurt.xnb
 C:\Users\laure_3y8jzli\School\J2\S1\SoftwareEngineering\SoftEngineeringProject\Project1\Project1\bin\Debug\net8.0\Content\idle.xnb
+C:\Users\laure_3y8jzli\School\J2\S1\SoftwareEngineering\SoftEngineeringProject\Project1\Project1\bin\Debug\net8.0\Content\Jitsu - Snail small.xnb
+C:\Users\laure_3y8jzli\School\J2\S1\SoftwareEngineering\SoftEngineeringProject\Project1\Project1\bin\Debug\net8.0\Content\snail.xnb
+C:\Users\laure_3y8jzli\School\J2\S1\SoftwareEngineering\SoftEngineeringProject\Project1\Project1\bin\Debug\net8.0\Content\spike.xnb
+C:\Users\laure_3y8jzli\School\J2\S1\SoftwareEngineering\SoftEngineeringProject\Project1\Project1\bin\Debug\net8.0\Content\tile.xnb
 C:\Users\laure_3y8jzli\School\J2\S1\SoftwareEngineering\SoftEngineeringProject\Project1\Project1\bin\Debug\net8.0\Content\walk.xnb
 C:\Users\laure_3y8jzli\School\J2\S1\SoftwareEngineering\SoftEngineeringProject\Project1\Project1\bin\Debug\net8.0\Project1.exe
 C:\Users\laure_3y8jzli\School\J2\S1\SoftwareEngineering\SoftEngineeringProject\Project1\Project1\bin\Debug\net8.0\Project1.deps.json
@@ -70,15 +83,3 @@ C:\Users\laure_3y8jzli\School\J2\S1\SoftwareEngineering\SoftEngineeringProject\P
 C:\Users\laure_3y8jzli\School\J2\S1\SoftwareEngineering\SoftEngineeringProject\Project1\Project1\obj\Debug\net8.0\Project1.pdb
 C:\Users\laure_3y8jzli\School\J2\S1\SoftwareEngineering\SoftEngineeringProject\Project1\Project1\obj\Debug\net8.0\Project1.genruntimeconfig.cache
 C:\Users\laure_3y8jzli\School\J2\S1\SoftwareEngineering\SoftEngineeringProject\Project1\Project1\obj\Debug\net8.0\ref\Project1.dll
-C:\Users\32486\School\J2\S1\Software Engineering\Project\Project1\Project1\bin\Debug\net8.0\Content\hurt.xnb
-C:\Users\32486\School\J2\S1\Software Engineering\Project\Project1\Project1\bin\Debug\net8.0\Content\death.xnb
-C:\Users\32486\School\J2\S1\Software Engineering\Project\Project1\Project1\bin\Debug\net8.0\Content\spike.xnb
-C:\Users\laure_3y8jzli\School\J2\S1\SoftwareEngineering\SoftEngineeringProject\Project1\Project1\bin\Debug\net8.0\Content\death.xnb
-C:\Users\laure_3y8jzli\School\J2\S1\SoftwareEngineering\SoftEngineeringProject\Project1\Project1\bin\Debug\net8.0\Content\hurt.xnb
-C:\Users\laure_3y8jzli\School\J2\S1\SoftwareEngineering\SoftEngineeringProject\Project1\Project1\bin\Debug\net8.0\Content\spike.xnb
-C:\Users\laure_3y8jzli\School\J2\S1\SoftwareEngineering\SoftEngineeringProject\Project1\Project1\bin\Debug\net8.0\Content\font.xnb
-C:\Users\laure_3y8jzli\School\J2\S1\SoftwareEngineering\SoftEngineeringProject\Project1\Project1\bin\Debug\net8.0\Content\cherry.xnb
-C:\Users\laure_3y8jzli\School\J2\S1\SoftwareEngineering\SoftEngineeringProject\Project1\Project1\bin\Debug\net8.0\Content\door.xnb
-C:\Users\laure_3y8jzli\School\J2\S1\SoftwareEngineering\SoftEngineeringProject\Project1\Project1\bin\Debug\net8.0\Content\Jitsu - Snail small.xnb
-C:\Users\laure_3y8jzli\School\J2\S1\SoftwareEngineering\SoftEngineeringProject\Project1\Project1\bin\Debug\net8.0\Content\snail.xnb
-C:\Users\laure_3y8jzli\School\J2\S1\SoftwareEngineering\SoftEngineeringProject\Project1\Project1\bin\Debug\net8.0\Content\bat.xnb

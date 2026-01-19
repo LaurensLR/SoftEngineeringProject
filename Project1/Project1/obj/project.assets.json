@@ -301,9 +301,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\laure_3y8jzli\\School\\J2\\S1\\SoftwareEngineering\\SoftEngineeringProject\\Project1\\Project1\\Project1.csproj",
-      "projectName": "Project1",
-      "projectPath": "C:\\Users\\laure_3y8jzli\\School\\J2\\S1\\SoftwareEngineering\\SoftEngineeringProject\\Project1\\Project1\\Project1.csproj",
+      "projectUniqueName": "C:\\Users\\laure_3y8jzli\\School\\J2\\S1\\SoftwareEngineering\\SoftEngineeringProject\\Project1\\Project1\\CherryCollector.csproj",
+      "projectName": "CherryCollector",
+      "projectPath": "C:\\Users\\laure_3y8jzli\\School\\J2\\S1\\SoftwareEngineering\\SoftEngineeringProject\\Project1\\Project1\\CherryCollector.csproj",
       "packagesPath": "C:\\Users\\laure_3y8jzli\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\laure_3y8jzli\\School\\J2\\S1\\SoftwareEngineering\\SoftEngineeringProject\\Project1\\Project1\\obj\\",
       "projectStyle": "PackageReference",
