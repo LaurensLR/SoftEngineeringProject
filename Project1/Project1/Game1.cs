@@ -36,7 +36,7 @@ namespace CherryCollector
 
             _graphics.PreferredBackBufferWidth = GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Width;
             _graphics.PreferredBackBufferHeight = GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Height;
-            _graphics.IsFullScreen = true;
+            _graphics.IsFullScreen = false;
             _graphics.HardwareModeSwitch = false;
             _graphics.ApplyChanges();
         }

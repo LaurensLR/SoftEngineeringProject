@@ -30,7 +30,7 @@ namespace CherryCollector.Systems
             _walkAnimation = walkAnimation;
             _hurtAnimation = hurtAnimation;
             _deathAnimation = deathAnimation;
-            _currentAnimation = _idleAnimation;
+            _currentAnimation = idleAnimation;
             _facingLeft = false;
         }
 

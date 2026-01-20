@@ -3,12 +3,28 @@
   "WorkspaceRootPath": "C:\\Users\\laure_3y8jzli\\School\\J2\\S1\\SoftwareEngineering\\SoftEngineeringProject\\Project1\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{61340343-5B1B-4F30-A711-DD84BA788FF8}|Project1\\CherryCollector.csproj|c:\\users\\laure_3y8jzli\\school\\j2\\s1\\softwareengineering\\softengineeringproject\\project1\\project1\\states\\gamestates\\gameoverstate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{61340343-5B1B-4F30-A711-DD84BA788FF8}|Project1\\CherryCollector.csproj|solutionrelative:project1\\states\\gamestates\\gameoverstate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{61340343-5B1B-4F30-A711-DD84BA788FF8}|Project1\\CherryCollector.csproj|c:\\users\\laure_3y8jzli\\school\\j2\\s1\\softwareengineering\\softengineeringproject\\project1\\project1\\systems\\collisionmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{61340343-5B1B-4F30-A711-DD84BA788FF8}|Project1\\CherryCollector.csproj|solutionrelative:project1\\systems\\collisionmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{61340343-5B1B-4F30-A711-DD84BA788FF8}|Project1\\CherryCollector.csproj|c:\\users\\laure_3y8jzli\\school\\j2\\s1\\softwareengineering\\softengineeringproject\\project1\\project1\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{61340343-5B1B-4F30-A711-DD84BA788FF8}|Project1\\CherryCollector.csproj|solutionrelative:project1\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{61340343-5B1B-4F30-A711-DD84BA788FF8}|Project1\\CherryCollector.csproj|c:\\users\\laure_3y8jzli\\school\\j2\\s1\\softwareengineering\\softengineeringproject\\project1\\project1\\levels\\levelrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{61340343-5B1B-4F30-A711-DD84BA788FF8}|Project1\\CherryCollector.csproj|solutionrelative:project1\\levels\\levelrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{61340343-5B1B-4F30-A711-DD84BA788FF8}|Project1\\CherryCollector.csproj|c:\\users\\laure_3y8jzli\\school\\j2\\s1\\softwareengineering\\softengineeringproject\\project1\\project1\\systems\\movementmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{61340343-5B1B-4F30-A711-DD84BA788FF8}|Project1\\CherryCollector.csproj|solutionrelative:project1\\systems\\movementmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{61340343-5B1B-4F30-A711-DD84BA788FF8}|Project1\\CherryCollector.csproj|c:\\users\\laure_3y8jzli\\school\\j2\\s1\\softwareengineering\\softengineeringproject\\project1\\project1\\systems\\jumpmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{61340343-5B1B-4F30-A711-DD84BA788FF8}|Project1\\CherryCollector.csproj|solutionrelative:project1\\systems\\jumpmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{61340343-5B1B-4F30-A711-DD84BA788FF8}|Project1\\CherryCollector.csproj|c:\\users\\laure_3y8jzli\\school\\j2\\s1\\softwareengineering\\softengineeringproject\\project1\\project1\\levels\\levelfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{61340343-5B1B-4F30-A711-DD84BA788FF8}|Project1\\CherryCollector.csproj|solutionrelative:project1\\levels\\levelfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{61340343-5B1B-4F30-A711-DD84BA788FF8}|Project1\\CherryCollector.csproj|c:\\users\\laure_3y8jzli\\school\\j2\\s1\\softwareengineering\\softengineeringproject\\project1\\project1\\levels\\level.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{61340343-5B1B-4F30-A711-DD84BA788FF8}|Project1\\CherryCollector.csproj|solutionrelative:project1\\levels\\level.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,7 +34,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 6,
           "Children": [
             {
               "$type": "Bookmark",
@@ -26,28 +42,80 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "GameOverState.cs",
-              "DocumentMoniker": "C:\\Users\\laure_3y8jzli\\School\\J2\\S1\\SoftwareEngineering\\SoftEngineeringProject\\Project1\\Project1\\States\\GameStates\\GameOverState.cs",
-              "RelativeDocumentMoniker": "Project1\\States\\GameStates\\GameOverState.cs",
-              "ToolTip": "C:\\Users\\laure_3y8jzli\\School\\J2\\S1\\SoftwareEngineering\\SoftEngineeringProject\\Project1\\Project1\\States\\GameStates\\GameOverState.cs",
-              "RelativeToolTip": "Project1\\States\\GameStates\\GameOverState.cs",
-              "ViewState": "AgIAABUAAAAAAAAAAAAqwCcAAAAPAAAAAAAAAA==",
+              "DocumentIndex": 2,
+              "Title": "MovementManager.cs",
+              "DocumentMoniker": "C:\\Users\\laure_3y8jzli\\School\\J2\\S1\\SoftwareEngineering\\SoftEngineeringProject\\Project1\\Project1\\Systems\\MovementManager.cs",
+              "RelativeDocumentMoniker": "Project1\\Systems\\MovementManager.cs",
+              "ToolTip": "C:\\Users\\laure_3y8jzli\\School\\J2\\S1\\SoftwareEngineering\\SoftEngineeringProject\\Project1\\Project1\\Systems\\MovementManager.cs",
+              "RelativeToolTip": "Project1\\Systems\\MovementManager.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAD0AAAArAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-19T16:42:54.951Z",
+              "WhenOpened": "2026-01-20T10:25:21.098Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "JumpManager.cs",
+              "DocumentMoniker": "C:\\Users\\laure_3y8jzli\\School\\J2\\S1\\SoftwareEngineering\\SoftEngineeringProject\\Project1\\Project1\\Systems\\JumpManager.cs",
+              "RelativeDocumentMoniker": "Project1\\Systems\\JumpManager.cs",
+              "ToolTip": "C:\\Users\\laure_3y8jzli\\School\\J2\\S1\\SoftwareEngineering\\SoftEngineeringProject\\Project1\\Project1\\Systems\\JumpManager.cs",
+              "RelativeToolTip": "Project1\\Systems\\JumpManager.cs",
+              "ViewState": "AgIAABkAAAAAAAAAAAA1wAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-20T10:25:17.939Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Level.cs",
+              "DocumentMoniker": "C:\\Users\\laure_3y8jzli\\School\\J2\\S1\\SoftwareEngineering\\SoftEngineeringProject\\Project1\\Project1\\Levels\\Level.cs",
+              "RelativeDocumentMoniker": "Project1\\Levels\\Level.cs",
+              "ToolTip": "C:\\Users\\laure_3y8jzli\\School\\J2\\S1\\SoftwareEngineering\\SoftEngineeringProject\\Project1\\Project1\\Levels\\Level.cs",
+              "RelativeToolTip": "Project1\\Levels\\Level.cs",
+              "ViewState": "AgIAABkAAAAAAAAAAAAiwDEAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-20T10:20:16.726Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "LevelFactory.cs",
+              "DocumentMoniker": "C:\\Users\\laure_3y8jzli\\School\\J2\\S1\\SoftwareEngineering\\SoftEngineeringProject\\Project1\\Project1\\Levels\\LevelFactory.cs",
+              "RelativeDocumentMoniker": "Project1\\Levels\\LevelFactory.cs",
+              "ToolTip": "C:\\Users\\laure_3y8jzli\\School\\J2\\S1\\SoftwareEngineering\\SoftEngineeringProject\\Project1\\Project1\\Levels\\LevelFactory.cs",
+              "RelativeToolTip": "Project1\\Levels\\LevelFactory.cs",
+              "ViewState": "AgIAABIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-20T10:20:12.265Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\laure_3y8jzli\\School\\J2\\S1\\SoftwareEngineering\\SoftEngineeringProject\\Project1\\Project1\\Program.cs",
-              "RelativeDocumentMoniker": "Project1\\Program.cs",
-              "ToolTip": "C:\\Users\\laure_3y8jzli\\School\\J2\\S1\\SoftwareEngineering\\SoftEngineeringProject\\Project1\\Project1\\Program.cs",
-              "RelativeToolTip": "Project1\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAkAAAAAAAAAA==",
+              "Title": "LevelRepository.cs",
+              "DocumentMoniker": "C:\\Users\\laure_3y8jzli\\School\\J2\\S1\\SoftwareEngineering\\SoftEngineeringProject\\Project1\\Project1\\Levels\\LevelRepository.cs",
+              "RelativeDocumentMoniker": "Project1\\Levels\\LevelRepository.cs",
+              "ToolTip": "C:\\Users\\laure_3y8jzli\\School\\J2\\S1\\SoftwareEngineering\\SoftEngineeringProject\\Project1\\Project1\\Levels\\LevelRepository.cs",
+              "RelativeToolTip": "Project1\\Levels\\LevelRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEkAAABFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-19T16:41:52.245Z",
+              "WhenOpened": "2026-01-20T10:20:02.202Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "CollisionManager.cs",
+              "DocumentMoniker": "C:\\Users\\laure_3y8jzli\\School\\J2\\S1\\SoftwareEngineering\\SoftEngineeringProject\\Project1\\Project1\\Systems\\CollisionManager.cs",
+              "RelativeDocumentMoniker": "Project1\\Systems\\CollisionManager.cs",
+              "ToolTip": "C:\\Users\\laure_3y8jzli\\School\\J2\\S1\\SoftwareEngineering\\SoftEngineeringProject\\Project1\\Project1\\Systems\\CollisionManager.cs*",
+              "RelativeToolTip": "Project1\\Systems\\CollisionManager.cs*",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABsAAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-20T10:15:28.124Z",
               "EditorCaption": ""
             }
           ]
