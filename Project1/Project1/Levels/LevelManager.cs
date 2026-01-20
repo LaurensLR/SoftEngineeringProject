@@ -8,13 +8,45 @@ using System.Linq;
 
 namespace CherryCollector.Levels
 {
-    /* 
-     * DESIGN PATTERN - Mediator/Manager Pattern:
-     * LevelManager acts as a mediator between the Level data and the Game engine.
-     * 
-     * SOLID - Single Responsibility Principle (SRP):
-     * This class is ONLY responsible for the lifecycle of the level (loading, updating, and drawing the world).
-     */
+    /// <summary>
+    /// LevelManager CLASS - LEVEL LIFECYCLE COORDINATOR   
+    ///   PURPOSE:   
+    ///   High-level coordinator for level operations. Provides a clean API for     
+    ///   the game to interact with levels without knowing internal details.  
+    ///   ENCAPSULATION:    
+    ///   PlayingState asks high-level questions:     
+    ///    • "Is the level complete?" (not "Is door.IsPlayerInside true?")    
+    ///     • "Are all cherries collected?" (not manual LINQ queries)  
+    ///   This hides implementation details from game state code.   
+    ///   DESIGN PATTERNS APPLIED:    
+    ///   [FACADE PATTERN]   
+    ///   LevelManager provides a simplified interface to the level subsystem
+    ///   [MEDIATOR PATTERN]   
+    ///   LevelManager mediates between:
+    ///  • Game states (PlayingState) and level data
+    ///     • Level objects and the game loop (Update/Draw)    
+    ///   Objects don't communicate directly with game states.  
+    ///   SOLID PRINCIPLES APPLIED:   
+    ///   [S] Single Responsibility Principle (SRP):   
+    ///       LevelManager coordinates level lifecycle only.    
+    ///       It doesn't:     
+    ///     • Parse level maps (Level does that)   
+    ///    • Create objects (Factory does that)   
+    ///    • Handle hero physics (PhysicsManager does that)
+    ///   [O] Open/Closed Principle (OCP):    
+    ///       New level features (checkpoints, secrets) can be added by:  
+    ///       • Adding new query methods (HasCheckpoint(), GetSecretCount())   
+    ///    • Existing code doesn't need modification      
+    ///   [L] Liskov Substitution Principle (LSP):   
+    ///       LevelManager doesn't prevent extending/overriding behavior.   
+    ///       (e.g., CustomLevelManager can override NextLevel() logic)   
+    ///   [I] Interface Segregation Principle (ISP):  
+    ///       LevelManager uses narrow interfaces (e.g., IGameObject).   
+    ///       Clients are not forced to depend on unneeded methods.   
+    ///   [D] Dependency Inversion Principle (DIP):  
+    ///       LevelManager works with IGameObject interface.    
+    ///     Uses LINQ OfType<T> for type-specific queries (Cherry, Door).   
+    /// </summary>
     public class LevelManager
     {
         private readonly LevelObjectFactory _factory;
@@ -30,19 +62,12 @@ namespace CherryCollector.Levels
             _levelData = new Level(_factory);
         }
 
-        /* 
-         * SOLID - Single Responsibility: 
-         * Logic to check if level requirements are met.
-         */
         public bool AllCherriesCollected()
         {
             return !CurrentLevelObjects.OfType<Cherry>().Any(c => !c.IsCollected);
         }
 
-        /* 
-         * REFACTORING - Encapsulation:
-         * Exposed high-level questions ("Can I win?") rather than low-level details ("Is door.IsPlayerInside true?").
-         */
+
         public bool CheckLevelCompletion()
         {
             var door = CurrentLevelObjects.OfType<Door>().FirstOrDefault();
@@ -55,11 +80,7 @@ namespace CherryCollector.Levels
             return door != null && door.IsPlayerInside && !AllCherriesCollected();
         }
 
-        /* 
-         * SOLID - Single Responsibility: 
-         * This method handles resetting the level state.
-         * We add an optional parameter to force a full game reset (back to level 0).
-         */
+
         public void ResetLevel(bool backToStart = false)
         {
             if (backToStart)
@@ -70,10 +91,7 @@ namespace CherryCollector.Levels
             _levelData.LoadLevel(_currentLevelIndex);
         }
 
-        /* 
-         * SOLID - Single Responsibility: 
-         * Logic to determine if the player has finished all available content.
-         */
+
         public bool HasMoreLevels()
         {
             return _currentLevelIndex + 1 < _levelData.LevelCount;

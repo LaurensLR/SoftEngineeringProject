@@ -5,11 +5,34 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace CherryCollector.Entities.Base
 {
-    /* 
-     * SOLID - Open/Closed Principle:
-     * This base class is now open for extension (any enemy can use it) 
-     * but closed for modification of core rendering and collision logic.
-     */
+    /// <summary>
+    ///    Enemy CLASS - ABSTRACT BASE FOR ALL ENEMIES
+    ///   PURPOSE:
+    ///   Abstract base class that provides common functionality for all enemy types.
+    ///   Defines the contract (abstract methods) that concrete enemies must fulfill.
+    ///   DESIGN PATTERNS APPLIED:     
+    ///   [TEMPLATE METHOD PATTERN]     
+    ///   Enemy provides a default Draw() implementation that subclasses inherit.    
+    ///   Subclasses can override Draw() (like Bat does for centering).    
+    ///   Update() is abstract - subclasses MUST provide their own logic.    
+    ///   [COMPONENT PATTERN]  
+    ///   AnimationManager is a reusable component shared by Hero and all enemies.   
+    ///   This avoids duplicating animation code in each enemy class.
+    ///   SOLID PRINCIPLES APPLIED:  
+    ///   [O] Open/Closed Principle (OCP):   
+    ///       Enemy is OPEN for extension (new enemy types like Spider, Ghost)
+    ///       but CLOSED for modification of core enemy behavior.   
+    ///       New enemies extend Enemy; they don't modify it.     
+    ///   [L] Liskov Substitution Principle (LSP):
+    /// All Enemy subclasses can be used wherever IGameObject is expected.     
+    ///  LevelManager stores enemies in List<IGameObject> polymorphically.  
+    ///   [D] Dependency Inversion Principle (DIP):      
+    ///      Enemy depends on abstractions (AnimationManager) not concrete logic.   
+    ///       Animation details are encapsulated in the manager.  
+    ///   [S] Single Responsibility Principle (SRP):     
+    ///       Enemy handles common enemy behavior only.     
+    ///       Specific movement patterns are in Snail, Bat, etc.  
+    /// </summary>
     public abstract class Enemy : IGameObject
     {
         public Vector2 Position { get; set; }
@@ -18,10 +41,7 @@ namespace CherryCollector.Entities.Base
 
         protected Texture2D Texture;
 
-        /* 
-         * DESIGN PATTERN - Component Pattern:
-         * Using AnimationManager here maintains consistency with the Hero class.
-         */
+
         protected AnimationManager AnimationManager;
 
         public Enemy(Texture2D texture, Vector2 position)

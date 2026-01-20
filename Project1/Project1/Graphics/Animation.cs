@@ -4,12 +4,36 @@ using System.Collections.Generic;
 
 namespace CherryCollector.Graphics
 {
-    /* 
-     * SOLID - Open/Closed Principle:
-     * This base class is now "Closed" to further modification of logic, 
-     * but "Open" for different animations to define their own frame rates 
-     * through the constructor.
-     */
+    /// <summary>
+    ///   Animation CLASS - SPRITE ANIMATION SYSTEM  
+    ///   PURPOSE:       
+    ///   Manages a sequence of animation frames, updating which frame to display    
+    ///   based on elapsed time and frames per second (FPS).   
+    ///   LAG COMPENSATION:  
+    ///   The while-loop in Update() handles frame skipping when the game lags.    
+    ///   If deltaTime is large, multiple frames may advance in one update call.
+    ///   This ensures animations complete in consistent real-world time.   
+    /// DESIGN PATTERNS APPLIED:    
+    /// [TEMPLATE METHOD PATTERN (partial)]   
+    ///   Animation is a base class that concrete animations extend:     
+    ///    • IdleAnimation, WalkAnimation, HurtAnimation, DeathAnimation     
+    ///   Subclasses call AddFrame() in constructor to define their frames.    
+    ///   [FLYWEIGHT PATTERN (implicit)]   
+    ///   AnimationFrame objects store only SourceRectangle data.     
+    ///   The actual Texture2D is shared (stored once in Animation.Texture).  
+    ///   This saves memory when many frames exist.   
+    ///   SOLID PRINCIPLES APPLIED:   
+    ///   [S] Single Responsibility Principle (SRP):     
+    /// Animation ONLY handles frame sequencing and timing.    
+    ///       It doesn't:
+    ///         • Draw sprites (AnimationManager/Entity does that)     
+    ///       • Decide which animation to play (AnimationManager does)        
+    ///         • Load textures (done externally in Content pipeline)      
+    ///   [O] Open/Closed Principle (OCP):    
+    ///       New animation types are created by extending Animation.         
+    ///    Base class provides Update(), Reset(), AddFrame() - subclasses only 
+    ///       define their specific frames.  
+    /// </summary>
     public class Animation
     {
         public Texture2D Texture { get; protected set; }
@@ -24,11 +48,7 @@ namespace CherryCollector.Graphics
 
         public bool IsFinished => _isFinished;
 
-        /* 
-         * SOLID - Single Responsibility: 
-         * Storing the FPS here allows subclasses to define how fast they run 
-         * (e.g., a fast Walk vs a slow Idle).
-         */
+
         public int Fps { get; set; }
 
         public Animation(int fps = 10, bool loop = true)
@@ -47,12 +67,7 @@ namespace CherryCollector.Graphics
         {
             if (_isFinished || _frames.Count == 0) return;
 
-            /* 
-             * REFACTORING - Frame Independence (Lag Compensation):
-             * By using a 'while' loop, we subtract the exact frame duration from our counter.
-             * If the game takes a long time to update, the animation will skip frames 
-             * to "catch up," ensuring the animation length is always consistent in seconds.
-             */
+
             _accumulatedTime += gameTime.ElapsedGameTime.TotalSeconds;
             double secondsPerFrame = 1.0 / Fps;
 

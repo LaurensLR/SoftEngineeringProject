@@ -4,19 +4,31 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace CherryCollector.Entities.World
 {
-    /* 
-     * SOLID - Single Responsibility: Manages the Door's visual and logic state.
-     */
+    /// <summary>
+    ///          Door CLASS - LEVEL EXIT  
+    ///   PURPOSE:       
+    ///   Represents the exit door that completes a level when the Hero enters it    
+    ///   after collecting all cherries. Acts as both a visual landmark and goal.   
+    ///   DESIGN PATTERNS APPLIED:
+    ///   [FACTORY PATTERN - Product] 
+    ///   Door is created by LevelObjectFactory, keeping Level class clean.    
+    ///   [STATE TRACKING]   
+    ///   IsPlayerInside is a simple state that's reset each frame and set on   
+    ///   collision. This "pulse" pattern prevents stale state.  
+    ///   SOLID PRINCIPLES APPLIED:
+    ///   [S] Single Responsibility Principle (SRP):  
+    ///       Door ONLY tracks whether the Hero is inside and renders itself.         
+    ///       Level completion logic is in LevelManager, not Door.  
+    ///   [O] Open/Closed Principle (OCP):    
+    ///     Door behavior can be extended (locked doors, keys) by adding new   
+    ///   door types without modifying existing Door class.   
+    /// </summary>
     public class Door : IGameObject
     {
         private readonly Texture2D _texture;
         public Vector2 Position { get; private set; }
 
-        /*
-         * REFACTORING - Scalability:
-         * Made the bounds 2x bigger (32x48) without changing the raw PNG.
-         * The physics collision box now matches the new visual scale.
-         */
+
         public Rectangle Bounds => new Rectangle((int)Position.X, (int)Position.Y, 32, 48);
         public CollisionType CollisionType => CollisionType.Door;
 
@@ -25,8 +37,7 @@ namespace CherryCollector.Entities.World
         public Door(Texture2D texture, Vector2 position)
         {
             _texture = texture;
-            // Adjust position so the door sits on the same "floor" level as blocks
-            // since it is now 48px high instead of 24px.
+
             Position = new Vector2(position.X, position.Y - 24);
         }
 
@@ -37,11 +48,7 @@ namespace CherryCollector.Entities.World
 
         public void Draw(SpriteBatch spriteBatch)
         {
-            /* 
-             * DESIGN PATTERN - Visual Scaling:
-             * We use the destination rectangle feature of spriteBatch.Draw 
-             * to stretch the PNG to our new 32x48 dimensions.
-             */
+
             spriteBatch.Draw(_texture, Bounds, Color.White);
         }
 

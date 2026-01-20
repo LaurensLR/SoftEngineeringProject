@@ -5,10 +5,41 @@ using System.Collections.Generic;
 
 namespace CherryCollector.Systems
 {
-    /* 
-     * SOLID - Single Responsibility Principle:
-     * Consolidates all physics calculations: Gravity, Velocity, and Collision Resolution.
-     */
+    /// <summary>
+    ///      PhysicsManager CLASS - PHYSICS SIMULATION SYSTEM 
+    ///   PURPOSE:    
+    ///   Centralized physics system that handles gravity, velocity, jumping, and    
+    ///   collision resolution for movable entities (Hero). 
+    ///   DESIGN PATTERNS APPLIED:    
+    ///   [COMPONENT PATTERN / MANAGER PATTERN]       
+    ///   PhysicsManager encapsulates all physics logic in one place.     
+    ///   Hero doesn't calculate physics - it delegates to this manager.   
+    ///   This makes physics:  
+    ///     • Reusable (other entities could use it)    
+    ///     • Testable (can unit test physics in isolation)  
+    ///    • Maintainable (physics changes don't touch Hero code)   
+    ///   [SEPARATION OF CONCERNS]    
+    ///   Physics (movement, gravity, collision) is separated from:   
+    ///    • Input (handled by IInputReader)
+    ///     • Animation (handled by AnimationManager) 
+    ///     • Game logic (handled by Hero states)
+    ///   SOLID PRINCIPLES APPLIED:     
+    ///   [S] Single Responsibility Principle (SRP):  
+    ///       PhysicsManager ONLY handles physics calculations.    
+    ///       It doesn't read input, play animations, or track lives.    
+    ///   [O] Open/Closed Principle (OCP):
+    ///       New physics features (double jump, wall slide) can be added without    
+    ///       modifying existing Hero or NormalState code.
+    ///   [D] Dependency Inversion Principle (DIP):   
+    ///       PhysicsManager works with IMovable interface.
+    ///       It doesn't depend on Hero specifically - could work with any movable.  
+    ///   PHYSICS CONSTANTS:       
+    ///     • Gravity: 1500 pixels/sec² (downward acceleration)   
+    ///     • JumpStrength: -450 pixels/sec (initial upward velocity)    
+    ///     • BounceStrength: -350 pixels/sec (damage bounce)     
+    ///     • MapWidth: 800 pixels (prevents leaving screen)     
+    ///     • MaxPenetrationMap: 24 pixels (max overlap correction)  
+    /// </summary>
     public class PhysicsManager
     {
         private const int MapWidth = 800;
@@ -20,8 +51,8 @@ namespace CherryCollector.Systems
         private float _jumpStrength = -450f;
         private float _bounceStrength = -350f;
 
-        // State carried over from JumpManager/MovementManager
-        public Vector2 Velocity { get; set; } // Now X and Y are together
+
+        public Vector2 Velocity { get; set; }
         public bool IsGrounded { get; private set; }
 
         public void Jump()
@@ -51,9 +82,7 @@ namespace CherryCollector.Systems
             IsGrounded = false;
         }
 
-        /*
-         * Central Physics Update Loop
-         */
+
         public void Update(IMovable entity, List<IGameObject> worldObjects, GameTime gameTime)
         {
             float dt = (float)gameTime.ElapsedGameTime.TotalSeconds;
@@ -61,10 +90,10 @@ namespace CherryCollector.Systems
             // 1. Calculate desired velocity
             // Gravity
             float newVy = Velocity.Y + _gravity * dt;
-            
+
             // Input (Horizontal Movement)
             Vector2 input = entity.InputReader.ReadInput();
-            float newVx = input.X * entity.Speed.X; 
+            float newVx = input.X * entity.Speed.X;
 
             Velocity = new Vector2(newVx, newVy);
 
@@ -140,8 +169,8 @@ namespace CherryCollector.Systems
                 if (desiredMoveY > 0) // Falling
                 {
                     float distance = obj.Bounds.Top - (movable.Position.Y + movable.Height);
-                    
-                    // FIX: Allow snapping up if we penetrated the block, provided we weren't WAY below it.
+
+
                     // This catches the case where gravity pulled us 5-10 pixels deep in one frame.
                     if (distance >= -MaxPenetrationMap)
                     {

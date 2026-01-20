@@ -4,10 +4,41 @@ using Microsoft.Xna.Framework.Input;
 
 namespace CherryCollector.UI
 {
-    /*
-     * SOLID - Single Responsibility: 
-     * This class handles UI interaction logic and rendering including borders.
-     */
+    /// <summary>
+    ///          Button CLASS - INTERACTIVE UI ELEMENT    
+    ///   PURPOSE:     
+    ///   A reusable UI button component that handles mouse click detection and      
+    ///   visual rendering. Used in menu screens (Start, GameOver, Win states).      
+    ///     CLICK DETECTION:              
+    ///      1. Get mouse screen position   
+    ///      2. Transform to design space (800x480) using inverse matrix       
+    ///      3. Check if transformed position is inside button bounds      
+    ///      4. Check if left mouse button is pressed  
+    ///      5. Return true only if BOTH conditions met 
+    ///   COORDINATE TRANSFORMATION:       
+    ///   The game renders at 800x480 but the window can be resized. The scaleMatrix 
+    ///   transforms design coordinates to screen coordinates. To check clicks, we   
+    ///   INVERT this matrix to transform screen mouse position back to design space.
+    ///   DESIGN PATTERNS APPLIED:    
+    ///   [LAZY INITIALIZATION PATTERN]            
+    ///   The _pixel texture (used to draw borders) is created only when Draw() is   
+    ///   first called, not in the constructor. This:           
+    ///     • Avoids creating textures before graphics device is ready               
+    ///     • Shares one texture across ALL Button instances (static field)        
+    ///     • Saves memory - one 1x1 pixel texture instead of one per button     
+    ///   [FLYWEIGHT PATTERN (partial)]          
+    ///   The static _pixel texture is shared across all Button instances.     
+    ///   Each button only stores its unique data (bounds, text, color).             
+    ///   SOLID PRINCIPLES APPLIED:  
+    ///   [S] Single Responsibility Principle (SRP):        
+    ///       Button handles TWO related things:            
+    ///   • Click detection (IsClicked)       
+    /// • Visual rendering (Draw)              
+    ///       It does NOT handle what happens when clicked - that's the caller's job.
+    ///   [O] Open/Closed Principle (OCP):                   
+    ///     Button can be extended for new behaviors (hover effects, sounds)      
+    ///       without modifying existing code. Text property allows dynamic updates.  
+    /// </summary>
     public class Button
     {
         private readonly Rectangle _bounds;
@@ -15,7 +46,7 @@ namespace CherryCollector.UI
         private readonly Color _color;
         private static Texture2D _pixel; // Static texture for border drawing
 
-        // MODIFIED: Text is now a public property so it can be updated dynamicall (e.g. for toggles)
+
         public string Text { get; set; }
 
         public Button(Rectangle bounds, string text, SpriteFont font, Color color)
@@ -26,11 +57,7 @@ namespace CherryCollector.UI
             _color = color;
         }
 
-        /* 
-         * DESIGN PATTERN - Coordinate Transformation:
-         * We take the world scaling matrix and invert it to find where the mouse 
-         * would be if the screen was still 800x480.
-         */
+
         public bool IsClicked(Matrix scaleMatrix)
         {
             var mouse = Mouse.GetState();

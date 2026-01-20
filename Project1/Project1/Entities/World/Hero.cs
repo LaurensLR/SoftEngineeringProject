@@ -10,11 +10,49 @@ using System;
 
 namespace CherryCollector.Entities.World
 {
-    /* 
-     * SOLID - Single Responsibility Principle (SRP):
-     * Hero is responsible for Hero logic. 
-     * It delegates ALL Physics (Movement/Jump) to the new PhysicsManager.
-     */
+    /// <summary>
+    ///         Hero CLASS - PLAYER CHARACTER       
+    ///   PURPOSE:   
+    ///   The main player-controlled character. Handles input, movement, collisions, 
+    ///   animations, damage, and death. The Hero is the central entity of gameplay. 
+    ///   COMPONENT DEPENDENCIES:    
+    ///     • PhysicsManager: Handles gravity, velocity, collision resolution  
+    ///     • AnimationManager: Manages sprite animations (idle, walk, hurt, death)  
+    ///     • IInputReader: Abstracts player input (keyboard, gamepad, etc.)      
+    ///     • CollisionManager: Detects collisions with world objects     
+    /// • LevelManager: Provides access to current level objects  
+    ///   DESIGN PATTERNS APPLIED:     
+    ///   [STATE PATTERN]  
+    ///   Hero uses IHeroState to change behavior at runtime: 
+    ///     • NormalState: Full player control, physics active  
+    ///     • DeadState: No input, death animation plays    
+    ///   SetState() transitions between states, Enter() initializes new state.      
+    ///   [OBSERVER PATTERN]  
+    /// Hero publishes events that other objects subscribe to:     
+    ///  • LivesChanged: UIManager subscribes to update HUD display     
+    ///     • Died: Game1 subscribes to trigger GameOverState
+    ///   [STRATEGY PATTERN]    
+    ///   IInputReader allows swapping input methods without changing Hero code.     
+    ///   KeyBoardReader is the current strategy; others can be added.  
+    ///   [DELEGATION PATTERN] 
+    ///   Hero delegates responsibilities to specialized managers: 
+    ///     • Physics → PhysicsManager     
+    ///   • Animation → AnimationManager      
+    ///     • Input → IInputReader  
+    ///   SOLID PRINCIPLES APPLIED:
+    ///   [S] Single Responsibility Principle (SRP):    
+    ///       Hero coordinates its subsystems but doesn't implement physics or       
+    ///       animation logic itself. Each responsibility is delegated.  
+    ///   [O] Open/Closed Principle (OCP):  
+    ///       New states (PowerUpState, InvincibleState) can be added without
+    ///       modifying Hero - just create new IHeroState implementations.      
+    ///   [D] Dependency Inversion Principle (DIP):    
+    ///       Hero depends on abstractions (IInputReader, IHeroState), not concrete  
+    ///       implementations. This enables testing and flexibility.   
+    ///   [I] Interface Segregation Principle (ISP): 
+    ///       Hero implements IGameObject and IMovable - exactly what's needed.      
+    ///       IMovable adds movement properties (Position, Speed, Width, Height).   
+    /// </summary>
     public class Hero : IGameObject, IMovable
     {
         private const int FixedWidth = 26;
@@ -34,10 +72,10 @@ namespace CherryCollector.Entities.World
         public event EventHandler Died;
 
         public AnimationManager AnimationManager { get; private set; }
-        
-        // REFACTORING: Replaced JumpManager and MovementManager with PhysicsManager
+
+
         public PhysicsManager PhysicsManager { get; private set; }
-        
+
         public LevelManager LevelManager { get; private set; }
         // SOLID - Dependency Inversion: We depend on the manager, not the implementation details.
         private CollisionManager _collisionManager;
@@ -64,7 +102,7 @@ namespace CherryCollector.Entities.World
         private float _hurtTimer;
         private const float HurtCooldown = 1.0f;
 
-        // Constructor updated to accept PhysicsManager
+
         public Hero(Texture2D walk, Texture2D idle, Texture2D hurt, Texture2D death, IInputReader input, LevelManager levelManager, CollisionManager collisionManager, PhysicsManager physicsManager)
         {
             InputReader = input;
@@ -77,17 +115,14 @@ namespace CherryCollector.Entities.World
                 new WalkAnimation(walk),
                 new HurtAnimation(hurt),
                 new DeathAnimation(death));
-            
+
             Speed = new Vector2(150f, 0);
 
             // Set initial state
             SetState(new NormalState());
         }
 
-        /*
-         * DESIGN PATTERN - State Pattern Switch:
-         * This method handles changing the behavior of the hero.
-         */
+
         public void SetState(IHeroState newState)
         {
             _currentState = newState;
@@ -98,9 +133,7 @@ namespace CherryCollector.Entities.World
         {
             _currentState.Update(this, gameTime);
 
-            /* 
-             * SOLID - SRP Asking the CollisionManager for collisions:
-             */
+
             _collisionManager.CheckCollisions(this, LevelManager.CurrentLevelObjects);
 
             if (_hurtTimer > 0)
@@ -118,13 +151,10 @@ namespace CherryCollector.Entities.World
             {
                 TakeDamage(other);
             }
-            // Cherry & Door logic handled elsewhere or by LevelManager queries
+
         }
 
-        /* 
-         * SOLID - Single Responsibility: Provides a way to reset character state 
-         * for the restart functionality.
-         */
+
         public void Reset(Vector2 spawnPosition)
         {
             Position = spawnPosition;
@@ -144,7 +174,7 @@ namespace CherryCollector.Entities.World
         {
             Lives = MaxLives;
             Position = newPos;
-            PhysicsManager.Reset(); // Stop movement
+            PhysicsManager.Reset();
         }
 
         private void TakeDamage(IGameObject spike)

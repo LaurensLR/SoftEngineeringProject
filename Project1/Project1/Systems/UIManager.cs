@@ -4,15 +4,35 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace CherryCollector.Systems
 {
-    /* 
-     * SOLID - Single Responsibility Principle (SRP):
-     * The UIManager is responsible ONLY for drawing the user interface (HUD).
-     * 
-     * DESIGN PATTERN - Observer Pattern:
-     * This class acts as an Observer. It subscribes to the Hero's 'LivesChanged' 
-     * event so it can update the visual display without the Hero needing 
-     * to know that a UI even exists.
-     */
+    /// <summary>
+    ///        UIManager CLASS - HEADS-UP DISPLAY SYSTEM   
+    ///   PURPOSE:     
+    ///   Manages the in-game user interface (HUD) that displays during gameplay.   
+    ///   Shows player lives and temporary notification messages.     
+    ///   DESIGN PATTERNS APPLIED: 
+    ///   [OBSERVER PATTERN]  
+    ///   UIManager subscribes to Hero's LivesChanged event
+    ///   Benefits:      
+    ///     • Hero doesn't know UIManager exists (loose coupling)     
+    ///     • UI updates automatically when lives change     
+    ///     • Multiple observers could subscribe (sound manager, achievements)       
+    ///   [MEDIATOR PATTERN (partial)] 
+    ///   DisplayMessage() allows game logic to show messages without knowing
+    ///   HOW messages are displayed. The UI handles presentation details.    
+    ///   SOLID PRINCIPLES APPLIED:       
+    ///   [S] Single Responsibility Principle (SRP):    
+    ///       UIManager ONLY handles HUD rendering and message display.    
+    ///       It doesn't:     
+    ///         • Calculate lives (Hero does that)  
+    ///  • Decide when to show messages (PlayingState decides)    
+    ///         • Handle menu buttons (Button class does that)     
+    ///   [O] Open/Closed Principle (OCP):     
+    ///       New HUD elements (score, timer, minimap) can be added without 
+    ///       modifying existing lives/message code.    
+    ///   [D] Dependency Inversion Principle (DIP):     
+    ///       UIManager receives Hero via constructor injection.   
+    ///       It depends on Hero's event, not Hero's internal implementation.  
+    /// </summary>
     public class UIManager
     {
         private readonly SpriteFont _font;
@@ -31,11 +51,7 @@ namespace CherryCollector.Systems
             hero.LivesChanged += OnLivesChanged;
         }
 
-        /* 
-         * DESIGN PATTERN - Command/Notification:
-         * This allows the game logic to "request" a message be shown 
-         * without the UI knowing WHY it is being shown.
-         */
+
         public void DisplayMessage(string message, float duration)
         {
             _activeMessage = message;

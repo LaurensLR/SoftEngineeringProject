@@ -4,10 +4,32 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace CherryCollector.Entities.World
 {
-    /* 
-     * SOLID - Single Responsibility Principle (SRP):
-     * This class only handles the logic for the Cherry object.
-     */
+    /// <summary>
+    ///          Cherry CLASS - COLLECTIBLE ITEM   
+    ///   PURPOSE:      
+    ///   Represents a collectible cherry that the Hero must gather to unlock the    
+    ///   level's exit door. All cherries must be collected before completing level. 
+    ///   DESIGN PATTERNS APPLIED:  
+    ///   [FACTORY PATTERN - Product] 
+    ///   Cherry is created by LevelObjectFactory when it encounters 'C' character.  
+    ///   Level doesn't instantiate Cherry directly.    
+    ///   [OBSERVER PATTERN (implicit)]     
+    ///   The Cherry's state change (IsCollected = true) is observed by:   
+    ///     • LevelManager: Checks AllCherriesCollected() for door unlock     
+    ///     • LevelManager.Update(): Removes collected cherries 
+    ///   SOLID PRINCIPLES APPLIED:    
+    ///   [S] Single Responsibility Principle (SRP):         
+    ///       Cherry ONLY tracks its own collected state and visual.   
+    ///       It doesn't update score, play sounds, or check win conditions.
+    ///   [O] Open/Closed Principle (OCP):   
+    ///       New collectible types (coins, gems) can be added following same
+    ///  pattern without modifying Cherry or collection logic.
+    ///   [L] Liskov Substitution Principle (LSP):
+    ///       Cherry can replace any IGameObject in collections.
+    ///       LevelManager iterates List<IGameObject> polymorphically.     
+    /// </summary>
+
+
     public class Cherry : IGameObject
     {
         private readonly Texture2D _texture;
@@ -26,7 +48,7 @@ namespace CherryCollector.Entities.World
 
         public void Update(GameTime gameTime)
         {
-            // Static collectible - no update logic needed
+
         }
 
         public void Draw(SpriteBatch spriteBatch)

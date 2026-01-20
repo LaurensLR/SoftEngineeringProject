@@ -7,10 +7,30 @@ using System;
 
 namespace CherryCollector.Entities.Enemies
 {
-    /* 
-     * SOLID - Single Responsibility: 
-     * Manages the Bat's specific flying pattern and irregular sprite slicing.
-     */
+    /// <summary>
+    ///   Bat CLASS - FLYING HOVER ENEMY    
+    ///   PURPOSE:   
+    ///   A flying enemy that hovers in place using a sine wave motion.    
+    ///   Creates aerial hazards that the Hero must jump over or avoid. 
+    ///   DESIGN PATTERNS APPLIED:    
+    ///   [TEMPLATE METHOD PATTERN - Override]      
+    ///   Bat overrides BOTH Update() AND Draw() from Enemy:  
+    ///     • Update(): Custom sine wave movement  
+    ///     • Draw(): Custom centering logic for variable-size frames   
+    ///   [COMPONENT PATTERN]     
+    ///   Uses shared AnimationManager from Enemy base for consistent animation   
+    ///   handling across all enemy types.       
+    ///   SOLID PRINCIPLES APPLIED:      
+    ///   [S] Single Responsibility Principle (SRP):   
+    ///       Bat ONLY handles bat-specific hover behavior and drawing.   
+    ///       Collision handling is done by CollisionManager + Hero.       
+    ///   [O] Open/Closed Principle (OCP):     
+    ///       New flying enemies (Bird, Ghost) can extend Enemy without     
+    ///       modifying Bat or Enemy classes. 
+    ///   [L] Liskov Substitution Principle (LSP):
+    ///       Bat can replace Enemy (or any IGameObject) polymorphically. 
+    ///    LevelManager treats all game objects uniformly.     
+    /// </summary>
     public class Bat : Enemy
     {
         private double _timer;
@@ -26,11 +46,7 @@ namespace CherryCollector.Entities.Enemies
         {
             _startPos = position;
 
-            /* 
-             * DESIGN PATTERN - Component Setup:
-             * Frame 1 is 29x15, Frame 2 is 26x16. 
-             * We define them exactly as they appear on your sprite sheet.
-             */
+
             var flyAnim = new Animation(fps: 8, loop: true);
             flyAnim.AddFrame(new AnimationFrame(new Rectangle(1, 8, 29, 15)));
             flyAnim.AddFrame(new AnimationFrame(new Rectangle(33, 7, 26, 16)));
@@ -51,11 +67,6 @@ namespace CherryCollector.Entities.Enemies
             AnimationManager.Update(Vector2.Zero, gameTime);
         }
 
-        /* 
-         * REFACTORING - Visual Centering:
-         * Because the frames have different widths, we calculate a drawing offset 
-         * to keep the bat centered on its actual Position.
-         */
         public override void Draw(SpriteBatch spriteBatch)
         {
             if (AnimationManager?.CurrentAnimation?.CurrentFrame == null) return;

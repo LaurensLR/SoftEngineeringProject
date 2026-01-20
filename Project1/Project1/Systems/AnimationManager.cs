@@ -3,6 +3,40 @@ using Microsoft.Xna.Framework;
 
 namespace CherryCollector.Systems
 {
+    /// <summary>
+    /// AnimationManager CLASS - ANIMATION STATE MACHINE   
+    ///   PURPOSE:    
+    ///   Manages which animation is currently playing and handles transitions        
+    ///   between animations based on entity state (idle, walking, hurt, dead).      
+    ///   FACING DIRECTION:     
+    ///   • FacingLeft tracks which way the sprite should face 
+    ///   • Set when X direction changes (left = -1, right = +1)  
+    ///   • Used by Draw() to flip sprite with SpriteEffects.FlipHorizontally
+    ///   DESIGN PATTERNS APPLIED:   
+    ///   [STATE MACHINE PATTERN]    
+    ///   AnimationManager implements a simple state machine:     
+    ///     • States: Idle, Walk, Hurt, Dead (AnimationState enum)  
+    ///     • Transitions: Based on input direction and method calls    
+    ///     • Each state has an associated Animation object    
+    ///   [COMPONENT PATTERN]    
+    ///   AnimationManager is a reusable component used by:   
+    ///     • Hero (for player animations)     
+    ///  • All Enemy subclasses (Snail, Bat)
+    ///   This avoids duplicating animation logic in each entity. 
+    ///   SOLID PRINCIPLES APPLIED:     
+    ///   [S] Single Responsibility Principle (SRP):  
+    ///       AnimationManager ONLY handles animation state and transitions.  
+    ///       It doesn't:
+    ///         • Know about physics or input   
+    ///         • Handle drawing (just provides CurrentAnimation)   
+    ///         • Calculate frame timing (delegated to Animation class)    
+    ///   [O] Open/Closed Principle (OCP):   
+    ///       New animation states (jumping, attacking) can be added by:   
+    ///    • Adding new AnimationState enum values     
+    ///         • Adding new Animation fields and Play methods  
+    ///       Existing code doesn't need modification.  
+    /// </summary>
+
     internal enum AnimationState
     {
         Idle,
@@ -34,11 +68,7 @@ namespace CherryCollector.Systems
             _facingLeft = false;
         }
 
-        /* 
-         * SOLID - Single Responsibility: 
-         * This method provides a clean way to force the manager back to a starting state
-         * without recreating the whole object.
-         */
+
         public void Reset()
         {
             _state = AnimationState.Idle;

@@ -2,10 +2,43 @@ using System.Collections.Generic;
 
 namespace CherryCollector.Levels
 {
-    /* 
-     * SOLID - Single Responsibility: 
-     * This class ONLY holds the raw data for levels.
-     */
+    /// <summary>
+    ///       LevelRepository CLASS - LEVEL DATA STORAGE  
+    ///   PURPOSE:   
+    ///   Stores all raw level data as string arrays. Separates level content from   
+    ///   level parsing and game logic. Single source of truth for level designs.    
+    ///   LEVEL THEMES:  
+    ///     • Level 1: "Parkour Basics" - Introduction to spikes and cherries   
+    ///     • Level 2: "Enter the Snail" - Ground patrol enemies introduced   
+    ///     • Level 3: "Terror from Above" - Flying bat enemies introduced  
+    ///   DESIGN PATTERNS APPLIED:  
+    ///   [REPOSITORY PATTERN]
+    ///   LevelRepository is a data access layer that:     
+    ///     • Provides a collection of level data   
+    ///     • Abstracts data storage from data consumers    
+    ///     • Could be extended to load from files, database, or network    
+    ///   [DATA ACCESS OBJECT (DAO) PATTERN]  
+    ///   Similar to DAO - provides data without exposing storage mechanism.  
+    ///   Currently hardcoded, but could easily become:   
+    ///     • File-based: Load from .txt or .json files    
+    ///     • Resource-based: Embed in game assets    
+    ///   Consumers (Level class) wouldn't need to change.   
+    ///   SOLID PRINCIPLES APPLIED:      
+    ///   [S] Single Responsibility Principle (SRP):  
+    ///       LevelRepository ONLY stores and provides level data.   
+    ///       It doesn't:  
+    ///    • Parse the strings (Level does that) 
+    ///  • Create game objects (Factory does that)   
+    ///    • Know about game logic or win conditions    
+    ///   [O] Open/Closed Principle (OCP):   
+    ///       New levels can be added by simply adding new string[] entries.    
+    ///       No existing code needs modification.   
+    ///   Could be extended to load from external files without changing API. 
+    ///   WHY STATIC CLASS?       
+    ///   Level data doesn't change at runtime and doesn't need instance state.      
+    ///   Static makes it easy to access from anywhere without dependency injection. 
+    ///   For larger games, consider making it non-static for testing/modding.
+    /// </summary>
     public static class LevelRepository
     {
         public static List<string[]> GetLevels()

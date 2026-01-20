@@ -4,6 +4,27 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace CherryCollector.Entities.World
 {
+    /// <summary>
+    ///      Spike CLASS - HAZARD OBJECT  
+    ///   PURPOSE:     
+    /// Represents a static hazard that damages the Hero on contact.     
+    ///   Spikes are placed on platforms to create challenging obstacles.
+    ///   DESIGN PATTERNS APPLIED: 
+    ///   [FACTORY PATTERN - Product] 
+    ///   Spike is a product of LevelObjectFactory. The Level class doesn't know     
+    /// how to create Spikes - it delegates to the factory.   
+    ///   [TELL, DON'T ASK]  
+    ///   Spike doesn't ask Hero "are you touching me?" - instead, CollisionManager  
+    ///   tells both objects they've collided, and Hero handles the damage.
+    ///   SOLID PRINCIPLES APPLIED:  
+    ///   [S] Single Responsibility Principle (SRP):   
+    ///       Spike ONLY represents a hazard's position and visual.  
+    ///       It doesn't calculate damage - that's Hero's responsibility.
+    ///       It doesn't check collisions - that's CollisionManager's job.     
+    ///   [O] Open/Closed Principle (OCP):    
+    ///   New hazard types (fire, acid, etc.) can be added by creating new   
+    ///       classes with CollisionType.Spike without modifying Spike class.    
+    /// </summary>
     public class Spike : IGameObject
     {
         public Vector2 Position { get; private set; }
@@ -22,7 +43,7 @@ namespace CherryCollector.Entities.World
 
         public void Update(GameTime gameTime)
         {
-            // Spikes are static.
+
         }
 
         public void Draw(SpriteBatch spriteBatch)
@@ -33,7 +54,7 @@ namespace CherryCollector.Entities.World
 
         public void OnCollision(IGameObject other)
         {
-            // Logic handled by the Hero when it hits this spike.
+
         }
     }
 }

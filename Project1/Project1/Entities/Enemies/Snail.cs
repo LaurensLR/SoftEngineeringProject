@@ -8,10 +8,31 @@ using System.Collections.Generic;
 
 namespace CherryCollector.Entities.Enemies
 {
-    /* 
-     * SOLID - Single Responsibility: 
-     * Manages the Snail's specific patrol movement and its 25x16 animation slicing.
-     */
+    /// <summary>
+    ///       Snail CLASS - GROUND PATROL ENEMY       
+    ///   PURPOSE:  
+    ///   A ground-based enemy that patrols horizontally along platforms.  
+    ///   Turns around when hitting walls or reaching platform edges.   
+    ///   DESIGN PATTERNS APPLIED:       
+    ///   [SENSOR PATTERN]  
+    ///   Snail uses two invisible "sensor" rectangles to detect its environment:   
+    ///     • wallSensor: Detects walls ahead (triggers turn)    
+    ///     • edgeSensor: Detects floor ahead (no floor = turn)  
+    ///   This is a common AI pattern in platformer games.      
+    ///   [TEMPLATE METHOD PATTERN - Override]    
+    ///   Snail inherits Draw() from Enemy but provides its own Update().    
+    ///   The Update(GameTime, List) overload provides world awareness.   
+    ///   SOLID PRINCIPLES APPLIED:  
+    ///   [S] Single Responsibility Principle (SRP):      
+    ///   Snail ONLY handles snail-specific patrol behavior.  
+    ///   Common enemy logic (texture, animation, collision type) is in Enemy base. 
+    ///   [O] Open/Closed Principle (OCP):    
+    ///       New ground enemies (Spider, Beetle) can extend Enemy without 
+    ///       modifying Snail or Enemy classes.   
+    ///   [D] Dependency Inversion Principle (DIP): 
+    ///       Snail receives worldObjects as parameter - it doesn't create or own    
+    ///       the world data. This allows testing with mock objects.
+    /// </summary>
     public class Snail : Enemy
     {
         private float _speed = 40f;
@@ -22,10 +43,7 @@ namespace CherryCollector.Entities.Enemies
 
         public Snail(Texture2D texture, Vector2 position) : base(texture, position)
         {
-            /* 
-             * DESIGN PATTERN - Animation Setup:
-             * We slice the 25x16 frames from the sprite sheet.
-             */
+
             var walkAnim = new Animation(fps: 6, loop: true);
             walkAnim.AddFrame(new AnimationFrame(new Rectangle(10, 81, 25, 16)));
             walkAnim.AddFrame(new AnimationFrame(new Rectangle(58, 81, 25, 16)));
@@ -35,10 +53,6 @@ namespace CherryCollector.Entities.Enemies
             AnimationManager = new AnimationManager(walkAnim, walkAnim, walkAnim, walkAnim);
         }
 
-        /* 
-         * SOLID - Dependency Inversion:
-         * We pass the 'worldObjects' so the Snail can 'see' the floor and walls.
-         */
         public void Update(GameTime gameTime, List<IGameObject> worldObjects)
         {
             CheckPatrol(worldObjects);
@@ -48,21 +62,14 @@ namespace CherryCollector.Entities.Enemies
             // Basic horizontal patrol movement
             Position = new Vector2(Position.X + _speed * _direction * dt, Position.Y);
 
-            /* 
-             * SOLID - Delegation:
-             * Passing direction to the manager automatically handles the facing-left flip.
-             */
+
             AnimationManager.Update(new Vector2(_direction, 0), gameTime);
         }
 
         // Default interface implementation
-        public override void Update(GameTime gameTime) { /* logic moved to overload */ }
+        public override void Update(GameTime gameTime) { }
 
-        /* 
-         * DESIGN PATTERN - Sensor Pattern:
-         * We create two imaginary boxes: one in front (Wall Sensor) 
-         * and one down-and-front (Edge Sensor).
-         */
+
         private void CheckPatrol(List<IGameObject> worldObjects)
         {
             int lookAhead = _direction > 0 ? 22 : -5;
