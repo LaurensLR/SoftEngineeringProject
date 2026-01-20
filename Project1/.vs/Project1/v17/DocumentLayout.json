@@ -3,12 +3,20 @@
   "WorkspaceRootPath": "C:\\Users\\laure_3y8jzli\\School\\J2\\S1\\SoftwareEngineering\\SoftEngineeringProject\\Project1\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{61340343-5B1B-4F30-A711-DD84BA788FF8}|Project1\\CherryCollector.csproj|c:\\users\\laure_3y8jzli\\school\\j2\\s1\\softwareengineering\\softengineeringproject\\project1\\project1\\states\\gamestates\\gameoverstate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{61340343-5B1B-4F30-A711-DD84BA788FF8}|Project1\\CherryCollector.csproj|solutionrelative:project1\\states\\gamestates\\gameoverstate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{61340343-5B1B-4F30-A711-DD84BA788FF8}|Project1\\CherryCollector.csproj|c:\\users\\laure_3y8jzli\\school\\j2\\s1\\softwareengineering\\softengineeringproject\\project1\\project1\\states\\gamestates\\startstate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{61340343-5B1B-4F30-A711-DD84BA788FF8}|Project1\\CherryCollector.csproj|solutionrelative:project1\\states\\gamestates\\startstate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{61340343-5B1B-4F30-A711-DD84BA788FF8}|Project1\\CherryCollector.csproj|c:\\users\\laure_3y8jzli\\school\\j2\\s1\\softwareengineering\\softengineeringproject\\project1\\project1\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{61340343-5B1B-4F30-A711-DD84BA788FF8}|Project1\\CherryCollector.csproj|solutionrelative:project1\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{61340343-5B1B-4F30-A711-DD84BA788FF8}|Project1\\CherryCollector.csproj|c:\\users\\laure_3y8jzli\\school\\j2\\s1\\softwareengineering\\softengineeringproject\\project1\\project1\\levels\\levelrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{61340343-5B1B-4F30-A711-DD84BA788FF8}|Project1\\CherryCollector.csproj|solutionrelative:project1\\levels\\levelrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{61340343-5B1B-4F30-A711-DD84BA788FF8}|Project1\\CherryCollector.csproj|c:\\users\\laure_3y8jzli\\school\\j2\\s1\\softwareengineering\\softengineeringproject\\project1\\project1\\game1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{61340343-5B1B-4F30-A711-DD84BA788FF8}|Project1\\CherryCollector.csproj|solutionrelative:project1\\game1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{61340343-5B1B-4F30-A711-DD84BA788FF8}|Project1\\CherryCollector.csproj|c:\\users\\laure_3y8jzli\\school\\j2\\s1\\softwareengineering\\softengineeringproject\\project1\\project1\\levels\\levelfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{61340343-5B1B-4F30-A711-DD84BA788FF8}|Project1\\CherryCollector.csproj|solutionrelative:project1\\levels\\levelfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,36 +26,62 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 0,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "StartState.cs",
+              "DocumentMoniker": "C:\\Users\\laure_3y8jzli\\School\\J2\\S1\\SoftwareEngineering\\SoftEngineeringProject\\Project1\\Project1\\States\\GameStates\\StartState.cs",
+              "RelativeDocumentMoniker": "Project1\\States\\GameStates\\StartState.cs",
+              "ToolTip": "C:\\Users\\laure_3y8jzli\\School\\J2\\S1\\SoftwareEngineering\\SoftEngineeringProject\\Project1\\Project1\\States\\GameStates\\StartState.cs*",
+              "RelativeToolTip": "Project1\\States\\GameStates\\StartState.cs*",
+              "ViewState": "AgIAABsAAAAAAAAAAAAowDcAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-20T09:58:07.514Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "GameOverState.cs",
-              "DocumentMoniker": "C:\\Users\\laure_3y8jzli\\School\\J2\\S1\\SoftwareEngineering\\SoftEngineeringProject\\Project1\\Project1\\States\\GameStates\\GameOverState.cs",
-              "RelativeDocumentMoniker": "Project1\\States\\GameStates\\GameOverState.cs",
-              "ToolTip": "C:\\Users\\laure_3y8jzli\\School\\J2\\S1\\SoftwareEngineering\\SoftEngineeringProject\\Project1\\Project1\\States\\GameStates\\GameOverState.cs",
-              "RelativeToolTip": "Project1\\States\\GameStates\\GameOverState.cs",
-              "ViewState": "AgIAABUAAAAAAAAAAAAqwCcAAAAPAAAAAAAAAA==",
+              "DocumentIndex": 2,
+              "Title": "Game1.cs",
+              "DocumentMoniker": "C:\\Users\\laure_3y8jzli\\School\\J2\\S1\\SoftwareEngineering\\SoftEngineeringProject\\Project1\\Project1\\Game1.cs",
+              "RelativeDocumentMoniker": "Project1\\Game1.cs",
+              "ToolTip": "C:\\Users\\laure_3y8jzli\\School\\J2\\S1\\SoftwareEngineering\\SoftEngineeringProject\\Project1\\Project1\\Game1.cs",
+              "RelativeToolTip": "Project1\\Game1.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAxwAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-19T16:42:54.951Z",
+              "WhenOpened": "2026-01-20T09:54:57.982Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\laure_3y8jzli\\School\\J2\\S1\\SoftwareEngineering\\SoftEngineeringProject\\Project1\\Project1\\Program.cs",
-              "RelativeDocumentMoniker": "Project1\\Program.cs",
-              "ToolTip": "C:\\Users\\laure_3y8jzli\\School\\J2\\S1\\SoftwareEngineering\\SoftEngineeringProject\\Project1\\Project1\\Program.cs",
-              "RelativeToolTip": "Project1\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAkAAAAAAAAAA==",
+              "Title": "LevelRepository.cs",
+              "DocumentMoniker": "C:\\Users\\laure_3y8jzli\\School\\J2\\S1\\SoftwareEngineering\\SoftEngineeringProject\\Project1\\Project1\\Levels\\LevelRepository.cs",
+              "RelativeDocumentMoniker": "Project1\\Levels\\LevelRepository.cs",
+              "ToolTip": "C:\\Users\\laure_3y8jzli\\School\\J2\\S1\\SoftwareEngineering\\SoftEngineeringProject\\Project1\\Project1\\Levels\\LevelRepository.cs*",
+              "RelativeToolTip": "Project1\\Levels\\LevelRepository.cs*",
+              "ViewState": "AgIAABYAAAAAAAAAAAAAwC8AAAAPAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-19T16:41:52.245Z",
+              "WhenOpened": "2026-01-20T09:45:46.747Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "LevelFactory.cs",
+              "DocumentMoniker": "C:\\Users\\laure_3y8jzli\\School\\J2\\S1\\SoftwareEngineering\\SoftEngineeringProject\\Project1\\Project1\\Levels\\LevelFactory.cs",
+              "RelativeDocumentMoniker": "Project1\\Levels\\LevelFactory.cs",
+              "ToolTip": "C:\\Users\\laure_3y8jzli\\School\\J2\\S1\\SoftwareEngineering\\SoftEngineeringProject\\Project1\\Project1\\Levels\\LevelFactory.cs",
+              "RelativeToolTip": "Project1\\Levels\\LevelFactory.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-20T09:45:43.564Z",
               "EditorCaption": ""
             }
           ]
