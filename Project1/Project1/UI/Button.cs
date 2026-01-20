@@ -11,15 +11,17 @@ namespace CherryCollector.UI
     public class Button
     {
         private readonly Rectangle _bounds;
-        private readonly string _text;
         private readonly SpriteFont _font;
         private readonly Color _color;
         private static Texture2D _pixel; // Static texture for border drawing
 
+        // MODIFIED: Text is now a public property so it can be updated dynamicall (e.g. for toggles)
+        public string Text { get; set; }
+
         public Button(Rectangle bounds, string text, SpriteFont font, Color color)
         {
             _bounds = bounds;
-            _text = text;
+            Text = text;
             _font = font;
             _color = color;
         }
@@ -56,13 +58,13 @@ namespace CherryCollector.UI
             spriteBatch.Draw(_pixel, new Rectangle(_bounds.Right - borderSize, _bounds.Top, borderSize, _bounds.Height), Color.White); // Right
 
             // Center original text inside the border
-            Vector2 textSize = _font.MeasureString(_text);
+            Vector2 textSize = _font.MeasureString(Text);
             Vector2 textPos = new Vector2(
                 _bounds.Center.X - textSize.X / 2,
                 _bounds.Center.Y - textSize.Y / 2
             );
 
-            spriteBatch.DrawString(_font, _text, textPos, _color);
+            spriteBatch.DrawString(_font, Text, textPos, _color);
         }
     }
 }

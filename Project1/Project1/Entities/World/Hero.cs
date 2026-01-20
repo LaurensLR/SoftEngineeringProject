@@ -19,6 +19,7 @@ namespace CherryCollector.Entities.World
     {
         private const int FixedWidth = 26;
         private const int FixedHeight = 28;
+        public int MaxLives { get; set; } = 3;
 
         public Vector2 Position { get; set; }
         public Vector2 Speed { get; set; }
@@ -42,7 +43,7 @@ namespace CherryCollector.Entities.World
         private CollisionManager _collisionManager;
 
         private IHeroState _currentState;
-        private int _lives = 3;
+        private int _lives;
 
         // Encapsulated property that notifies observers via the Observer Pattern
         public int Lives
@@ -127,7 +128,7 @@ namespace CherryCollector.Entities.World
         public void Reset(Vector2 spawnPosition)
         {
             Position = spawnPosition;
-            Lives = 3;
+            Lives = MaxLives;
             _hurtTimer = 0;
             Speed = new Vector2(150f, 0);
 
@@ -139,8 +140,9 @@ namespace CherryCollector.Entities.World
         }
 
         // Helper for level transitions
-        public void ResetPosition(Vector2 newPos)
+        public void ResetHero(Vector2 newPos)
         {
+            Lives = MaxLives;
             Position = newPos;
             PhysicsManager.Reset(); // Stop movement
         }

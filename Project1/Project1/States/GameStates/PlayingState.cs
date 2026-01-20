@@ -33,7 +33,7 @@ namespace CherryCollector.States.GameStates
                 if (game.LevelManager.HasMoreLevels())
                 {
                     game.LevelManager.NextLevel();
-                    game.Hero.ResetPosition(new Vector2(100, 100));
+                    game.Hero.ResetHero(new Vector2(0, 450));
                 }
                 else
                 {

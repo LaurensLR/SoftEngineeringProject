@@ -34,7 +34,7 @@ namespace CherryCollector
             Window.Title = "Cherry dungeons";
             _graphics.PreferredBackBufferWidth = GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Width;
             _graphics.PreferredBackBufferHeight = GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Height;
-            _graphics.IsFullScreen = true;
+            _graphics.IsFullScreen = false;
             _graphics.HardwareModeSwitch = false;
             _graphics.ApplyChanges();
         }
@@ -81,7 +81,7 @@ namespace CherryCollector
             // Pass _physicsManager to Hero
             Hero = new Hero(walk, idle, hurt, death, input, LevelManager, _collisionManager, _physicsManager)
             {
-                Position = new Vector2(100, 100)
+                Position = new Vector2(0, 450)
             };
             UiManager = new UIManager(Font, Hero);
 
@@ -108,7 +108,7 @@ namespace CherryCollector
         public void ResetGame()
         {
             LevelManager.ResetLevel(true); // Loops back to Level 0
-            Hero.Reset(new Vector2(100, 100));
+            Hero.Reset(new Vector2(0, 450));
             SetGameState(new PlayingState());
         }
 
@@ -116,7 +116,7 @@ namespace CherryCollector
         public void RestartLevel()
         {
             LevelManager.ResetLevel(false); // Keeps current level index
-            Hero.Reset(new Vector2(100, 100)); // Resets hero state
+            Hero.Reset(new Vector2(0, 450)); // Resets hero state
             SetGameState(new PlayingState());
         }
 

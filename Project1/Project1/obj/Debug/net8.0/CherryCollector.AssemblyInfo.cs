@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("CherryCollector")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e452e2d7339f16b314ef454668b55e2f9a4ca983")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d2ae42ac959ac4572f346b7940b88faaad01b1e6")]
 [assembly: System.Reflection.AssemblyProductAttribute("CherryCollector")]
 [assembly: System.Reflection.AssemblyTitleAttribute("CherryCollector")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
