@@ -3,13 +3,12 @@ using Microsoft.Xna.Framework;
 
 namespace CherryCollector.States.HeroStates
 {
-    // SOLID - Single Responsibility: Handles logic when the hero has died
     public class DeadState : IHeroState
     {
         public void Enter(Hero hero)
         {
             hero.Speed = Vector2.Zero;
-            hero.JumpManager.CancelJump();
+            hero.PhysicsManager.CancelJump(); // Use PhysicsManager
             hero.AnimationManager.PlayDeath();
         }
 

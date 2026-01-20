@@ -14,7 +14,6 @@ namespace CherryCollector
         private GraphicsDeviceManager _graphics;
         private SpriteBatch _spriteBatch;
 
-        // Expose components for states to access (DIP)
         public Hero Hero { get; private set; }
         public LevelManager LevelManager { get; private set; }
         public UIManager UiManager { get; private set; }
@@ -25,18 +24,17 @@ namespace CherryCollector
         private const int VirtualWidth = 800;
         private const int VirtualHeight = 480;
         private CollisionManager _collisionManager;
+        private PhysicsManager _physicsManager; // NEW
 
         public Game1()
         {
             _graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
             IsMouseVisible = true;
-
             Window.Title = "Cherry dungeons";
-
             _graphics.PreferredBackBufferWidth = GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Width;
             _graphics.PreferredBackBufferHeight = GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Height;
-            _graphics.IsFullScreen = false;
+            _graphics.IsFullScreen = true;
             _graphics.HardwareModeSwitch = false;
             _graphics.ApplyChanges();
         }
@@ -74,12 +72,14 @@ namespace CherryCollector
             var bat = Content.Load<Texture2D>("bat");
             Font = Content.Load<SpriteFont>("font");
 
-            // Initialize Game Systems
             var factory = new LevelObjectFactory(tile, spike, cherry, door, snail, bat);
             LevelManager = new LevelManager(factory);
             _collisionManager = new CollisionManager();
+            _physicsManager = new PhysicsManager(); // Init Physics
             IInputReader input = new KeyBoardReader();
-            Hero = new Hero(walk, idle, hurt, death, input, LevelManager, _collisionManager)
+            
+            // Pass _physicsManager to Hero
+            Hero = new Hero(walk, idle, hurt, death, input, LevelManager, _collisionManager, _physicsManager)
             {
                 Position = new Vector2(100, 100)
             };

@@ -12,11 +12,8 @@ namespace CherryCollector.Entities.World
 {
     /* 
      * SOLID - Single Responsibility Principle (SRP):
-     * Hero is responsible for Hero logic (health, input, animation state). 
-     * It delegates Physics to Movement/Jump Managers and behavior to States.
-     * 
-     * SOLID - Dependency Inversion Principle (DIP):
-     * Hero depends on LevelManager (an abstraction/manager) to see the world.
+     * Hero is responsible for Hero logic. 
+     * It delegates ALL Physics (Movement/Jump) to the new PhysicsManager.
      */
     public class Hero : IGameObject, IMovable
     {
@@ -36,8 +33,10 @@ namespace CherryCollector.Entities.World
         public event EventHandler Died;
 
         public AnimationManager AnimationManager { get; private set; }
-        public MovementManager MovementManager { get; private set; }
-        public JumpManager JumpManager { get; private set; }
+        
+        // REFACTORING: Replaced JumpManager and MovementManager with PhysicsManager
+        public PhysicsManager PhysicsManager { get; private set; }
+        
         public LevelManager LevelManager { get; private set; }
         // SOLID - Dependency Inversion: We depend on the manager, not the implementation details.
         private CollisionManager _collisionManager;
@@ -64,22 +63,24 @@ namespace CherryCollector.Entities.World
         private float _hurtTimer;
         private const float HurtCooldown = 1.0f;
 
-        public Hero(Texture2D walk, Texture2D idle, Texture2D hurt, Texture2D death, IInputReader input, LevelManager levelManager, CollisionManager collisionManager)
+        // Constructor updated to accept PhysicsManager
+        public Hero(Texture2D walk, Texture2D idle, Texture2D hurt, Texture2D death, IInputReader input, LevelManager levelManager, CollisionManager collisionManager, PhysicsManager physicsManager)
         {
             InputReader = input;
             LevelManager = levelManager;
+            _collisionManager = collisionManager;
+            PhysicsManager = physicsManager;
+
             AnimationManager = new AnimationManager(
                 new IdleAnimation(idle),
                 new WalkAnimation(walk),
                 new HurtAnimation(hurt),
                 new DeathAnimation(death));
-            MovementManager = new MovementManager();
-            JumpManager = new JumpManager();
+            
             Speed = new Vector2(150f, 0);
 
             // Set initial state
             SetState(new NormalState());
-            _collisionManager = collisionManager;
         }
 
         /*
@@ -130,11 +131,8 @@ namespace CherryCollector.Entities.World
             _hurtTimer = 0;
             Speed = new Vector2(150f, 0);
 
-            /* 
-             * DESIGN PATTERN - Cleanup: 
-             * Explicitly resetting the animation manager ensures visual state 
-             * matches the logic state after a restart.
-             */
+            // Clean reset of physics
+            PhysicsManager.Reset();
             AnimationManager.Reset();
 
             SetState(new NormalState());
@@ -144,7 +142,7 @@ namespace CherryCollector.Entities.World
         public void ResetPosition(Vector2 newPos)
         {
             Position = newPos;
-            JumpManager.VelocityY = 0;
+            PhysicsManager.Reset(); // Stop movement
         }
 
         private void TakeDamage(IGameObject spike)
@@ -156,21 +154,17 @@ namespace CherryCollector.Entities.World
             else
             {
                 AnimationManager.PlayHurt();
-                // We now pass the spike to the Bounce method
                 Bounce(spike);
             }
         }
 
         private void Bounce(IGameObject hazard)
         {
-            /* 
-             * SOLID - SRP Hero does not need to know HOW to bounce: 
-             * We tell the JumpManager to apply the vertical force. 
-             * Hero only handles the horizontal nudge logic.
-             */
-            JumpManager.ApplyBounce();
+            // Delegate bounce physics to the manager
+            PhysicsManager.ApplyBounce();
 
-            float bounceAmount = 15f;
+            // Minimal horizontal nudge
+            float bounceAmount = 2f;
             float pushDir = AnimationManager.FacingLeft ? bounceAmount : -bounceAmount;
             Position = new Vector2(Position.X + pushDir, Position.Y - 2);
         }

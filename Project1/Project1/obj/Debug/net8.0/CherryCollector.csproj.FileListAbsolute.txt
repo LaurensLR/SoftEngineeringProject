@@ -1,10 +1,3 @@
-C:\Users\laure_3y8jzli\School\J2\S1\SoftwareEngineering\SoftEngineeringProject\Project1\Project1\obj\Debug\net8.0\mgcb.tool.restore
-C:\Users\laure_3y8jzli\School\J2\S1\SoftwareEngineering\SoftEngineeringProject\Project1\Project1\obj\Debug\net8.0\CherryCollector.csproj.AssemblyReference.cache
-C:\Users\laure_3y8jzli\School\J2\S1\SoftwareEngineering\SoftEngineeringProject\Project1\Project1\obj\Debug\net8.0\CherryCollector.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\laure_3y8jzli\School\J2\S1\SoftwareEngineering\SoftEngineeringProject\Project1\Project1\obj\Debug\net8.0\CherryCollector.AssemblyInfoInputs.cache
-C:\Users\laure_3y8jzli\School\J2\S1\SoftwareEngineering\SoftEngineeringProject\Project1\Project1\obj\Debug\net8.0\CherryCollector.AssemblyInfo.cs
-C:\Users\laure_3y8jzli\School\J2\S1\SoftwareEngineering\SoftEngineeringProject\Project1\Project1\obj\Debug\net8.0\CherryCollector.csproj.CoreCompileInputs.cache
-C:\Users\laure_3y8jzli\School\J2\S1\SoftwareEngineering\SoftEngineeringProject\Project1\Project1\obj\Debug\net8.0\CherryCollector.sourcelink.json
 C:\Users\laure_3y8jzli\School\J2\S1\SoftwareEngineering\SoftEngineeringProject\Project1\Project1\bin\Debug\net8.0\Content\bat.xnb
 C:\Users\laure_3y8jzli\School\J2\S1\SoftwareEngineering\SoftEngineeringProject\Project1\Project1\bin\Debug\net8.0\Content\cherry.xnb
 C:\Users\laure_3y8jzli\School\J2\S1\SoftwareEngineering\SoftEngineeringProject\Project1\Project1\bin\Debug\net8.0\Content\death.xnb
@@ -38,6 +31,13 @@ C:\Users\laure_3y8jzli\School\J2\S1\SoftwareEngineering\SoftEngineeringProject\P
 C:\Users\laure_3y8jzli\School\J2\S1\SoftwareEngineering\SoftEngineeringProject\Project1\Project1\bin\Debug\net8.0\runtimes\linux-x64\native\libSDL2-2.0.so.0
 C:\Users\laure_3y8jzli\School\J2\S1\SoftwareEngineering\SoftEngineeringProject\Project1\Project1\bin\Debug\net8.0\runtimes\osx\native\libSDL2-2.0.0.dylib
 C:\Users\laure_3y8jzli\School\J2\S1\SoftwareEngineering\SoftEngineeringProject\Project1\Project1\bin\Debug\net8.0\runtimes\win-x64\native\SDL2.dll
+C:\Users\laure_3y8jzli\School\J2\S1\SoftwareEngineering\SoftEngineeringProject\Project1\Project1\obj\Debug\net8.0\mgcb.tool.restore
+C:\Users\laure_3y8jzli\School\J2\S1\SoftwareEngineering\SoftEngineeringProject\Project1\Project1\obj\Debug\net8.0\CherryCollector.csproj.AssemblyReference.cache
+C:\Users\laure_3y8jzli\School\J2\S1\SoftwareEngineering\SoftEngineeringProject\Project1\Project1\obj\Debug\net8.0\CherryCollector.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\laure_3y8jzli\School\J2\S1\SoftwareEngineering\SoftEngineeringProject\Project1\Project1\obj\Debug\net8.0\CherryCollector.AssemblyInfoInputs.cache
+C:\Users\laure_3y8jzli\School\J2\S1\SoftwareEngineering\SoftEngineeringProject\Project1\Project1\obj\Debug\net8.0\CherryCollector.AssemblyInfo.cs
+C:\Users\laure_3y8jzli\School\J2\S1\SoftwareEngineering\SoftEngineeringProject\Project1\Project1\obj\Debug\net8.0\CherryCollector.csproj.CoreCompileInputs.cache
+C:\Users\laure_3y8jzli\School\J2\S1\SoftwareEngineering\SoftEngineeringProject\Project1\Project1\obj\Debug\net8.0\CherryCollector.sourcelink.json
 C:\Users\laure_3y8jzli\School\J2\S1\SoftwareEngineering\SoftEngineeringProject\Project1\Project1\obj\Debug\net8.0\CherryCo.F952BDBF.Up2Date
 C:\Users\laure_3y8jzli\School\J2\S1\SoftwareEngineering\SoftEngineeringProject\Project1\Project1\obj\Debug\net8.0\CherryCollector.dll
 C:\Users\laure_3y8jzli\School\J2\S1\SoftwareEngineering\SoftEngineeringProject\Project1\Project1\obj\Debug\net8.0\refint\CherryCollector.dll
